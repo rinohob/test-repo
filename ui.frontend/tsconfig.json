@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "esnext", 
+        "baseUrl": "../ui.frontend",
+        "removeComments": true,
+        "moduleResolution":"node",
+        "allowJs": true,
+        "preserveConstEnums": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "noEmit": false
+    },
+    "include": [ "./src/**/*.ts", "global.d.ts"],
+    "exclude": ["./src/**/*.stories.ts","./src/**/*.hbs"]
+}

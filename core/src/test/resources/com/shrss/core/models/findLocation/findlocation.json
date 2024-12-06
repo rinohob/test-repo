@@ -1,0 +1,17 @@
+{
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "admin",
+            "locationLabel": "Find a Hard Rock:",
+            "emptyText": "Please provide a city, state, or zip/postal code",
+            "jcr:lastModifiedBy": "admin",
+            "viewAllText": "View All",
+            "searchText": "Search",
+            "jcr:created": "Tue Aug 06 2024 14:27:37 GMT+0530",
+            "id": "myid",
+            "class": "xxx",
+            "errorText": "Search Failed",
+            "pagePath": "/content/shrss/us/en/vidd/viddtwo",
+            "jcr:lastModified": "Tue Aug 06 2024 15:32:21 GMT+0530",
+            "sling:resourceType": "shrss/components/findLocation",
+            "placeholderText": "City,State or Zip/Postal Code"
+          }

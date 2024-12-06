@@ -1,0 +1,19 @@
+.container {
+    &--max-content {
+        > .cmp-container {
+            padding: 0 20px;
+            margin: 0 auto;
+            max-width: calc(var(--max-width-container) + 80px);
+        }
+    }
+}
+
+@include media('>=mobile') {
+    .container {
+        &--max-content {
+            > .cmp-container {
+                padding: 0 40px;
+            }
+        }
+    }
+}

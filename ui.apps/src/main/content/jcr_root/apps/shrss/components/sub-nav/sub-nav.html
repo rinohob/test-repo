@@ -1,0 +1,11 @@
+<sly data-sly-use.model="com.shrss.core.models.SubNavModel" data-sly-use.commonFields="com.shrss.core.models.CommonFields"/>
+<div data-sly-test="${wcmmode.edit}" data-emptytext="${'Sub Nav' @ i18n}" class="cq-placeholder"></div>
+<div data-sly-test="${model.subNavItems}" data-component="subnav" class="list list--subnav ${model.mobileSubnav == 'off' ? 'list--md': ''} ${commonFields.overrideClass}" id="${commonFields.id}" aria-label="${model.accessLabel}">
+   <div class="cmp-list__value">
+   </div>
+   <ul data-sly-list.subNavItems="${model.subNavItems}" id="list-3a1e8d64e8" class="cmp-list">
+      <li class="cmp-list__item"> 
+         <a href="${subNavItems.pagePath}" target="${subNavItems.ctaTarget}" class="${subNavItems.isActive ? 'cmp-list__item-link active': 'cmp-list__item-link'} ${subNavItemsList.index == 0 ? 'cmp-list__item-link--first':''}" aria-label="${subNavItems.title @ context='text'}">${subNavItems.title @context='html'}</a>
+      </li>
+   </ul>
+</div>

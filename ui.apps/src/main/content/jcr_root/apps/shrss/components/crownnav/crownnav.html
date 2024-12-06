@@ -1,0 +1,14 @@
+<sly data-sly-use.crownNavModel="com.shrss.core.models.CrownNavModel"></sly>
+<div data-sly-test="${wcmmode.edit && !crownNavModel.lobLinks}" data-emptytext="Crown Navigation"
+     class="cq-placeholder"></div>
+<ul class="hrc-header__crown__left" data-sly-list.link="${crownNavModel.lobLinks}">
+  <li class="hrc-header__crown__leftitem hrc-header__crown__leftitem--first"
+      data-sly-test="${linkList.index == 0 && link.showHideLink == 'show' }">
+      <a href="" loading="lazy"
+          target="${link.newTab == 'true' ? '_blank' : ''}"
+          class="${link.isActive ? 'hrc-header__crown__link hrc-header__crown__link--active': 'hrc-header__crown__link'}">${link.label}</a></li>
+  <li  class="hrc-header__crown__leftitem" data-sly-test="${linkList.index != 0 && link.showHideLink == 'show'}">
+    <a href="${link.navUrl}" loading="lazy" target="${link.newTab == 'true' ? '_blank' : ''}"
+       class="${link.isActive ? 'hrc-header__crown__link hrc-header__crown__link--active': 'hrc-header__crown__link'}">${link.label}</a>
+  </li>
+</ul>

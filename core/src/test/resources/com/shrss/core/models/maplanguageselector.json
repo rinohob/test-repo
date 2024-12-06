@@ -1,0 +1,14 @@
+{
+    "mapLangSel": {
+        "item0": {
+            "jcr:primaryType": "nt:unstructured",
+            "newTabDropdown": "false",
+            "labelDropdown": "Portuguese"
+        },
+        "item1": {
+            "jcr:primaryType": "nt:unstructured",
+            "newTabDropdown": "false",
+            "labelDropdown": "French"
+        }
+    }
+}

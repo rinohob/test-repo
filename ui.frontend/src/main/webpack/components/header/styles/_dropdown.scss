@@ -1,0 +1,49 @@
+.hrc-header__dropdown {
+  $p: &;
+
+  position: relative;
+
+  &.active {
+    > .hrc-header__button--primary {
+      background-color: var(--color-button-primary-hover);
+      color: var(--color-button-text-primary-hover);
+    }
+  }
+
+  &__content {
+    display: none;
+    background-color: var(--color-background-header-crown);
+    width: auto;
+    min-width: 100%;
+
+    &--show {
+      display: block;
+    }
+
+    &--up {
+      position: absolute;
+      top: unset;
+      bottom: 100%;
+      padding: 0;
+      width: 100%;
+    }
+
+    .hrc-header__button {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    > .hrc-header__button {
+      padding: 8px 16px;
+    }
+  }
+  @include media('>=desktop-sm') {
+    &:hover,
+    &:focus-within {
+      #{$p}__content {
+        display: block;
+      }
+    }
+  }
+}

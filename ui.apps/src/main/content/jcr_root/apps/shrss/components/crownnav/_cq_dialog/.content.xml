@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Crown Navigation"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <crownTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Lob Links"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <loblinks
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="LoB Links">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./lobLinks">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <label
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            emptyText="Label"
+                                            fieldDescription="Enter label"
+                                            fieldLabel="Label"
+                                            name="./label"/>
+                                        <url
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            emptyText="Navigation URL"
+                                            fieldDescription="Enter URL"
+                                            fieldLabel="Navigation URL"
+                                            name="./navUrl"
+											rootPath="/content"/>
+                                        <newtab
+                                            granite:class="coral-Form-fieldwrapper"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                            fieldDescription="Check this checkbox for opening URL in new Tab"
+                                            name="./newTab"
+                                            text="Open in new tab"
+                                            uncheckedValue="{Boolean}false"
+                                            value="{Boolean}true"/>
+                                        <showLink
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/select"
+                                            fieldDescription="Select hide/show to hide and show the navigation link"
+                                            fieldLabel="Link Visiblity"
+                                            name="./showHideLink">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <show
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Show"
+                                                    value="show"/>
+                                                <hide
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Hide"
+                                                    value="hide"/>
+                                            </items>
+                                        </showLink>
+                                        <separation
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                            text="----------------------------"/>
+                                    </items>
+                                </field>
+                            </loblinks>
+                        </items>
+                    </crownTab>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,22 @@
+.page-entertainment {
+    --color-button-primary: #0055a1;
+    --color-button-primary-hover: #023d72;
+    --color-button-primary-dark: #dcc385;
+
+
+    // --color-button-secondary: #ffffff;
+    --color-button-secondary-outline: #ffffff;
+    --color-button-secondary-light: #0055a1;
+    --color-button-tertiary: #0055a1;
+    --color-text-light: #ffffff;
+    --color-text-dark: #363636;
+    --color-text-link-hover: #023d72;
+    --color-background-primary: #ececec;
+
+    // TAB
+    --color-tab-title: var(--color-text-dark);
+    --color-tab-title-hover: var(--color-text-light);
+    --color-tab-title-active: var(--color-text-light);
+    --color-tab-bg-hover: var(--color-button-primary-hover);
+    --color-tab-bg-active: var(--color-button-primary);
+}

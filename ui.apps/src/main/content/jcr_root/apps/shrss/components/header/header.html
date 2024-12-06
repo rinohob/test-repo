@@ -1,0 +1,15 @@
+<header class="hrc-header" data-component="header">
+    <a href="#main" aria-label="${'Skip to content' @ i18n}" class="hrc-header__skip cmp-button--primary">${'Skip to content' @ i18n}</a>
+    <div class="hrc-header__crown">
+        <nav class="hrc-header__container">
+            <sly data-sly-resource="${ @path='left',resourceType='shrss/components/crownnav'}"></sly>
+
+            <nav class="hrc-header__crown__right">
+                <sly data-sly-resource="${ @path='right',resourceType='shrss/components/crowncta'}"></sly>
+            </nav>
+        </nav>
+    </div>
+    <div class="hrc-header__main">
+        <sly data-sly-resource="${ @path='main-navigation',resourceType='shrss/components/mainnavigation'}"></sly>
+    </div>
+</header>

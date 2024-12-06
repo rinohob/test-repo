@@ -1,0 +1,28 @@
+.cmp-title {
+    $p: &;
+
+    &__eyebrow{
+        display: block;
+        @extend %e1;
+    }
+
+    &--light{
+        #{$p}__text {
+            color: var(--color-text-light);
+        }
+        #{$p}__link{
+            color: var(--color-text-light);
+        }
+        #{$p}__eyebrow {
+            color: var(--color-text-light);
+        }
+    }
+
+    &--right {
+        text-align: right;
+    } 
+
+    &--center {
+        text-align: center;
+    }  
+}

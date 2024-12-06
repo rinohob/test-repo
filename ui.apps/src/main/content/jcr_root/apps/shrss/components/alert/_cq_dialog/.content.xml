@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Alert"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <alert
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Lob Links"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldDescription="Enter the text"
+                                fieldLabel="Text"
+                                name="./text"
+                                required="{Boolean}true"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceSuperType="shrss/components/text/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/text/rtePlugins"
+                                    sling:resourceType="granite/ui/components/foundation/include"/>
+                                <uiSettings
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceSuperType="shrss/components/text/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/text/uiSettings"
+                                    sling:resourceType="granite/ui/components/foundation/include"/>
+                            </text>
+                            <mobileText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldDescription="Enter mobile text"
+                                fieldLabel="Mobile Text"
+                                name="./mobileText"
+                                required="{Boolean}true"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceSuperType="shrss/components/text/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/text/rtePlugins"
+                                    sling:resourceType="granite/ui/components/foundation/include"/>
+                                <uiSettings
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceSuperType="shrss/components/text/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/text/uiSettings"
+                                    sling:resourceType="granite/ui/components/foundation/include"/>
+                            </mobileText>
+                            <fromdate
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                displayedFormat="YYYY-MM-DD"
+                                emptyText="From Date"
+                                fieldDescription="Select from date"
+                                fieldLabel="From Date"
+                                name="./fromDate"
+                                required="{Boolean}true"
+                                type="date"
+                                typeHint="String"
+                                valueFormat="YYYY-MM-DD"/>
+                            <todate
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                displayedFormat="YYYY-MM-DD"
+                                emptyText="To Date"
+                                fieldDescription="Select to date"
+                                fieldLabel="To Date"
+                                name="./toDate"
+                                required="{Boolean}true"
+                                type="date"
+                                typeHint="String"
+                                valueFormat="YYYY-MM-DD"/>
+                            <dismissAlert
+                                granite:class="coral-Form-fieldwrapper"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Check this checkbox to dismiss Alert"
+                                name="./dismissAlert"
+                                text="Dismiss Alert"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true"/>
+                            <showIcon
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Select hide/show to hide and show the Icon"
+                                fieldLabel="Icon Visiblity"
+                                name="./showHideIcon">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <show
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Show"
+                                        value="true"/>
+                                    <hide
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Hide"
+                                        value="false"/>
+                                </items>
+                            </showIcon>
+                            <aria-label
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                emptyText="Aria Label"
+                                fieldDescription="Enter aria label to describe the alert’s purpose"
+                                fieldLabel="Aria Label"
+                                name="./ariaLabel"/>
+                            <class
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/include"
+                                path="shrss/components/commonfields/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/class"/>
+                            <id
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/include"
+                                path="shrss/components/commonfields/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/id"/>
+                            <tags
+                                cq:showOnCreate="{Boolean}true"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/common/tagspicker"
+                                allowBulkEdit="{Boolean}true"
+                                allowCreate="{Boolean}true"
+                                cq-msm-lockable="cq:tags"
+                                fieldDescription="Select tags"
+                                fieldLabel="Tags"
+                                name="./cq:tags"
+                                rootPath="/content/cq:tags"/>
+                        </items>
+                    </alert>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

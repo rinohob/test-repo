@@ -1,0 +1,72 @@
+<div class="hero hero--{{align}} hero--{{color}} {{#if height}}hero--{{height}} {{/if}} {{#if gradientOff}} hero--gradient-off {{/if}} {{#if hideMobileDesc}} hero--desc-hide {{/if}}">
+  <div id="teaser-4dd97e852b"
+    class="cmp-teaser {{#if headerHeight}} hero--bleed-header {{/if}}">
+    {{#unless videoBanner}}
+    <div class="cmp-teaser__body">
+      <div class="cmp-teaser__content">
+        <p class="cmp-teaser__pretitle">UNITY MEMBER RATES</p>
+        <h2 class="cmp-teaser__title">SAVE UP TO 10%</h2>
+        <div class="cmp-teaser__description">
+          <p>Unlock exclusive member-only hotel rates. All Unity by Hard Rock members get exclusive room rates at Hotels
+            and Casino Hotels just for being a member.</p>
+        </div>
+        <div class="cmp-teaser__action-container">
+          <div class="button cmp-button--primary">
+            <button type="button" class="cmp-button">LEARN MORE</button>
+          </div>
+          {{#if moreCta}}
+          <div class="button cmp-button--secondary">
+            <button type="button" class="cmp-button">JOIN UNITY</button>
+          </div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    {{/unless}}
+    {{#if videoBanner}}
+    <div class="embed">
+      <div id="embed-2aa125dec4" class="cmp-embed cmp-embed__video-banner">
+        {{#ifEquals videoType "youtube"}}
+        <div class="cmp-embed__youtube">
+          <iframe class="cmp-embed__youtube-iframe" width="100%" height="100%" title="youtube video"
+            src="{{videoId}}?playlist=yPcRn-YLYt4&amp;enablejsapi=1&amp;controls=0&amp;modestbranding=1&amp;autohide=1&amp;fs=0&amp;iv_load_policy=3&amp;rel=0&amp;showinfo=0&amp;loop=1&amp;autoplay=1&amp;mute=1"
+            data-muted="" frameborder="0" allow="autoplay" allowfullscreen="" data-gtm-yt-inspected-162="true"
+            id="317029350" data-gtm-yt-inspected-167="true" title="Guitar Light Show"></iframe>
+        </div>
+        {{else}}
+        {{#ifEquals videoType "vimeo"}}
+        <div class="cmp-embed__vimeo">
+          <iframe class="cmp-embed__vimeo-iframe" title="vimeo video" autoplay="autoplay"
+            src="https://player.vimeo.com/video/{{videoId}}?background=1&loop=1&muted=1" frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        {{else}}
+        <div class="cmp-video__assets">
+          <video class="cmp-video" autoplay loop muted>
+            <source src="{{videoUrl}}" type="video/mp4">
+          </video>
+        </div>
+        {{/ifEquals}}
+        {{/ifEquals}}
+      </div>
+    </div>
+    {{else}}
+    <div class="cmp-teaser__image">
+      <div class="cmp-image">
+        <picture>
+          <!-- Desktop Image -->
+          <source media="(min-width: 1024px)"
+            srcset="https://unity.hardrock.com/-/media/loyalty/campaigns/hotel/summer-together/summer-together-2800x1000.jpg?rev=37a2839dc8374c28a4d79b56dc2437e3">
+          <!-- Tablet and mobile Image -->
+          <source media="(max-width: 1023px)"
+            srcset="https://unity.hardrock.com/-/media/loyalty/campaigns/hotel/summer-together/summer-together-800x800.jpg?rev=6b303807d24e43a191f50360c1e9b5fb">
+          <!-- Fallback Image -->
+          <img
+            src="https://unity.hardrock.com/-/media/loyalty/come-together/other/maldives-2208x812.jpg?rev=5688991b94c04e70a88d68691b84eff1"
+            loading="lazy" alt="fallback image" class="cmp-image__image">
+        </picture>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+</div>

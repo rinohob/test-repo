@@ -1,0 +1,11 @@
+<sly data-sly-use.vimeo="com.shrss.core.models.Vimeo"
+     data-sly-use.fixedTemplate="vimeofixed.html"
+     data-sly-use.responsiveTemplate="vimeoresponsive.html">
+  <sly data-sly-test="${!vimeo.empty}">
+    <sly data-sly-test="${!vimeo.vimeoLayout || vimeo.vimeoLayout!='responsive'}"
+         data-sly-call="${fixedTemplate.vimeo @ vimeo=vimeo}"></sly>
+
+    <sly data-sly-test="${vimeo.vimeoLayout=='responsive'}"
+         data-sly-call="${responsiveTemplate.vimeo @ vimeo=vimeo}"></sly>
+  </sly>
+</sly>

@@ -1,0 +1,176 @@
+:root {
+  --color-button-primary: #9e6c1b;
+  --color-button-primary-hover: #77531a;
+  --color-button-secondary: #ffffff;
+  --color-button-tertiary: #9d6b1b;
+  --color-text-light: #ffffff;
+  --color-text-dark: #363636;
+  --color-text-link-hover: #000000;
+  --color-text-gray: #ececec;
+  --color-text-black-stallion: #101820;
+  --color-text-gray-97: #f7f7f7;
+  --color-text-primary: #d1b162;
+  --text-transform-heading: uppercase;
+  --text-transform-title: uppercase;
+  --color-background-primary: #77531a;
+  --color-background-body: #ffffff;
+  --font-family-primary: "lato", sans-serif;
+  --font-family-header: var(--font-family-primary);
+  --font-family-h1: var(--font-family-primary);
+  --font-family-e1: var(--font-family-primary);
+  --font-size-base: 1rem;
+  --font-size-h1: #{to-rem(40)};
+  --font-size-h1-tablet: #{to-rem(40)};
+  --font-size-h1-mobile: #{to-rem(38)};
+  --font-size-h2: #{to-rem(36)};
+  --font-size-h2-tablet: #{to-rem(36)};
+  --font-size-h2-mobile: #{to-rem(34)};
+  --font-size-h3: #{to-rem(32)};
+  --font-size-h3-tablet: #{to-rem(32)};
+  --font-size-h3-mobile: #{to-rem(30)};
+  --font-size-h4: #{to-rem(28)};
+  --font-size-h4-tablet: #{to-rem(28)};
+  --font-size-h4-mobile: #{to-rem(26)};
+  --font-size-h5: #{to-rem(24)};
+  --font-size-h5-tablet: #{to-rem(24)};
+  --font-size-h5-mobile: #{to-rem(22)};
+  --font-size-h6: #{to-rem(20)};
+  --font-size-h6-tablet: #{to-rem(20)};
+  --font-size-h6-mobile: #{to-rem(18)};
+  --font-size-t1: #{to-rem(20)};
+  --font-size-t1-tablet: #{to-rem(20)};
+  --font-size-t1-mobile: #{to-rem(18)};
+  --font-size-t2: #{to-rem(16)};
+  --font-size-t2-tablet: #{to-rem(16)};
+  --font-size-t2-mobile: #{to-rem(14)};
+  --font-size-p: #{to-rem(24)};
+  --font-size-p1: #{to-rem(16)};
+  --font-size-p1-mobile: #{to-rem(16)};
+  --font-size-p2: #{to-rem(14)};
+  --font-size-p2-mobile: #{to-rem(12)};
+  --font-size-e1: #{to-rem(30)};
+  --font-size-e1-tablet: #{to-rem(30)};
+  --font-size-e1-mobile: #{to-rem(28)};
+  --font-height-base: 1.5rem;
+  --font-height-h1: #{to-rem(50)};
+  --font-height-h1-tablet: #{to-rem(50)};
+  --font-height-h1-mobile: #{to-rem(46)};
+  --font-height-h2: #{to-rem(44)};
+  --font-height-h2-tablet: #{to-rem(44)};
+  --font-height-h2-mobile: #{to-rem(42)};
+  --font-height-h3: #{to-rem(40)};
+  --font-height-h3-tablet: #{to-rem(40)};
+  --font-height-h3-mobile: #{to-rem(38)};
+  --font-height-h4: #{to-rem(36)};
+  --font-height-h4-tablet: #{to-rem(36)};
+  --font-height-h4-mobile: #{to-rem(34)};
+  --font-height-h5: #{to-rem(32)};
+  --font-height-h5-tablet: #{to-rem(32)};
+  --font-height-h5-mobile: #{to-rem(30)};
+  --font-height-h6: #{to-rem(28)};
+  --font-height-h6-tablet: #{to-rem(28)};
+  --font-height-h6-mobile: #{to-rem(26)};
+  --font-height-t1: #{to-rem(28)};
+  --font-height-t1-tablet: #{to-rem(28)};
+  --font-height-t1-mobile: #{to-rem(26)};
+  --font-height-t2: #{to-rem(24)};
+  --font-height-t2-tablet: #{to-rem(24)};
+  --font-height-t2-mobile: #{to-rem(22)};
+  --font-height-p: #{to-rem(26)};
+  --font-height-p1: #{to-rem(24)};
+  --font-height-p1-mobile: #{to-rem(24)};
+  --font-height-p2: #{to-rem(22)};
+  --font-height-p2-mobile: #{to-rem(18)};
+  --font-height-e1: #{to-rem(34)};
+  --font-height-e1-tablet: #{to-rem(34)};
+  --font-height-e1-mobile: #{to-rem(32)};
+  --font-weight-h1: 700;
+  --font-weight-h2: 700;
+  --font-weight-h3: 700;
+  --font-weight-h4: 700;
+  --font-weight-h5: 700;
+  --font-weight-h6: 700;
+  --font-weight-t1: 700;
+  --font-weight-t2: 700;
+  --font-weight-p1: 300;
+  --font-weight-p2: 300;
+  --font-weight-e1: 300;
+  --font-weight-p: 700;
+  --font-size-button: 0.875rem;
+  --font-size-button-text: 1rem;
+  --color-subnav-active: #aaaaaa;
+  --color-breadcrumb-gray: #aaaaaa;
+  --max-width-container: 1374px;
+
+  // header
+  --font-size-header-crown: #{to-rem(14)};
+  --font-size-header-menu: #{to-rem(18)};
+  --font-size-header-menu-sm: #{to-rem(20)};
+  --font-size-header-logo: #{to-rem(12)};
+  --font-size-header-logo-title: #{to-rem(16)};
+  --font-size-header-submenu-sm: #{to-rem(18)};
+  --font-size-header-submenu: #{to-rem(16)};
+  --font-height-header: #{to-rem(24)};
+  --color-background-header-crown: #1c1c1c;
+  --color-background-header-active: #2d343a;
+  --color-background-header-reverb: #2d343a;
+  --color-text-header: #ffffff;
+  --color-header-link-hover: #d1cdcd;
+  --color-header-crown-separator: #9f9f9f;
+  --top-header: 0px;
+
+  // button text
+  --color-button-text-primary: #ffffff;
+  --color-button-text-primary-hover: #ffffff;
+  --color-button-text-primary-light: #ffffff;
+  --color-button-text-secondary: #ffffff;
+  --color-button-text-secondary-hover: #ffffff;
+  --color-button-disabled: #aaaaaa;
+  --color-button-text-disabled: #000000;
+  --color-anchor: #000000;
+  --color-anchor-hover: #000000;
+  --text-decoration-anchor: underline;
+  --color-tab-title: #101820;
+  --color-text-body: #363636;
+
+  // Accordion
+  --color-accordion-bg: var(--color-text-light);
+  --color-accordion-title: var(--color-text-dark);
+  --color-accordion-bg-hover: var(--color-text-gray);
+  --color-accordion-hover: var(--color-accordion-title);
+  --color-accordion-bg-expanded: var(--color-text-gray-97);
+  --color-accordion-bg-gray92: #ebebeb;
+
+  // BREADCRUMB
+  --color-breadcrumb-bg: #ffffff;
+  --color-breadcrumb-title: #363636;
+  --color-breadcrumb-icon: #363636;
+  --color-breadcrumb-active: #aaaaaa;
+
+  // HERO BANNER
+  --color-hero-title: #ffffff;
+
+  //Location
+  --color-location-bg: #161616;
+  --color-location-border: #cccccc;
+  --color-location-focus-input: #66afe9;
+  --color-location-text-form: #686868;
+
+  // Carousel Dot
+  --color-background-carousel-dot: #ececec;
+  //cards
+  --color-card-bg: #ffffff;
+  --color-card-text: #000000;
+
+  // Social Feed
+  --color-socialfeed-background: #ececec;
+  --color-socialfeed-post-text: #ffffff;
+  --color-socialfeed-load-more: #85630a;
+  // social media
+  --color-social-media: #000000;
+  --color-background-social-media: #ababab;
+  --color-background-social-media-hover: #ffffff;
+  // separator
+  --color-background-sep: #cccccc;
+  --color-background-sep-dark: #575757;
+}

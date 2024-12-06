@@ -1,0 +1,3 @@
+{
+  "external.api.url": "$[env:unityAPI;default=https://10.79.56.136/services/Version]"
+}

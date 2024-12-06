@@ -1,0 +1,25 @@
+{
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:createdBy": "admin",
+    "jcr:lastModifiedBy": "admin",
+    "jcr:created": "Mon Jun 03 2024 17:00:43 GMT+0530",
+    "jcr:lastModified": "Fri Jun 14 2024 14:51:45 GMT+0530",
+    "sling:resourceType": "shrss/components/crownnav",
+    "lobLinks": {
+        "jcr:primaryType": "nt:unstructured",
+        "item0": {
+            "jcr:primaryType": "nt:unstructured",
+            "navUrl": "https://casino.hardrock.com/",
+            "newTab": "true",
+            "label": "Casino",
+            "showHideLink": "hide"
+        },
+        "item1": {
+            "jcr:primaryType": "nt:unstructured",
+            "navUrl": "https://cafe.hardrock.com/",
+            "newTab": "true",
+            "label": "Cafes",
+            "showHideLink": "show"
+        }
+    }
+}

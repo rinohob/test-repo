@@ -1,0 +1,16 @@
+<sly data-sly-use.video="com.shrss.core.models.VideoModel"></sly>
+<sly data-sly-use.commonFields="com.shrss.core.models.CommonFields"></sly>
+<sly data-sly-template.vimeo="${@ vimeo}">
+    <div class="cmp-embed__vimeo"
+         style="padding-bottom: ${vimeo.iFrameAspectRatio || 56.25  @ context='styleString'}%">
+        <iframe class="cmp-embed__vimeo-iframe ${commonFields.overrideClass}"
+                title="vimeo video"
+                id="${commonFields.id}"
+                data-cmp-data-layer="${vimeo.data.json}"
+                src="${vimeo.iFrameSrc}"
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay; fullscreen"
+                aria-label="${vimeo.vimeoAccessibilityLabel @ i18n}"></iframe>
+    </div>
+</sly>

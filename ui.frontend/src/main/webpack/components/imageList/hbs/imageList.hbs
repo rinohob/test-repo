@@ -1,0 +1,25 @@
+<div class="hrc-carousel hrc-carousel--image-list" data-component="carousel">
+    <div class="hrc-carousel__viewport">
+        <div class="hrc-carousel__container">
+            {{#each items}}
+            <div class="hrc-carousel__slide">
+                <img class="hrc-carousel__slide__image" src={{src}} loading="lazy" alt={{alt}} />
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="hrc-carousel__btn {{addClass items}}">
+        <button class="hrc-carousel__button hrc-carousel__button--prev" type="button">
+            <span class="fas fa-chevron-left"></span>
+        </button>
+        <button class="hrc-carousel__button hrc-carousel__button--next" type="button">
+            <span class="fas fa-chevron-right"></span>
+        </button>
+        {{#if showDots}}
+        <div class="hrc-carousel__dots">
+        </div>
+        {{/if}}
+    </div>
+
+</div>

@@ -1,0 +1,46 @@
+{
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "admin",
+        "jcr:lastModifiedBy": "admin",
+        "jcr:created": "Tue Jun 04 2024 14:36:05 GMT+0530",
+        "jcr:lastModified": "Fri Jun 14 2024 16:06:28 GMT+0530",
+        "sling:resourceType": "shrss/components/crowncta",
+        "crowncta": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+                "jcr:primaryType": "nt:unstructured",
+                "ctaURL": "https://unity.login.hardrock.com",
+                "newTab": "true",
+                "colorSel": "#ffffff",
+                "label": "Sign in",
+                "dropdownFor": "CTA",
+                "experienceSelect": "help",
+                "authorId": "111"
+            },
+            "item1": {
+                "jcr:primaryType": "nt:unstructured",
+                "ctaURL": "https://hotel.hardrock.com/",
+                "newTab": "true",
+                "colorSel": "#ffffff",
+                "label": "Book Now",
+                "dropdownFor": "CTA",
+                "experienceSelect": "dropdown",
+                "authorId": "3333",
+                "mapLangSel": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "item0": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "newTabDropdown": "true",
+                        "url": "https://hotel.hardrock.com/",
+                        "labelDropdown": "cta11"
+                    },
+                    "item1": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "newTabDropdown": "true",
+                        "url": "https://cafe.hardrock.com/",
+                        "labelDropdown": "cta22"
+                    }
+                }
+            }
+        }
+}

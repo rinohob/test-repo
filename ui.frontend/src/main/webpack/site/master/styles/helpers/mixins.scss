@@ -1,0 +1,11 @@
+@mixin d-flex($flex, $justify, $align) {
+    display: $flex;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  @mixin font-size($size, $line-height, $font-weight) {
+    font-size: $size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+  }
+  

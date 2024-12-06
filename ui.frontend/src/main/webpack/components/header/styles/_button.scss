@@ -1,0 +1,136 @@
+.hrc-header {
+  &__button {
+    display: inline-block;
+    color: var(--color-text-header);
+    padding: 8px 16px;
+    line-height: var(--font-height-header);
+    font-size: var(--font-size-header-crown);
+    background-color: transparent;
+    text-align: center;
+
+    &:hover {
+      color: var(--color-header-link-hover);
+    }
+
+   @include media('>=mobile') {
+      padding: 16.5px 16px;
+    }
+
+    @include media('>=desktop-sm') {
+      padding: 8px 16px;
+    }
+
+    &--primary {
+      background-color: var(--color-button-primary);
+      color: var(--color-button-text-primary);
+
+      &:hover {
+        color: var(--color-button-text-primary-hover);
+        background-color: var(--color-button-primary-hover);
+      }
+    }
+
+    &--secondary {
+      background-color: var(--color-button-primary-light);
+
+      &:hover {
+        color: var(--color-text-light);
+        background-color: var(--color-button-primary-light-hover);
+      }
+    }
+
+    &__img {
+      vertical-align: middle;
+      height: 17px;
+    }
+  }
+
+  &__main__button{
+    display: flex;
+
+  .hrc-header {
+    &__button {
+      display: none;
+
+      &__text {
+        display: none;
+      }
+
+      &--unity,
+      &--map {
+        display: inline-block;
+      }
+
+      @include media('>=mobile') {
+        display: inline-block;
+
+        &__text {
+          display: inline;
+        }
+
+        &--lang {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include media('>=desktop-sm') {
+    display: none;
+  }
+  }
+  
+  &__mainmenu__button {
+    .hrc-header {
+      &__button {
+        text-align: left;
+        font-size: 20px;
+        padding: 12px 0;
+        width: 100%;
+  
+        &__chev {
+          float: right;
+        }
+  
+        &--unity,
+        &--primary,
+        &--secondary {
+          display: none;
+        }
+  
+        &--img {
+          padding: 0;
+          padding-bottom: 20px;
+        }
+  
+        @include media('>=mobile') {
+          &--img {
+            display: none;
+          }
+        }
+      }
+    }
+  
+    @include media('>=desktop-sm') {
+      display: none;
+    }
+  }
+
+  &__main__fixedbtn {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+    > * {
+      flex: 1;
+      width: 100%;
+    }
+  
+    @include media('>=mobile') {
+      display: none;
+    }
+  }
+  
+}

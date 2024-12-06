@@ -1,0 +1,11 @@
+<sly data-sly-use.socialMedia="com.shrss.core.models.SocialMedia"></sly>
+<sly data-sly-use.commonFields="com.shrss.core.models.CommonFields"></sly>
+<div data-sly-test="${wcmmode.edit}" data-emptytext="${'Social Media' @ i18n}" class="cq-placeholder"></div>
+<sly data-sly-test="${socialMedia.socialMediaLinks && socialMedia.socialMediaLinks.size != 0}">
+   <div class="socialmedia ${commonFields.overrideClass}" id="${commonFields.id}" >
+      <ol class="socialmedia__list" data-sly-list.socialData="${socialMedia.socialMediaLinks}">
+         <li class="socialmedia__listitem"><a class="socialmedia__link" href="${socialData.pagePath}" target="${socialData.ctaTarget}"> <span
+            class="${socialData.socialMedia}" aria-label="${socialData.label}"></span> <span class="sr-only">${socialData.label}</span> </a></li>
+      </ol>
+   </div>
+</sly>

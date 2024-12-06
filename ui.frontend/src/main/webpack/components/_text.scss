@@ -1,0 +1,23 @@
+.cmp-text {
+    @extend %p1;
+
+    color: var(--color-text-body);
+
+    a {
+        text-decoration: underline;
+        color: var(--color-anchor);
+
+        &:hover{
+            color: var(--color-anchor-hover);
+            text-decoration: none;
+        }
+    }
+
+    ul, ol, li {
+        all: unset;
+        display: revert;
+        list-style: revert;
+        margin: revert;
+        padding: revert;
+    }
+}

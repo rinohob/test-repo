@@ -1,0 +1,9 @@
+<div class="tabs panelcontainer">
+  <div class="cmp-tabs">
+    <ol role="tablist" class="cmp-tabs__tablist">
+      {{#each tabItems}}
+        <li role="tab" class="cmp-tabs__tab {{#ifEquals @index 0}}cmp-tabs__tab--active{{/ifEquals}}">{{this}}</li>
+      {{/each}}
+    </ol>
+  </div>
+</div>

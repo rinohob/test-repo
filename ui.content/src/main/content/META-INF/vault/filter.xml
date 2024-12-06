@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/shrss"/>
+    <filter root="/content/shrss" mode="merge"/>
+    <filter root="/content/dam/shrss" mode="merge">
+        <exclude pattern="/content/dam/shrss(/.*)?"/>
+        <include pattern="/content/dam/shrss/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/shrss/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/shrss" mode="merge"/>
+	<filter root="/etc/acs-commons/lists" mode="merge"/>
+</workspaceFilter>

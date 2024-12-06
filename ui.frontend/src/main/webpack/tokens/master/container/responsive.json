@@ -1,0 +1,12 @@
+{
+  "container": {
+    "responsive": {
+      "mobile-width": { "value": "390px" },
+      "mobile-padding": { "value": "16px" },
+      "laptop-width": { "value": "1024px" },
+      "laptop-padding": { "value": "85px" },
+      "desktop-width": { "value": "1366px" },
+      "desktop-padding": { "value": "113px" }
+    }
+  }
+}

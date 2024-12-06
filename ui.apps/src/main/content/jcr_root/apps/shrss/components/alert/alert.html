@@ -1,0 +1,13 @@
+<sly data-sly-use.alertModel="com.shrss.core.models.AlertModel" />
+
+<div data-sly-test="${wcmmode.edit && !alertModel.text}" area-label="${alertModel.areaLabel}"  data-emptytext="${'Alert' @ i18n}" class="cq-placeholder"></div>
+
+<div class="container-alert">
+   <ul>
+	<li> ${'text' @ i18n} :   ${alertModel.text @ context='html'}</li>      
+	<li> ${'Mobile text' @ i18n} : ${alertModel.mobileText @ context='html'}</li>
+	<li>${'Tags' @ i18n}- ${alertModel.tags}<li>
+	<li>${'From date' @ i18n}- ${alertModel.fromDate} </li>
+	<li>${'To date' @ i18n}- ${alertModel.toDate} </li>
+  </ul>
+</div>

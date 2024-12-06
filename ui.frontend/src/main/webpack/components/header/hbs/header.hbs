@@ -1,0 +1,242 @@
+<div class="header hrc-header--{{variant}}">
+  <header class="hrc-header" data-component="header">
+    <a href="#main" class="hrc-header__skip cmp-button--primary">Skip to content</a>
+    <div class="hrc-header__crown">
+      <nav class="hrc-header__container">
+        <ul class="hrc-header__crown__left">
+          <li class="hrc-header__crown__leftitem"><a href=""
+              class="hrc-header__crown__link hrc-header__crown__link--active">Hard rock</a></li>
+          {{#each crownlist}}
+          <li class="hrc-header__crown__leftitem"><a href="{{url}}" class="hrc-header__crown__link">{{name}}</a></li>
+          {{/each}}
+        </ul>
+        <nav class="hrc-header__crown__right">
+          {{#each buttons}}
+          {{#if imgUrl}}
+          <a href="{{url}}" class="hrc-header__button hrc-header__button--{{variation}}">
+            <img src="{{imgUrl}}" alt="{{altText}}" class="hrc-header__button__img" />
+          </a>
+          {{else}}
+          {{#ifEquals type "dropdown"}}
+          <div class="hrc-header__dropdown">
+            <a class="hrc-header__button hrc-header__button--{{variation}}" aria-haspopup="true" aria-expanded="false"
+            href="#" role="button">
+              <span class="{{icon}}"></span>
+              <span class="hrc-header__button__text">{{text}}</span>
+            </a>
+            <ul class="hrc-header__dropdown__content">
+              {{#each values}}
+              <li class="hrc-header__dropdown__item">
+                <a href="{{url}}" class="hrc-header__button hrc-header__button--{{../variation}}">{{name}}</a>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+          {{else}}
+          <a href="{{url}}" class="hrc-header__button hrc-header__button--{{variation}}">
+            {{#if icon}}
+            <i class="{{icon}}"></i>
+            {{/if}}
+            <span class="hrc-header__button__text">{{text}}</span>
+          </a>
+          {{/ifEquals}}
+          {{/if}}
+          {{/each}}
+        </nav>
+      </nav>
+    </div>
+    <div class="hrc-header__main">
+      <div class="hrc-header__container">
+        {{#ifEquals variant "reverb"}}
+        <div class="hrc-header__logo">
+          <a href="#" class="hrc-header__link">
+            <img src="https://reverb.hardrock.com/files/5866/reverb-logo02.png" alt="" />
+          </a>
+          <div class="hrc-header__line"></div>
+          <div class="hrc-header__address">
+            <p>DOWNTOWN ATLANTA</p>
+            <p>89 CENTENNIAL OLYMPIC
+              PARK DR. ATLANTA, GA 30313</p>
+          </div>
+        </div>
+        {{else}}
+        <div class="hrc-header__logo">
+          {{#each imageList}}
+          <a href="{{url}}" class="hrc-header__logolink">
+            <img src="{{imgUrl}}" alt="{{altText}}" class="hrc-header__logoicon" />
+            {{#if location}}
+            <span>{{location}}</span>
+            {{/if}}
+          </a>
+          {{/each}}
+        </div>
+        {{/ifEquals}}
+        <nav class="hrc-header__main__button">
+          {{#each buttons}}
+          {{#if imgUrl}}
+          <a href="{{url}}" class="hrc-header__button hrc-header__button--{{variation}}">
+            <img src="{{imgUrl}}" alt="{{altText}}" class="hrc-header__button__img" />
+          </a>
+          {{else}}
+          {{#ifEquals type "dropdown"}}
+          <div class="hrc-header__dropdown">
+            <a class="hrc-header__button hrc-header__button--{{variation}}" href="#"
+              role="button">
+              <span class="{{icon}}"></span>
+              <span class="hrc-header__button__text">{{text}}</span>
+            </a>
+            <ul class="hrc-header__dropdown__content">
+              {{#each values}}
+              <li class="hrc-header__dropdown__item">
+                <a href="{{url}}" class="hrc-header__button hrc-header__button--{{../variation}}">{{name}}</a>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+          {{else}}
+          <a href="{{url}}" class="hrc-header__button hrc-header__button--{{variation}}">
+            {{#if icon}}
+            <i class="{{icon}}"></i>
+            {{/if}}
+            <span class="hrc-header__button__text">{{text}} </span>
+          </a>
+          {{/ifEquals}}
+          {{/if}}
+          {{/each}}
+          <button class="hrc-header__ham-icon" id="hamBtn">
+            <span class="hrc-header__ham-icon--line"></span>
+            <span class="hrc-header__ham-icon--line"></span>
+            <span class="hrc-header__ham-icon--line"></span>
+          </button>
+        </nav>
+
+        <div class="hrc-header__main__menu" id="menu">
+          <nav class="hrc-header__main__nav">
+            <ul class="hrc-header__main__menulist">
+              {{#each mainnav}}
+              <li class="hrc-header__main__menuitem">
+                <a href="{{url}}" class="hrc-header__main__menu-link {{#if child}}has-child{{/if}}">
+                  {{name}}
+                  {{#if child}}
+                  <span class="fas fa-chevron-right"></span>
+                  {{/if}}
+                </a>
+                {{#if child}}
+                <div class="hrc-header__child__wrapper">
+                    <a href="#" class="hrc-header__main__menu-link hrc-header__main__menu-link--back hide-xl" role="button">
+                        <span class="fas fa-chevron-left"></span>
+                        Main Menu
+                        </a>
+                  <ul class="hrc-header__child__menu">
+                    <li class="hrc-header__main__menuitem hide-xl">
+                      <a href={{url}} class="hrc-header__main__menu-link">{{name}}</a>
+                    </li>
+                    {{#each child}}
+                    {{#if subchild}}
+                    <li class="hrc-header__main__menuitem">
+                      <a class="hrc-header__main__menu-link  {{#if subchild}}has-subchild{{/if}}" href={{url}} role="button">
+                        <span class="hrc-header__button__text">{{name}}</span>
+                        <span class="fas fa-chevron-down hrc-header__button__chev"></span>
+                      </a>
+                      <ul class="hrc-header__subchild-menu">
+                        <li class="hrc-header__main__aside__listitem hide-xl">
+                          <a href={{url}} class="hrc-header__main__aside__listlink">{{name}}</a>
+                        </li>
+                        {{#each subchild}}
+                        <li class="hrc-header__main__aside__listitem">
+                          <a href={{url}} class="hrc-header__main__aside__listlink">{{name}}</a>
+                        </li>
+                        {{/each}}
+                      </ul>
+                    </li>
+                    {{else}}
+                    <li class="hrc-header__main__menuitem">
+                      <a href="{{url}}" class="hrc-header__main__menu-link">{{name}}</a>
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                  </ul>
+                </div>
+                {{/if}}
+              </li>
+              {{/each}}
+            </ul>
+            <div class="hrc-header__main__aside">
+              <p class="hrc-header__main__asidetitle">
+                HARD ROCK
+              </p>
+              <ul class="hrc-header__main__aside__list">
+                {{#each crownlist}}
+                <li class="hrc-header__main__aside__listitem"><a href="{{url}}"
+                    class="hrc-header__main__aside__listlink">{{name}}</a></li>
+                {{/each}}
+              </ul>
+            </div>
+            <div class="hrc-header__mainmenu__button">
+
+            {{#each buttons}}
+            {{#if imgUrl}}
+            <a href="{{url}}" class="hrc-header__button hrc-header__button--{{variation}}">
+              <img src="{{imgUrl}}" alt="{{altText}}" class="hrc-header__button__img" />
+            </a>
+            {{else}}
+            {{#ifEquals text "English"}}
+            <div class="hrc-header__dropdown">
+              <a class="hrc-header__button hrc-header__button--{{variation}}" href="#"
+                role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="{{icon}}"></span>
+                <span class="hrc-header__button__text">{{text}}</span>
+                <span class="fas fa-chevron-down hrc-header__button__chev" id="chevIcon"></span>
+              </a>
+              <ul class="hrc-header__dropdown__content">
+                {{#each values}}
+                <li class="hrc-header__main__aside__listitem">
+                  <a href="{{url}}" class="hrc-header__main__aside__listlink">{{name}}</a>
+                </li>
+                {{/each}}
+              </ul>
+            </div>
+            {{/ifEquals}}
+            {{/if}}
+            {{/each}}
+          </div>
+          </nav>
+
+          <div class="hrc-header__main__fixedbtn">
+            {{#each buttons}}
+            {{#In variation "primary" "secondary"}}
+            {{#ifEquals type "dropdown"}}
+            <div class="hrc-header__dropdown">
+              <a class="hrc-header__button hrc-header__button--{{variation}}" aria-haspopup="true" aria-expanded="false"
+              href="#" role="button">
+                <span class="{{icon}}"></span>
+                <span class="hrc-header__button__text">{{text}}</span>
+              </a>
+              <ul class="hrc-header__dropdown__content hrc-header__dropdown__content--up">
+                {{#each values}}
+                <li class="hrc-header__dropdown__item">
+                  <a href="{{url}}" class="hrc-header__button hrc-header__button--{{../variation}}">{{name}}</a>
+                </li>
+                {{/each}}
+              </ul>
+            </div>
+            {{else}}
+            <a href="{{url}}" class="hrc-header__button hrc-header__button--{{variation}}">
+              {{#if icon}}
+              <i class="{{icon}}"></i>
+              {{/if}}
+              <span class="hrc-header__button__text">{{text}} </span>
+            </a>
+            {{/ifEquals}}
+            {{/In}}
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      {{! Reverb main navigation variation }}
+  </header>
+</div>
+
+<main class="teaser-cmp hrc-main">
+  <img src="https://cafe.hardrock.com/files/5282/23412644_ImageLargeWidth.avif" alt="" />
+</main>

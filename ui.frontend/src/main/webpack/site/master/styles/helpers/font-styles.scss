@@ -1,0 +1,7 @@
+@mixin font-style($size, $lineheight, $spacing, $family, $color){
+    @if $size != '' { font-size: $size; }
+    @if $lineheight != '' { line-height: $lineheight; }
+    @if $spacing != '' { letter-spacing: $spacing; }
+    @if $family != '' { font-family: $family; }
+    @if $color != '' { color: $color; }
+}

@@ -1,0 +1,11 @@
+<div data-sly-use.fragment="com.adobe.cq.wcm.core.components.models.ExperienceFragment"
+     data-sly-use.customFragment="com.shrss.core.models.CustomHearderFooterExpFragment"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.commonFields="com.shrss.core.models.CommonFields"
+     data-sly-test=${customFragment.isConfigured}
+     data-sly-set.selector="content.${request.requestPathInfo.selectorString}"
+     data-sly-resource="${@path=customFragment.isPropertyAvailable ? customFragment.expFragmentPath : fragment.localizedFragmentVariationPath, selectors=selector, wcmmode='disabled'}"
+     id="${commonFields.id}"
+     class="cmp-experiencefragment cmp-experiencefragment--${fragment.name} ${commonFields.overrideClass}">
+</div>
+<sly data-sly-call="${template.placeholder @ isEmpty=!customFragment.isConfigured, classAppend='cmp-dd-experiencefragment'}"></sly>

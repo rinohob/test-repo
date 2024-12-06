@@ -1,0 +1,8 @@
+.container-alert {
+    padding: 16px 24px;
+    background-color: $color-background-alert;
+    @include d-flex(flex, flex-start, flex-start);
+
+    flex-direction: column;
+    gap: 12px;
+}

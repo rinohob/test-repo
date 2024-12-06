@@ -1,0 +1,49 @@
+{
+    "vimeo": {
+        "jcr:primaryType": "cq:Page",
+        "jcr:content": {
+            "jcr:primaryType": "cq:PageContent",
+            "jcr:title": "Embed Test Page",
+            "sling:resourceType": "core/wcm/components/page/v2/page",
+            "jcr:description": "Test page with embed component configurations",
+            "root": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                "responsivegrid": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+                    "video1": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "sling:resourceType": "core/wcm/components/embed/v2/embed",
+                        "type": "embeddable",
+                        "embeddableResourceType": "shrss/components/video/embeddable/vimeo",
+                        "vimeoVideoId": "9389973",
+                        "vimeoWidth": "300",
+                        "vimeoHeight": "200",
+                        "vimeoAspectRatio": "56.25",
+                        "vimeoLayout": "responsive"
+                    },
+                    "video2": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "sling:resourceType": "core/wcm/components/embed/v2/embed",
+                        "type": "embeddable",
+                        "embeddableResourceType": "shrss/components/video/embeddable/vimeo",
+                        "vimeoVideoId": "9389973",
+                        "vimeoAutoPlay": "false",
+                        "vimeoMute": "false",
+                        "vimeoLoop": "false",
+                        "vimeoRel": "false",
+                        "vimeoPlaysInline": "false",
+                        "vimeoAccessibilityLabel": "Test Video"
+                    },
+                    "video3": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "sling:resourceType": "core/wcm/components/embed/v2/embed",
+                        "type": "embeddable",
+                        "embeddableResourceType": "shrss/components/video/embeddable/vimeo"
+                    }
+                }
+            }
+        }
+    }
+}

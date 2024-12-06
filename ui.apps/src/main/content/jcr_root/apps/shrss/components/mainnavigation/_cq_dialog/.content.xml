@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" jcr:mergeProperties="fieldLabel"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Main Navigation"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <logo
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Logo"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                    margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <logoitems
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                    composite="{Boolean}true"
+                                                    fieldDescription="Enter the logo details"
+                                                    fieldLabel="Logo Details">
+                                                <field
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        name="./logo">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <logoimage
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                fieldDescription="Select the logo image"
+                                                                fieldLabel="Logo Image"
+                                                                allowUpload="{Boolean}false"
+                                                                rootPath="/content/dam"
+                                                                name="./logoImage"/>
+                                                        <url
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="cq/gui/components/coral/common/form/pagefield"
+                                                                fieldDescription="Enter the url for redirect link"
+                                                                fieldLabel="Url"
+                                                                name="./logoUrl"
+                                                                rootPath="/content/shrss"/>
+                                                        <target
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                fieldDescription="Select checkbox to open link in New Tab"
+                                                                name="./logoTarget"
+                                                                text="New Tab"
+                                                                uncheckedValue="_self"
+                                                                value="_blank"/>
+                                                        <text
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="acs-commons/granite/ui/components/include"
+                                                                fieldDescription="Enter the Location Address"
+                                                                useFixedInlineToolbar="{Boolean}true"
+                                                                path="/apps/shrss/components/rte/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/text">
+				                                                <parameters
+				                                                    jcr:primaryType="nt:unstructured"
+				                                                    fieldLabel="Location Address"
+				                                                    fieldName="logoText"/>
+                                                        </text>
+                                                    </items>
+                                                </field>
+                                            </logoitems>
+                                            <id
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/include"
+                                                    path="/apps/shrss/components/commonfields/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/id"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </logo>
+                    <mainnav
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Main Navigation"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                    margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <mainnavitems
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                    composite="{Boolean}true"
+                                                    fieldLabel="Primary Navigation">
+                                                <field
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        name="./primaryNav">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <label
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                fieldLabel="Label"
+                                                                fieldDescription="Enter the label for primary navigation"
+                                                                name="./label"/>
+                                                        <url
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                fieldLabel="Url"
+                                                                fieldDescription="Enter the url for primary navigation"
+                                                                name="./url"
+                                                                rootPath="/content/shrss"/>
+                                                        <target
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                fieldDescription="Select checkbox to open primary navigation url in new tab"
+                                                                name="./urlTarget"
+                                                                text="New Tab"
+                                                                uncheckedValue="_self"
+                                                                value="_blank"/>
+                                                        <showhide
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                checked="{Boolean}false"
+                                                                fieldDescription="When selected the primary navigation item will be hidden"
+                                                                name="./showHide"
+                                                                text="Hide Link"
+                                                                uncheckedValue="{Boolean}false"
+                                                                value="{Boolean}true"/>
+                                                        <secondMF
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                                composite="{Boolean}true"
+                                                                fieldLabel="Secondary Navigation">
+                                                            <field
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                    name="./secondaryNav">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <label
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                            fieldLabel="Label"
+                                                                            fieldDescription="Enter the label for secondary navigation"
+                                                                            name="./label"/>
+                                                                    <url
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                            fieldLabel="Url"
+                                                                            fieldDescription="Enter the url for secondary navigation"
+                                                                            name="./url"
+                                                                            rootPath="/content/shrss"/>
+                                                                    <target
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                            fieldDescription="Select checkbox to open secondary navigation url in new tab"
+                                                                            name="./urlTarget"
+                                                                            text="New Tab"
+                                                                            uncheckedValue="_self"
+                                                                            value="_blank"/>
+                                                                    <showhide
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                            checked="{Boolean}false"
+                                                                            fieldDescription="When selected the secondary navigation item will be hidden"
+                                                                            name="./showHide"
+                                                                            text="Hide Link"
+                                                                            uncheckedValue="{Boolean}false"
+                                                                            value="{Boolean}true"/>
+                                                                    <thirdMF
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                                            composite="{Boolean}true"
+                                                                            fieldLabel="Tertiary Navigation">
+                                                                        <field
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                                name="./tertiaryNav">
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <label
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                                        fieldLabel="Label"
+                                                                                        fieldDescription="Enter the label for tertiary navigation"
+                                                                                        name="./tertiaryLabel"/>
+                                                                                <url
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                                        fieldLabel="Url"
+                                                                                        fieldDescription="Enter the url for tertiary navigation"
+                                                                                        name="./tertiaryUrl"
+                                                                                        rootPath="/content/shrss"/>
+                                                                                <target
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                        fieldDescription="Select checkbox to open tertiary navigation url in new tab"
+                                                                                        name="./tertiaryTarget"
+                                                                                        text="New Tab"
+                                                                                        uncheckedValue="_self"
+                                                                                        value="_blank"/>
+                                                                                <showhide
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                        checked="{Boolean}false"
+                                                                                        fieldDescription="When selected the tertiary navigation item will be hidden"
+                                                                                        name="./tertiaryShowHide"
+                                                                                        text="Hide Link"
+                                                                                        uncheckedValue="{Boolean}false"
+                                                                                        value="{Boolean}true"/>
+                                                                            </items>
+                                                                        </field>
+                                                                    </thirdMF>
+                                                                </items>
+                                                            </field>
+                                                        </secondMF>
+                                                    </items>
+                                                </field>
+                                            </mainnavitems>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </mainnav>
+                    <mobiletab
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Mobile/Tab"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                    margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <mobileText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="Enter the navigation help text for Mobile/Tab "
+                                                    fieldLabel="Navigation Help Text"
+                                                    name="./mobileText"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </mobiletab>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

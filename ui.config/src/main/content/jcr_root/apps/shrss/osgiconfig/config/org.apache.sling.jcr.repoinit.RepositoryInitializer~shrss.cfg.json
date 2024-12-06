@@ -1,0 +1,10 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/shrss",
+        "create path (nt:unstructured) /content/dam/shrss/jcr:content",
+		"create path /etc/acs-commons(sling:OrderedFolder)/lists(sling:OrderedFolder)",
+        "set properties on /content/dam/shrss/jcr:content\n  set cq:conf{String} to /conf/shrss\n  set jcr:title{String} to \"Hard Rock Seminole\"\nend",
+		"create service user shrss-service-user\n set ACL on /etc/acs-commons/lists\n allow jcr:read for shrss-service-user\n allow jcr:write for shrss-service-user\nend"
+    ]
+		
+}

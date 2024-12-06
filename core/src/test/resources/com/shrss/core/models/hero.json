@@ -1,0 +1,29 @@
+{
+    "jcr:title": "<b>This is Title</b>",
+    "fileReference": "/content/dam/shrss/summer-together-800x800.jpg",
+    "pretitle": "<b>This is eyebro</b>",
+    "id": "123",
+    "alt": "image",
+    "jcr:description": "this is description",
+    "sling:resourceType": "shrss/components/hero",
+    "assetType": "image",
+    "class": "css-class",
+    "disableLazyLoading": "true",
+    "video": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "admin",
+        "externalUrl": "http://localhost:4502/content/dam/shrss/Hard%20Rock.mp4",
+        "type": "externalUrl",
+        "jcr:lastModified": "Tue Aug 13 2024 15:16:16 GMT+0530",
+        "sling:resourceType": "shrss/components/video"
+    },
+    "actions": {
+        "jcr:primaryType": "nt:unstructured",
+        "item0": {
+            "jcr:primaryType": "nt:unstructured",
+            "link": "/content/shrss/us/en/hard-rock",
+            "text": "Learn More",
+            "linkTarget": "_self"
+        }
+    }
+}

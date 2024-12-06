@@ -1,0 +1,12 @@
+<div class="list {{#if piped}}list--piped {{else}}list--default{{/if}}">
+    <ul id="list-3a1e8d64e8" class="cmp-list" data-columns={{columns}}>
+        <li class="cmp-list__item">
+            <a href="/url" class="cmp-list__item-link cmp-list__item-link--first">Corporate</a>
+        </li>
+        {{#each items}}
+        <li class="cmp-list__item">
+            <a href="{{url}}" class="cmp-list__item-link {{#if active}} active{{/if}}">{{label}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</div>

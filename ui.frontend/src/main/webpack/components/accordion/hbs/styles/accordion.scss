@@ -1,0 +1,74 @@
+.cmp-accordion {
+  $p: &;
+
+  background-color: var(--color-accordion-bg);
+
+  &__header {
+    font-family: var(--font-family-primary);
+  }
+  #{$p}__icon {
+    float: right;
+    font-size: $font-size-accordion-icon;
+  }
+  #{$p}__button {
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--color-accordion-bg-gray92);
+    padding: 20px;
+    cursor: pointer;
+    @include d-flex(flex, space-between, baseline);
+
+    &:hover {
+      background-color: var(--color-accordion-bg-hover);
+
+      .cmp-accordion__title {
+        color: var(--color-accordion-hover);
+      }
+    }
+
+    .cmp-accordion__icon::before {
+      content: "\f107";
+      font-family: $font-awesome-family;
+      color: var(--color-accordion-expanded-icon);
+    }
+
+    &--expanded {
+      background-color: var(--color-accordion-bg-expanded);
+      color: var(--color-accordion-title);
+      border-bottom: 0;
+
+      &:hover {
+        background-color: var(--color-accordion-bg-hover);
+        color: var(--color-accordion-hover);
+      }
+
+      .cmp-accordion__icon::before {
+        content: "\f106";
+      }
+    }
+  }
+  #{$p}__title {
+    @extend %p1;
+
+    color: var(--color-accordion-title);
+  }
+  #{$p}__panel {
+    padding: 24px 20px;
+    color: var(--color-accordion-title);
+    @extend %p1;
+
+    font-family: var(--font-family-primary);
+    border-bottom: 2px solid var(--color-accordion-bg-gray92);
+  }
+}
+@include media('>=tablet') {
+  .cmp-accordion {
+    $p: &;
+    #{$p}__panel {
+      padding: 24px;
+    }
+    #{$p}__button {
+      padding: 18px 24px;
+    }
+  }
+}

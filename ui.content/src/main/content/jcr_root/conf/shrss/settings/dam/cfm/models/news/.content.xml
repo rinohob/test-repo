@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Template"
+    allowedPaths="[/content/entities(/.*)?]"
+    ranking="{Long}100">
+    <jcr:content
+        cq:scaffolding="/conf/shrss/settings/dam/cfm/models/news/jcr:content/model"
+        cq:templateType="/libs/settings/dam/cfm/model-types/fragment"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="News"
+        sling:resourceSuperType="dam/cfm/models/console/components/data/entity"
+        sling:resourceType="dam/cfm/models/console/components/data/entity/default"
+        status="enabled">
+        <metadata jcr:primaryType="nt:unstructured"/>
+        <model
+            cq:targetPath="/content/entities"
+            jcr:primaryType="cq:PageContent"
+            sling:resourceType="wcm/scaffolding/components/scaffolding"
+            dataTypesConfig="/mnt/overlay/settings/dam/cfm/models/formbuilderconfig/datatypes"
+            maxGeneratedOrder="20">
+            <cq:dialog
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/authoring/dialog">
+                <content
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                    <items
+                        jcr:primaryType="nt:unstructured"
+                        maxGeneratedOrder="20">
+                        <_x0031_723629658512
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="Enter the Title"
+                            fieldLabel="Title"
+                            listOrder="1"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="title"
+                            renderReadOnly="false"
+                            required="on"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <granite:data jcr:primaryType="nt:unstructured"/>
+                        </_x0031_723629658512>
+                        <_x0031_723629754288
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/models/editor/components/datatypes/datepicker"
+                            displayedFormat="YYYY-MM-DD"
+                            emptyText="YYYY-MM-DD"
+                            fieldDescription="Enter the Publish Date"
+                            fieldLabel="Publish Date"
+                            listOrder="2"
+                            metaType="date"
+                            name="publishDate"
+                            renderReadOnly="false"
+                            required="on"
+                            showEmptyInReadOnly="true"
+                            type="date"
+                            valueFormat="YYYY-MM-DD"
+                            valueType="calendar/date">
+                            <granite:data
+                                jcr:primaryType="nt:unstructured"
+                                typeHint="Date"/>
+                        </_x0031_723629754288>
+                        <_x0031_723629976799
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="Enter the Author"
+                            fieldLabel="Author"
+                            listOrder="3"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="author"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <granite:data jcr:primaryType="nt:unstructured"/>
+                        </_x0031_723629976799>
+                        <_x0031_723630057007
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/models/editor/components/contentreference"
+                            fieldDescription="Select the Image"
+                            fieldLabel="Image"
+                            filter="hierarchy"
+                            listOrder="4"
+                            metaType="reference"
+                            name="image"
+                            nameSuffix="contentReference"
+                            renderReadOnly="false"
+                            required="on"
+                            rootPath="/content/dam/shrss"
+                            showEmptyInReadOnly="true"
+                            showThumbnail="false"
+                            validation="cfm.validation.contenttype.image"
+                            valueType="string/reference">
+                            <granite:data
+                                jcr:primaryType="nt:unstructured"
+                                thumbnail-validation="cfm.validation.thumbnail.show"/>
+                        </_x0031_723630057007>
+                        <_x0031_723630533205
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="Enter the Image Alt Text"
+                            fieldLabel="Image Alt Text"
+                            listOrder="5"
+                            maxlength="255"
+                            metaType="text-single"
+                            name="imageAltText"
+                            renderReadOnly="false"
+                            required="on"
+                            showEmptyInReadOnly="true"
+                            valueType="string">
+                            <granite:data jcr:primaryType="nt:unstructured"/>
+                        </_x0031_723630533205>
+                        <_x0031_723631035682
+                            cq:showOnCreate="true"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                            autocreateTag="true"
+                            fieldDescription="Select the category tags."
+                            fieldLabel="Categories"
+                            forceSelection="false"
+                            listOrder="6"
+                            metaType="tags"
+                            multiple="true"
+                            name="categories"
+                            renderReadOnly="false"
+                            rootPath="/content/cq:tags/shrss/categories"
+                            showEmptyInReadOnly="true"
+                            valueType="string/tags[]"/>
+                        <_x0031_723633011232
+                            cq:showOnCreate="true"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                            autocreateTag="true"
+                            fieldDescription="Select the Tags"
+                            fieldLabel="Tags"
+                            forceSelection="false"
+                            listOrder="7"
+                            metaType="tags"
+                            multiple="true"
+                            name="tags"
+                            renderReadOnly="false"
+                            rootPath="/content/cq:tags"
+                            showEmptyInReadOnly="true"
+                            valueType="string/tags[]"/>
+                        <_x0031_723633087533
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Excerpt"
+                            checked="false"
+                            default-mime-type="text/html"
+                            fieldDescription="Short description  of article for display in Cards."
+                            listOrder="8"
+                            metaType="text-multi"
+                            name="excerpt"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string/multiline">
+                            <granite:data jcr:primaryType="nt:unstructured"/>
+                        </_x0031_723633087533>
+                        <_x0031_723633178716
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Description"
+                            checked="false"
+                            default-mime-type="text/html"
+                            fieldDescription="Enter the News article description"
+                            listOrder="9"
+                            metaType="text-multi"
+                            name="description"
+                            renderReadOnly="false"
+                            required="on"
+                            showEmptyInReadOnly="true"
+                            valueType="string/multiline">
+                            <granite:data jcr:primaryType="nt:unstructured"/>
+                        </_x0031_723633178716>
+                        <_x0031_723633265435
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="dam/cfm/admin/components/authoring/contenteditor/multieditor"
+                            cfm-element="Additional Content"
+                            checked="false"
+                            default-mime-type="text/html"
+                            fieldDescription="Enter the additional content"
+                            listOrder="10"
+                            metaType="text-multi"
+                            name="additionalContent"
+                            renderReadOnly="false"
+                            showEmptyInReadOnly="true"
+                            valueType="string/multiline">
+                            <granite:data jcr:primaryType="nt:unstructured"/>
+                        </_x0031_723633265435>
+                    </items>
+                </content>
+            </cq:dialog>
+        </model>
+    </jcr:content>
+</jcr:root>

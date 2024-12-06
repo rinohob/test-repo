@@ -1,0 +1,13 @@
+{
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "admin",
+            "jcr:lastModifiedBy": "admin",
+            "jcr:created": "Mon Aug 12 2024 03:35:43 GMT+0530",
+            "autopauseDisabled": "false",
+            "accessibilityAutoItemTitles": "false",
+            "delay": "5000",
+            "jcr:lastModified": "Mon Aug 12 2024 04:27:28 GMT+0530",
+            "sling:resourceType": "shrss/components/carousel",
+            "autoplay": "false",
+            "activeItem": "item_1723416155233"
+          }

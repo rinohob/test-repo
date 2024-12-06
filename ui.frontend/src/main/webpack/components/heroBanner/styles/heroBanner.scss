@@ -1,0 +1,252 @@
+.hero {
+  position: relative;
+
+  $p: '.cmp-teaser';
+  #{$p}__body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 80px;
+    width: 100%;
+    color: var(--color-hero-title);
+    z-index: $z-index-hero-text;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &--bleed-header {
+    --header-height-add: 57px;
+  }
+  #{$p}__pretitle {
+    @extend %e1;
+
+    color: var(--color-text-light);
+    text-transform: uppercase;
+  }
+  #{$p}__title {
+    @extend %h1;
+
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    padding-bottom: 16px;
+  }
+  #{$p}__description {
+    @extend %p1;
+
+    color: var(--color-text-light);
+    padding-bottom: 32px;
+  }
+  #{$p}__action-container {
+    @include d-flex(flex, flex-start, flex-start);
+
+    flex-wrap: wrap;
+    gap: 16px;
+
+    .cmp-button {
+      line-height: 17px;
+      margin-bottom: 0;
+    }
+  }
+
+  .cmp-image {
+    &__image {
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%) 0% 0% no-repeat
+        padding-box;
+      z-index: $z-index-hero-gradient;
+    }
+  }
+
+  &--center {
+    #{$p}__content {
+      text-align: center;
+      grid-column: span 12;
+    }
+    #{$p}__action-container {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &--right {
+    #{$p}__body {
+      text-align: right;
+      direction: rtl;
+    }
+    #{$p}__action-container {
+      @include d-flex(flex, flex-start, flex-end);
+    }
+  }
+
+  &--lg {
+    .cmp-image {
+      height: calc(555px + var(--header-height-add, 0px));
+    }
+  }
+
+  &--md,
+  &--sm {
+    .cmp-image {
+      height: calc(480px + var(--header-height-add, 0px));
+    }
+  }
+
+  &--dark {
+    #{$p}__pretitle,
+    #{$p}__title,
+    #{$p}__description {
+      color: var(--color-text-dark);
+    }
+  }
+
+  &--gradient-off {
+    .cmp-image {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &--desc-hide {
+    #{$p}__description {
+      display: none;
+    }
+    #{$p}__body {
+      text-align: center;
+    }
+    #{$p}__action-container {
+      justify-content: center;
+    }
+  }
+}
+
+.cmp-embed {
+  $p: &;
+
+  &__video-banner {
+    #{$p}__youtube-iframe,
+    #{$p}__vimeo-iframe,
+    .cmp-video {
+      width: 100%;
+      height: 100%;
+      min-width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    #{$p}__youtube,
+    #{$p}__vimeo,
+    #{$p}__assets {
+      position: relative;
+      padding-bottom: 56.25%;
+      overflow: hidden;
+      max-width: 100%;
+
+      &-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        pointer-events: none;
+      }
+    }
+  }
+}
+@include media(">=mobile") {
+  .hero {
+    $p: '.cmp-teaser';
+    #{$p}__body {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      padding: 0 40px;
+    }
+    #{$p}__content {
+      grid-column: span 6;
+    }
+
+    &--center {
+      #{$p}__content {
+        grid-column: 3 / span 8;
+      }
+    }
+
+    &--lg {
+      .cmp-image {
+        height: calc(768px + var(--header-height-add, 0px));
+      }
+    }
+
+    &--md {
+      .cmp-image {
+        height: calc(600px + var(--header-height-add, 0px));
+      }
+    }
+
+    &--sm {
+      .cmp-image {
+        height: calc(540px + var(--header-height-add, 0px));
+      }
+    }
+
+    &--desc-hide {
+      #{$p}__body {
+        text-align: unset;
+      }
+      #{$p}__description {
+        display: block;
+      }
+      #{$p}__action-container {
+        justify-content: unset;
+      }
+      &.hero--center {
+        #{$p}__action-container {
+        justify-content: center;
+      }
+      }
+    }
+  }
+}
+@include media(">=tablet") {
+  .hero {
+    $p: '.cmp-teaser';
+    #{$p}__body {
+      max-width: var(--max-width-container);
+      padding: 0 15px;
+    }
+    #{$p}__content {
+      grid-column: span 4;
+    }
+
+    &--bleed-header {
+      --header-height-add: 160px;
+    }
+
+    &--center {
+      #{$p}__content {
+        grid-column: 4 / span 6;
+      }
+      #{$p}__action-container {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &--lg {
+      .cmp-image {
+        height: calc(814px + var(--header-height-add, 0px));
+      }
+    }
+  }
+}

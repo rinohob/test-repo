@@ -1,0 +1,134 @@
+.page-reverb {
+       --color-button-primary: #34cad2;
+       --color-button-primary-hover: #5ef7ff;
+       --color-button-primary-light: #000000;
+       --color-button-primary-light-hover: #33353a;
+       --color-button-secondary: #ffffff;
+       --color-button-secondary-hover: #35cad2;
+       --color-button-secondary-light: #000000;
+       --color-button-secondary-light-hover: #33353a;
+       --color-button-tertiary: #000000;
+       --color-text-light: #ffffff;
+       --color-text-dark: #363636;
+       --color-text-link-hover: #000000;
+       --color-background-primary: #ffffff;
+       --color-background-secondary: #f7f1e4;
+       --color-background-body: #000000;
+       --font-family-primary: open sans, sans-serif;
+       --font-family-secondary: "Vollkorn", serif;
+       --font-family-header: var(--font-family-secondary);
+       --font-family-h1: var(--font-family-secondary);
+       --font-family-e1: var(--font-family-primary);
+       --font-size-h1: #{to-rem(38)};
+       --font-size-h1-tablet: #{to-rem(36)};
+       --font-size-h1-mobile: #{to-rem(36)};
+       --font-size-h2: #{to-rem(32)};
+       --font-size-h2-tablet: #{to-rem(30)};
+       --font-size-h2-mobile: #{to-rem(30)};
+       --font-size-h3: #{to-rem(30)};
+       --font-size-h3-tablet: #{to-rem(28)};
+       --font-size-h3-mobile: #{to-rem(28)};
+       --font-size-h4: #{to-rem(26)};
+       --font-size-h4-tablet: #{to-rem(24)};
+       --font-size-h4-mobile: #{to-rem(24)};
+       --font-size-h5: #{to-rem(24)};
+       --font-size-h5-tablet: #{to-rem(22)};
+       --font-size-h5-mobile: #{to-rem(22)};
+       --font-size-h6: #{to-rem(22)};
+       --font-size-h6-tablet: #{to-rem(20)};
+       --font-size-h6-mobile: #{to-rem(20)};
+       --font-size-t1: #{to-rem(20)};
+       --font-size-t1-tablet: #{to-rem(18)};
+       --font-size-t1-mobile: #{to-rem(18)};
+       --font-size-t2: #{to-rem(22)};
+       --font-size-t2-tablet: #{to-rem(20)};
+       --font-size-t2-mobile: #{to-rem(20)};
+       --font-size-p1: #{to-rem(16)};
+       --font-size-p1-mobile: #{to-rem(16)};
+       --font-size-p2: #{to-rem(14)};
+       --font-size-p2-mobile: #{to-rem(12)};
+       --font-size-e1: #{to-rem(30)};
+       --font-size-e1-tablet: #{to-rem(28)};
+       --font-size-e1-mobile: #{to-rem(28)};
+       --font-height-h1: #{to-rem(44)};
+       --font-height-h1-tablet: #{to-rem(40)};
+       --font-height-h1-mobile: #{to-rem(40)};
+       --font-height-h2: #{to-rem(36)};
+       --font-height-h2-tablet: #{to-rem(34)};
+       --font-height-h2-mobile: #{to-rem(34)};
+       --font-height-h3: #{to-rem(34)};
+       --font-height-h3-tablet: #{to-rem(32)};
+       --font-height-h3-mobile: #{to-rem(32)};
+       --font-height-h4: #{to-rem(30)};
+       --font-height-h4-tablet: #{to-rem(28)};
+       --font-height-h4-mobile: #{to-rem(28)};
+       --font-height-h5: #{to-rem(28)};
+       --font-height-h5-tablet: #{to-rem(26)};
+       --font-height-h5-mobile: #{to-rem(26)};
+       --font-height-h6: #{to-rem(26)};
+       --font-height-h6-tablet: #{to-rem(24)};
+       --font-height-h6-mobile: #{to-rem(24)};
+       --font-height-t1: #{to-rem(24)};
+       --font-height-t1-tablet: #{to-rem(24)};
+       --font-height-t1-mobile: #{to-rem(24)};
+       --font-height-t2: #{to-rem(26)};
+       --font-height-t2-tablet: #{to-rem(24)};
+       --font-height-t2-mobile: #{to-rem(24)};
+       --font-height-p1: #{to-rem(24)};
+       --font-height-p1-mobile: #{to-rem(24)};
+       --font-height-p2: #{to-rem(21)};
+       --font-height-p2-mobile: #{to-rem(18)};
+       --font-height-e1: #{to-rem(34)};
+       --font-height-e1-tablet: #{to-rem(32)};
+       --font-height-e1-mobile: #{to-rem(32)};
+       --font-weight-h1: 900;
+       --font-weight-h2: 900;
+       --font-weight-h3: 900;
+       --font-weight-h4: 900;
+       --font-weight-h5: 900;
+       --font-weight-h6: 900;
+       --font-weight-t1: 700;
+       --font-weight-t2: 300;
+       --font-weight-p1: 300;
+       --font-weight-p2: 300;
+       --font-weight-e1: 100;
+       --color-subnav-active: #34cad2;
+
+       // TABS
+       --color-tab-title: #ffffff;
+       --color-tab-title-hover: var(--color-text-dark);
+       --color-tab-title-active: var(--color-text-dark);
+       --color-tab-bg-hover: var(--color-button-primary-hover);
+       --color-tab-bg-active: var(--color-button-primary);
+
+       // button text
+       --color-button-text-primary: #ffffff;
+       --color-button-text-primary-hover: #000000;
+       --color-button-text-primary-light: #ffffff;
+       --color-button-text-secondary: #ffffff;
+       --color-button-secondary-light-disabled: #d3d3d3;
+       --color-anchor: #34cad2;
+       --color-anchor-hover: #ffffff;
+       --color-text-body: #ffffff;
+
+       // ACCORDION
+       --color-accordion-bg: var(--color-button-tertiary);
+       --color-accordion-title: var(--color-text-light);
+       --color-accordion-bg-hover: var(--color-text-dark);
+       --color-accordion-hover: var(--color-text-gray);
+       --color-accordion-bg-expanded: var(--color-text-dark);
+       --color-expanded-accordion: var(--color-text-light);
+       --color-accordion-expanded-icon: var(--color-button-primary);
+
+       // BREADCRUMB
+       --color-breadcrumb-bg: #1c1c1c;
+       --color-breadcrumb-title: #ffffff;
+       --color-breadcrumb-icon: #ffffff;
+
+       // HEROBANNER
+       --color-text-secondary: #000000;
+
+       // separator
+       --color-background-sep:#000000;
+       --color-background-sep-dark:#44474e;
+}

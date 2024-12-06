@@ -1,0 +1,23 @@
+ {{#each buttons}}
+        {{#if imgUrl}}
+          <a href="{{url}}" class="hrc-header__button hrc-header__button--{{variation}}">
+            <img src="{{imgUrl}}" alt="{{altText}}" class="hrc-header__button__img"/>  
+          </a>
+          </li>
+        {{else}}
+          <a href="{{url}}" class="hrc-header__button hrc-header__button--{{variation}}">
+          {{#if icon}}
+          <i class="{{icon}}"></i>
+          {{/if}}
+          <span class="hrc-header__button__text">{{text}} </span>
+          </a>
+          {{#if values}}
+           <div class="hrc-header__lngdropdown__content">
+            {{#each values}}
+            <a href="#">{{this}}</a>
+            {{/each}}
+          </div>
+          {{/if}}
+
+          {{/if}}
+{{/each}}

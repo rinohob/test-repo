@@ -1,0 +1,12 @@
+
+<div class="button cmp-button--{{variant}} {{#if isDisabled}}disabled{{/if}}">
+  {{#if url}}
+  <a class="cmp-button" data-cmp-clickable="" data-cmp-data-layer="{{anchorData}}" href="{{url}}">
+    <span class="cmp-button__text">{{buttonText}}</span>
+  </a>
+  {{else}}
+  <button type="button" id="button-123" class="cmp-button">
+    <span class="cmp-button__text">{{buttonText}}</span>
+  </button>
+  {{/if}}
+</div>

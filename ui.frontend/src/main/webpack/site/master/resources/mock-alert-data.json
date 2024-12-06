@@ -1,0 +1,68 @@
+[
+    {
+        "id": "1",
+        "alertContent": "Attention1: This is a placeholder alert message. Please disregard its contents. Thank you",
+        "startDate": "2024-07-11",
+        "endDate": "2024-08-31",
+        "showIcon": "true",
+        "alertMobileContent": "mobile text: 1",
+        "dismissAlert": "false",
+        "className": "",
+        "ariaLabel": ""
+    },
+    {
+        "id": "2",
+        "alertContent": "Attention2: This is a placeholder alert message. Please disregard its contents. Thank you",
+        "startDate": "2024-07-14",
+        "endDate": "2024-08-31",
+        "showIcon": "true",
+        "alertMobileContent": "mobile text: 2",
+        "dismissAlert": "false",
+        "className": "",
+        "ariaLabel": ""
+    },
+    {
+        "id": "3",
+        "alertContent": "Attention3: This is a placeholder alert message. Please disregard its contents. Thank you",
+        "startDate": "2024-07-15",
+        "endDate": "2024-08-31",
+        "showIcon": "true",
+        "alertMobileContent": "mobile text: 3",
+        "dismissAlert": "false",
+        "className": "",
+        "ariaLabel": ""
+    },
+    {
+        "id": "4",
+        "alertContent": "Attention4: This is a placeholder alert message. Please disregard its contents. Thank you",
+        "startDate": "2024-07-17",
+        "endDate": "2024-08-31",
+        "showIcon": "true",
+        "alertMobileContent": "mobile text: 4",
+        "dismissAlert": "false",
+        "className": "",
+        "ariaLabel": ""
+    },
+    {
+        "id": "5",
+        "alertContent": "Attention5: This is a placeholder alert message. Please disregard its contents. Thank you",
+        "startDate": "2024-07-18",
+        "endDate": "2024-08-31",
+        "showIcon": "false",
+        "alertMobileContent": "mobile text: 5",
+        "dismissAlert": "true",
+        "className": "",
+        "ariaLabel": ""
+    },
+    {
+        "id": "6",
+        "alertContent": "<p>Another Alert Banner Message.</p><a href='#'>Click to Learn More</a>",
+        "startDate": "2024-07-16",
+        "endDate": "2024-07-31",
+        "showIcon": "false",
+        "alertMobileContent": "mobile text: 6",
+        "dismissAlert": "false",
+        "className": "",
+        "ariaLabel": ""
+    }
+]

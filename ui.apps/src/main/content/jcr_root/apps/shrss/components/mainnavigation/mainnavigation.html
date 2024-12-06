@@ -1,0 +1,186 @@
+<sly data-sly-use.crownCTAModel="com.shrss.core.models.MainNavigation"></sly>
+<sly data-sly-use.commonFields="com.shrss.core.models.CommonFields"></sly>
+<div data-sly-test="${wcmmode.edit}" data-emptytext="${'Main Navigation' @ i18n}" class="cq-placeholder"></div>
+<div class="hrc-header__container" id="${commonFields.id}">
+    <div class="hrc-header__logo">
+      <sly data-sly-test="${crownCTAModel.logo && crownCTAModel.logo.size != 0 && inheritedPageProperties.subClientLib != 'page-reverb'}"
+             data-sly-list.logoMF="${crownCTAModel.logo}">
+            <a href="${logoMF.logoUrl}" target="${logoMF.logoTarget}"class="hrc-header__logolink">
+                <img loading="lazy" src="${logoMF.fileReference}" alt="Hard Rock" class="hrc-header__logoicon">
+                <span>${logoMF.logoText @context='html'}</span>
+            </a>
+      </sly>
+      <sly data-sly-test="${crownCTAModel.logo && crownCTAModel.logo.size != 0 && inheritedPageProperties.subClientLib == 'page-reverb'}"
+         data-sly-list.logoMF="${crownCTAModel.logo}">
+         <a href="${logoMF.logoUrl}" target="${logoMF.logoTarget}" class="hrc-header__link">
+         <img src="${logoMF.fileReference}" loading="lazy" alt="Hard Rock">
+         </a>
+         <div class="hrc-header__line"></div>
+         <div class="hrc-header__address">
+            ${logoMF.logoText @ context='html'}
+         </div>
+        </sly>
+    </div>
+    <nav class="hrc-header__main__button">
+        <sly data-sly-set.ctaCount="0" data-sly-list.link="${crownCTAModel.ctaItemList}">
+            <a href="${link.ctaURL}" data-sly-test="${link.experienceSelect == 'signin'}"
+               target="${link.newTab == 'true' ? '_blank' : ''}" class="hrc-header__button hrc-header__button--unity">
+                <i class="fas fa-user"></i>
+                <span class="hrc-header__button__text"> ${link.label}</span>
+            </a>
+            <a href="${link.ctaURL}" target="${link.newTab == 'true' ? '_blank' : ''}"
+                data-sly-test="${link.experienceSelect == 'cta' && link.fileReference}"
+                class="hrc-header__button hrc-header__button--img">
+                <img src="${link.fileReference}" loading="lazy" alt="${link.label}" class="hrc-header__button__img">
+            </a>
+            <a href="${link.ctaURL}"
+               data-sly-test="${link.experienceSelect == 'help' || link.experienceSelect == 'locationFinder'}"
+               target="${link.newTab == 'true' ? '_blank' : ''}" class="hrc-header__button hrc-header__button--icon">
+                <i
+                        class="${link.experienceSelect == 'help' ? 'fas fa-question-circle' : (link.experienceSelect == 'locationFinder' ? 'fas fa-search' : '')}"></i>
+                <span class="hrc-header__button__text">${link.label}</span>
+            </a>
+            <!-- primary and secondary normal btn-->
+            <a href="${link.ctaURL}" data-sly-test="${link.experienceSelect == 'cta' && !link.fileReference}"
+               style="background-color:${link.colorSel @ context='styleToken'}"
+               target="${link.newTab == 'true' ? '_blank' : ''}"
+               class="hrc-header__button hrc-header__button--${ctaCount == '0' ? 'primary' : 'secondary'}">
+                <span data-sly-set.ctaCount="1" class="hrc-header__button__text">${link.label}</span>
+            </a>
+            
+            <div class="hrc-header__dropdown"
+                 data-sly-test="${link.experienceSelect == 'dropdown'}">
+                 <sly data-sly-set.variation="${link.dropdownFor == 'CTA' ? 'primary': (link.dropdownFor == 'mapmarker' ? 'map' : 'lang' ) }">
+                    <sly data-sly-test="${variation == 'primary'}"><sly data-sly-set.ctaCount="1" ></sly></sly>
+                    <a class="hrc-header__button hrc-header__button--${variation}" href="#"
+                   role="button">
+                    <span class="${variation == 'map' ? 'fas fa-map-marker' : (variation == 'lang' ? 'fas fa-globe' : '') }"></span>
+                    <span class="hrc-header__button__text">${link.label}</span>
+                </a>
+                <ul data-sly-list.mapLang="${link.mapLangItemList}"
+                    class="hrc-header__dropdown__content">
+                    <li class="hrc-header__dropdown__item">
+                        <a href="${mapLang.url}" target="${mapLang.newTabDropdown == 'true' ? '_blank' : ''}"
+                           class="hrc-header__button hrc-header__button--${variation}">${mapLang.labelDropdown}</a>
+                    </li>
+                </ul>
+                </sly>
+            </div>
+
+        </sly>
+        <button class="hrc-header__ham-icon">
+            <span class="hrc-header__ham-icon--line"></span>
+            <span class="hrc-header__ham-icon--line"></span>
+            <span class="hrc-header__ham-icon--line"></span>
+        </button>
+    </nav>
+
+    <div class="hrc-header__main__menu" id="menu">
+        <nav class="hrc-header__main__nav">
+            <ul class="hrc-header__main__menulist">
+                <sly data-sly-test="${crownCTAModel.primaryNav && crownCTAModel.primaryNav.size != 0}" data-sly-list.primaryNav="${crownCTAModel.primaryNav}">
+                    <li data-sly-test="${!primaryNav.showHide && primaryNav.label}" class="hrc-header__main__menuitem">
+                        <a href="${primaryNav.url}" target="${primaryNav.urlTarget}" class="hrc-header__main__menu-link ${(primaryNav.secondaryNav && primaryNav.secondaryNav.size > 0) ? 'has-child' : ''}">${primaryNav.label}<span class=" ${(primaryNav.secondaryNav && primaryNav.secondaryNav.size > 0) ? 'fas fa-chevron-right' : ''}"></span></a>
+                        <sly data-sly-test="${primaryNav.secondaryNav && primaryNav.secondaryNav.size > 0}">
+                            <div class="hrc-header__child__wrapper">
+                                <a href="#" class="hrc-header__main__menu-link hrc-header__main__menu-link--back hide-xl" role="button">
+                                    <span class="fas fa-chevron-left"></span>
+                                    ${crownCTAModel.mobileText}
+                                </a>
+                                <ul class="hrc-header__child__menu">
+                                    <li data-sly-test="${!primaryNav.showHide}" class="hrc-header__main__menuitem hide-xl">
+                                        <a href="${primaryNav.url}" target="${primaryNav.urlTarget}" class="hrc-header__main__menu-link">${primaryNav.label}</a>
+                                    </li>
+                                    <sly data-sly-list.secondaryNav="${primaryNav.secondaryNav}">
+                                        <sly data-sly-test="${secondaryNav.tertiaryNav.size == 0}">
+                                            <li data-sly-test="${!secondaryNav.showHide}" class="hrc-header__main__menuitem">
+                                                <a href="${secondaryNav.url}" target="${secondaryNav.urlTarget}" class="hrc-header__main__menu-link">${secondaryNav.label}</a>
+                                            </li>
+                                        </sly>
+                                        <sly data-sly-test="${secondaryNav.tertiaryNav.size != 0}">
+                                            <li data-sly-test="${!secondaryNav.showHide && secondaryNav.label}" class="hrc-header__main__menuitem">
+                                                <a class="hrc-header__main__menu-link has-subchild" href="${secondaryNav.url}" target="${secondaryNav.urlTarget}">
+                                                    <span class="hrc-header__button__text">${secondaryNav.label}</span>
+                                                    <span class="fas fa-chevron-down hrc-header__button__chev"></span>
+                                                </a>
+                                                <ul class="hrc-header__subchild-menu">
+                                                    <li data-sly-test="${!secondaryNav.showHide}" class="hrc-header__main__aside__listitem hide-xl">
+                                                        <a target="${secondaryNav.urlTarget}" class="hrc-header__main__aside__listlink">${secondaryNav.label}</a>
+                                                    </li>
+                                                    <sly data-sly-list.tertiaryNav="${secondaryNav.tertiaryNav}">
+                                                        <li data-sly-test="${!tertiaryNav.tertiaryShowHide && tertiaryNav.tertiaryLabel}" class="hrc-header__main__aside__listitem">
+                                                            <a href="${tertiaryNav.tertiaryUrl}" target="${tertiaryNav.tertiaryTarget}" class="hrc-header__main__aside__listlink">${tertiaryNav.tertiaryLabel}</a>
+                                                        </li>
+                                                    </sly>
+                                                </ul>
+                                            </li>
+                                        </sly>
+                                    </sly>
+                                </ul>
+                            </div>
+                        </sly>
+                    </li>
+                </sly>
+            </ul>
+            <div class="hrc-header__main__aside">
+                <p class="hrc-header__main__asidetitle" data-sly-list.link="${crownCTAModel.lobLinks}">
+                    <sly data-sly-test="${linkList.index == 0 && link.showHideLink == 'show'}">${link.label}</sly>
+                </p>
+                <ul class="hrc-header__main__aside__list" data-sly-list.link="${crownCTAModel.lobLinks}">
+                    <li data-sly-test="${linkList.index != 0 && link.showHideLink == 'show'}"
+                        class="hrc-header__main__aside__listitem"><a href="${link.navUrl}"
+                                                                     target="${link.newTab == 'true' ? '_blank' : ''}"
+                                                                     class="hrc-header__main__aside__listlink">${link.label}</a></li>
+                </ul>
+            </div>
+            <div class="hrc-header__mainmenu__button">
+                <sly data-sly-list.link="${crownCTAModel.ctaItemList}">
+                    <div class="hrc-header__dropdown hrc-header__dropdown--btn"
+                         data-sly-test="${link.experienceSelect == 'dropdown' && link.dropdownFor == 'languageSel'}">
+                        <a class="hrc-header__button hrc-header__button--lang" target="${link.newTab == 'true' ? '_blank' : ''}" href="#" role="button">
+                            <span class="fas fa-globe"></span>
+                            <span class="hrc-header__button__text">${link.label}</span>
+                            <span class="fas fa-chevron-down hrc-header__button__chev"></span>
+                        </a>
+                        <ul data-sly-test="${link.dropdownFor == 'languageSel'}"
+                            data-sly-list.mapLang="${link.mapLangItemList}" class="hrc-header__dropdown__content">
+                            <li class="hrc-header__main__aside__listitem">
+                                <a href="${mapLang.url}" target="${mapLang.newTabDropdown == 'true' ? '_blank' : ''}"
+                                   class="hrc-header__main__aside__listlink">${mapLang.labelDropdown}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="${link.ctaURL}" target="${link.newTab == 'true' ? '_blank' : ''}"
+                       data-sly-test="${link.experienceSelect == 'cta' && link.fileReference}"
+                       class="hrc-header__button hrc-header__button--img">
+                        <img src="${link.fileReference}" loading="lazy" alt="${link.label}" class="hrc-header__button__img">
+                    </a>
+            </div>
+            <div class="hrc-header__main__fixedbtn">
+                <sly data-sly-set.ctaCount="0" data-sly-list.link="${crownCTAModel.ctaItemList}">                
+                    <a href="${link.ctaURL}" data-sly-test="${link.experienceSelect == 'cta' && !link.fileReference}"
+                       style="background-color:${link.colorSel @ context='styleToken'}"
+                       target="${link.newTab == 'true' ? '_blank' : ''}"
+                       class="hrc-header__button hrc-header__button--${ctaCount == '0' ? 'primary' : 'secondary'}">
+                        <span data-sly-set.ctaCount="1" class="hrc-header__button__text">${link.label}</span>
+                    </a>
+                    <div class="hrc-header__dropdown"
+                         data-sly-test="${link.experienceSelect == 'dropdown' && link.dropdownFor == 'CTA' && !link.fileReference}">
+                        <a data-sly-set.ctaCount="1" class="hrc-header__button hrc-header__button--primary" href="#"
+                           role="button">
+                            <span class=""></span>
+                            <span class="hrc-header__button__text">${link.label}</span>
+                        </a>
+                        <ul data-sly-list.mapLang="${link.mapLangItemList}"
+                            class="hrc-header__dropdown__content hrc-header__dropdown__content--up">
+                            <li class="hrc-header__dropdown__item">
+                                <a href="${mapLang.url}" target="${mapLang.newTabDropdown == 'true' ? '_blank' : ''}"
+                                   class="hrc-header__button hrc-header__button--primary">${mapLang.labelDropdown}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </sly>
+            </div>
+        </nav>
+    </div>
+</div>

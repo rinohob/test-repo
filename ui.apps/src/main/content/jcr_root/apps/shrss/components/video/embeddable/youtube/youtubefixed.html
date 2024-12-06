@@ -1,0 +1,11 @@
+<sly data-sly-template.youtube="${@ youtube}">
+    <iframe data-cmp-data-layer="${youtube.data.json}"
+            title="youtube video"
+            width="${youTube.iFrameWidth || auto @ context='scriptString'}"
+            height="${youTube.iFrameHeight || auto @ context='scriptString'}"
+            src="${youTube.iFrameSrc}"
+            frameborder="0"
+            allowfullscreen
+            allow="autoplay; fullscreen"
+            aria-label="${youtube.accessibilityLabel @ i18n}"></iframe>
+</sly>

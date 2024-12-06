@@ -1,0 +1,39 @@
+.socialmedia {
+  $p: &;
+
+  padding: 10px 5px;
+
+  &--col-2 {
+    #{$p}__list {
+      grid-template-columns: repeat(2, 40px)
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 10px 20px;
+    grid-template-columns: repeat(auto-fill, 40px);
+  }
+
+  &__listitem {
+    background-color: var(--color-background-social-media);
+    border-radius: 50%;
+    color: var(--color-social-media);
+    font-size: 1.2rem;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+
+    &:hover {
+      background-color: var(--color-background-social-media-hover);
+    }
+  }
+
+  &__link {
+    line-height: 1;
+  }
+
+}

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Hero Banner"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:orderBefore="text"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <assettype
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Select Image or Video"
+                                                fieldLabel="Asset Type"
+                                                name="./assetType">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <image
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Image"
+                                                        value="image"/>
+                                                    <video
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Video"
+                                                        value="video"/>
+                                                </items>
+                                            </assettype>
+                                            <damtext
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                level="{Long}5"
+                                                text="Note : For Asset Type Video, Please author Video component after saving this dialog. and For Asset Type image, please configure Asset tab."/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </basic>
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Text"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <pretitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="acs-commons/granite/ui/components/include"
+                                                fieldDescription="An eyebro that will be displayed above the Hero's title."
+                                                path="/apps/shrss/components/rte/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/text">
+                                                <parameters
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabel="Eyebrow Text"
+                                                    fieldName="pretitle"/>
+                                            </pretitle>
+                                            <titleGroup
+                                                granite:hide="${cqDesign.titleHidden}"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <title
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="acs-commons/granite/ui/components/include"
+                                                        fieldDescription="A title to display as the headline for the Hero."
+                                                        path="/apps/shrss/components/rte/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/text">
+                                                        <parameters
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Title"
+                                                            fieldName="jcr:title"/>
+                                                    </title>
+                                                    <titleType
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:hideResource="{Boolean}true"/>
+                                                    <titleTypeBackwardsCompatibility
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:hideResource="{Boolean}true"/>
+                                                    <titleFromLinkedPage
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:hideResource="{Boolean}true"/>
+                                                </items>
+                                            </titleGroup>
+                                            <descriptionGroup
+                                                granite:hide="${cqDesign.descriptionHidden}"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <description
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                        fieldDescription="A description to display as the subheadline for the Hero."
+                                                        useFixedInlineToolbar="{Boolean}true">
+                                                        <rtePlugins
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceSuperType="shrss/components/text/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/text/rtePlugins"
+                                                            sling:resourceType="granite/ui/components/foundation/include"/>
+                                                        <uiSettings
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceSuperType="shrss/components/text/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/text/uiSettings"
+                                                            sling:resourceType="granite/ui/components/foundation/include"/>
+                                                    </description>
+                                                    <descriptionFromLinkedPage
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:hideResource="{Boolean}true"/>
+                                                </items>
+                                            </descriptionGroup>
+											 <class
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/include"
+                                                    path="shrss/components/commonfields/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/class"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </text>
+                    <actions
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="CTA"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <linksNote
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideResource="{Boolean}true"/>
+                                            <link
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideResource="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </actions>
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Asset"
+                        sling:resourceType="core/wcm/components/include/imagedelegate"
+                        path="/apps/shrss/components/commons/asset"/>
+                    <styletab
+                        jcr:primaryType="nt:unstructured"
+                        sling:hideResource="{Boolean}true"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="/mnt/overlay/cq/gui/components/authoring/dialog/style/tab_edit/styletab"/>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

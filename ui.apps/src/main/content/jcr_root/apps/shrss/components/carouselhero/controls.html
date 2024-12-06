@@ -1,0 +1,15 @@
+<sly data-sly-use.carousel="com.adobe.cq.wcm.core.components.models.Carousel"
+   data-sly-template.controls="${@ carousel}">
+   <button class="hrc-carousel__button hrc-carousel__button--prev"
+      type="button"
+      aria-label="${carousel.accessibilityPrevious || 'Previous' @ i18n}"
+      data-cmp-hook-carousel="previous">
+   <span class="fas fa-chevron-left"></span>
+   </button>
+   <button class="hrc-carousel__button hrc-carousel__button--next"
+      type="button"
+      aria-label="${carousel.accessibilityNext || 'Next' @ i18n}"
+      data-cmp-hook-carousel="next">
+   <span class="fas fa-chevron-right"></span>
+   </button>
+</sly>

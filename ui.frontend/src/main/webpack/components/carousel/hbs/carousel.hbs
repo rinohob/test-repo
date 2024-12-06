@@ -1,0 +1,32 @@
+<div class="hrc-carousel" data-component="carousel" data-auto-play="{{autoPlay}}" data-delay="{{delay}}" data-start-index="{{startIndex}}" data-stop-on-hover="{{stopOnHover}}">
+  <div class="hrc-carousel__viewport">
+    <div class="hrc-carousel__container">
+      <div class="hrc-carousel__slide">
+        {{#if isHeroBanner}}
+        {{> heroBanner}}
+        {{else}}
+        {{> vimeo}}
+        {{/if}}
+      </div>
+      <div class="hrc-carousel__slide">
+        {{#if isHeroBanner}}
+        {{> heroBanner}}
+        {{else}}
+        {{> vimeo}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <button class="hrc-carousel__button hrc-carousel__button--prev" type="button">
+    <span class="fas fa-chevron-left"></span>
+  </button>
+  <button class="hrc-carousel__button hrc-carousel__button--next" type="button">
+    <span class="fas fa-chevron-right"></span>
+  </button>
+
+  {{#if showDots}}
+  <div class="hrc-carousel__dots">
+  </div>
+  {{/if}}
+</div>

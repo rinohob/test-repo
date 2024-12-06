@@ -1,0 +1,59 @@
+$font-size: 16px;
+$font-height: 1.5;
+
+// Color
+
+// Normal mode
+$color-foreground: #202020;
+$color-background: #ececec;
+$color-link: #2020e0;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-gray11: #1c1c1c;
+$color-gray17: #2b2b2b;
+$color-gray: #aaaaaa;
+$color-megamenu-listlink: #a2a1a1;
+$color-gray67: #ababab;
+
+// font sizes
+
+$font-weight-600: 600;
+
+// font sizes for subnav
+$size-subnav-link: 16px;
+$size-subnav-right-chevron: 10px;
+
+// line height for subnav
+$lineheight-subnav-link: 38px;
+$lineheight-subnav-currentpage-link: 24px;
+
+// font weight for subnav
+$fontweight-subnav-link: normal;
+
+// positions for subnav
+$top-position-sticky-subnav-lg: 40px;
+$left-position-sticky-subnav-sm: 0;
+$top-position-sticky-subnav-sm: 57px;
+
+// height for subnav
+$height-subnav: 51px;
+
+// font size for accordion icon
+
+$font-size-accordion-icon: 24px;
+$height-mainnav-sm: 57px;
+$height-mainnav-lg: 120px;
+$height-crown-lg: 40px;
+
+// colors
+$font-16: 1rem;
+$crown-height-lg: 40px;
+$mobile-nav-height: 57px;
+
+// Brekpoints
+$mobile: 768px;
+$tablet: 1024px;
+$color-background-alert: #d6d6d6;
+$desktop-sm: 1200px;
+$font-awesome-family: "Font Awesome 5 Free";
+$font-awesome-family-brands: "Font Awesome 5 Brands";

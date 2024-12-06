@@ -1,0 +1,75 @@
+ 
+$teaser-overlay-gradient: linear-gradient(to bottom,rgba(0, 0, 0, 0%) 30%,rgba(0, 0, 0, 80%) 99%,rgba(0, 0, 0, 100%) 100%);
+
+.teaser {
+  &--overlay-vertical,&--overlay-horizontal {
+    .cmp-teaser {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: $teaser-overlay-gradient;
+      }
+
+      &__content {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+
+        .cmp-button {
+          background-color: transparent;
+          color: var(--color-text-light);
+          border-color: var(--color-text-light);
+
+          &:hover {
+            background-color: var(--color-button-primary);
+            border-color: var(--color-button-primary);
+          }
+        }
+      }
+
+      &__title,&__description {
+        color: var(--color-text-light);
+      }
+
+      .cmp-image {
+        height: 350px;
+      }
+    }
+  }
+
+  &--overlay-horizontal {
+    .cmp-image {
+        height: calc( 520px / 2 ) !important;
+      }
+  }
+}
+
+@include media(">=mobile") {
+  .teaser {
+    &--overlay-vertical, &--overlay-horizontal {
+      .cmp-teaser {
+        .cmp-image {
+          height: 400px;
+        }
+      }
+    }
+  }
+}
+@include media(">=tablet") {
+  .teaser {
+    &--overlay-vertical, &--overlay-horizontal {
+      .cmp-teaser {
+        .cmp-image {
+          height: 520px;
+        }
+      }
+    }
+  }
+}

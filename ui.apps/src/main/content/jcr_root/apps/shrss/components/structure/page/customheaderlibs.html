@@ -1,0 +1,8 @@
+<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html" data-sly-use.basePage="com.shrss.core.models.BasePageModel">
+    <sly data-sly-call="${clientlib.css @ categories='shrss.base'}"/>
+    <sly data-sly-call="${clientlib.css @ categories=basePage.mainClientLib}"/>
+</sly>
+<script data-sly-test="${pageProperties.ldJson}" type=application/ld+json>
+    ${pageProperties.ldJson @ context="unsafe"}
+</script>
+<sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>

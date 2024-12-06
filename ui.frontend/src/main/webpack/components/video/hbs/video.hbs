@@ -1,0 +1,38 @@
+<div class="video embed">
+    <div id="embed-2aa125dec4" class="cmp-embed">
+        {{#ifEquals videoType "youtube"}}
+        {{#ifEquals layout "responsive"}}
+        <div class="cmp-embed__youtube">
+            <iframe class="cmp-embed__youtube-iframe" title=" youtube video" src="https://www.youtube.com/embed/{{videoId}}?playlist={{videoId}}&autoplay={{#if
+                autoplay}}1{{else}}0{{/if}}&loop={{#if loop}}1{{else}}0{{/if}}&mute={{#if mute}}1{{else}}0{{/if}}"
+                frameborder="0" allowfullscreen="" allow="autoplay; fullscreen"
+                aria-label="Greenland land of ice"></iframe>
+        </div>
+        {{else}}
+        <iframe {{#if fixedWidth}}style="width: {{fixedWidth}}px" {{/if}} title=" youtube video" src="https://www.youtube.com/embed/{{videoId}}?playlist={{videoId}}&autoplay={{#if
+                autoplay}}1{{else}}0{{/if}}&loop={{#if loop}}1{{else}}0{{/if}}&mute={{#if mute}}1{{else}}0{{/if}}"
+            frameborder="0" allowfullscreen="" allow="autoplay; fullscreen" aria-label="Greenland land of ice"></iframe>
+        {{/ifEquals}}
+        {{else}}
+        {{#ifEquals videoType "vimeo"}}
+        {{#ifEquals layout "responsive"}}
+        <div class="cmp-embed__vimeo">
+            <iframe class="cmp-embed__vimeo-iframe" title="vimeo video" autoplay="autoplay" src="https://player.vimeo.com/video/{{videoId}}?autoplay={{#if
+                autoplay}}1{{else}}0{{/if}}&loop={{#if loop}}1{{else}}0{{/if}}&muted={{#if mute}}1{{else}}0{{/if}}"
+                frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        {{else}}
+        <iframe style="width: {{#if fixedWidth}}{{fixedWidth}}px{{/if}}auto" title="vimeo video" autoplay="autoplay"
+            src="https://player.vimeo.com/video/{{videoId}}?autoplay={{#if
+                autoplay}}1{{else}}0{{/if}}&loop={{#if loop}}1{{else}}0{{/if}}&muted={{#if mute}}1{{else}}0{{/if}}"
+            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        {{/ifEquals}}
+        {{else}}
+        <div class="cmp-video__assets" {{#if fixedWidth}}style="width: {{fixedWidth}}px" {{/if}}>
+            <video class="cmp-video" autoplay loop muted>
+                <source src="{{videoUrl}}" type="video/mp4">
+            </video>
+        </div>
+        {{/ifEquals}}
+        {{/ifEquals}}
+    </div>

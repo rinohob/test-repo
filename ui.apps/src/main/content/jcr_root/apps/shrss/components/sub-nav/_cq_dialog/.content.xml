@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Sub Nav"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                        	<columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <navigationRoot
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideResource="{Boolean}true"/>
+                                            <structureStart
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideResource="{Boolean}true"/>
+                                            <collectAllPages
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideResource="{Boolean}true"/>
+                                            <structureDepth
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideResource="{Boolean}true"/>
+                                            <disableShadowing
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideResource="{Boolean}true"/>
+                                            <id
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideResource="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                            <subNavItems
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Options for Sub Nav">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./subNavItems">
+                                    <items jcr:primaryType="nt:unstructured">
+                                    	<pagePath
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Page Path"
+                                            fieldDescription="Provide the path of the page to be linked"
+                                            name="./pagePath"
+                                            rootPath="/content/shrss"/>
+                                        <ctaTarget
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            fieldDescription="Opens the link in new tab if checked."
+                                            name="./ctaTarget"
+                                            text="Open Link in New Tab"
+                                            uncheckedValue="_self"
+                                            value="_blank"/>
+                                        <title
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="acs-commons/granite/ui/components/include"
+                                            path="/apps/shrss/components/rte/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/text">
+                                            <parameters
+                                                jcr:primaryType="nt:unstructured"
+                                                fieldLabel="Page Title"
+                                                fieldDescription="Provide the title of the page."
+                                                fieldName="title"/>
+                                        </title>
+                                    </items>
+                                </field>
+                            </subNavItems>
+                            <mobileSubnav
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldDescription="If checked, it will always display as mobile subnav"
+                                name="./mobileSubnav"
+                                text="Always display as mobile subnav"
+                                uncheckedValue="off"
+                                value="on"/>
+                            <class
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/include"
+                                path="/apps/shrss/components/commonfields/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/class"/>
+                            <id
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/include"
+                                path="/apps/shrss/components/commonfields/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/id"/>
+                        </items>
+                    </properties>
+                    <styletab
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="/mnt/overlay/cq/gui/components/authoring/dialog/style/tab_edit/styletab"/>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

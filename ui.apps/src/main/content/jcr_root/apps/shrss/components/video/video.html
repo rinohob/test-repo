@@ -1,0 +1,20 @@
+<div data-sly-use.embed="com.adobe.cq.wcm.core.components.models.Embed"
+   data-sly-use.video="com.shrss.core.models.VideoModel"
+   data-sly-use.commonFields="com.shrss.core.models.CommonFields"
+   data-sly-use.commonsTemplates="core/wcm/components/commons/v1/templates.html"
+   data-sly-test.hasContent="${(video.externalUrl && video.type == 'externalUrl') || embed.embeddableResourceType}"
+   data-cmp-data-layer="${embed.data.json}"
+   id="${commonFields.id}"
+   class="cmp-embed ${commonFields.overrideClass}">
+   <sly data-sly-test="${video.externalUrl && video.type=='externalUrl'}"
+   <sly data-sly-include="externalVideo.html"></sly>
+   </sly>
+   <sly data-sly-test="${embed.embeddableResourceType != 'core/wcm/components/embed/v1/embed/embeddable/youtube' && video.type != 'externalUrl'}">
+  	 <sly data-sly-resource="${resource.path @ resourceType=embed.embeddableResourceType, wcmmode='disabled'}"></sly>
+   </sly>
+   <sly data-sly-test="${embed.embeddableResourceType == 'core/wcm/components/embed/v1/embed/embeddable/youtube' && video.type != 'externalUrl'}">
+  	 <sly data-sly-resource="${resource.path @ resourceType='shrss/components/video/embeddable/youtube', wcmmode='disabled'}"></sly>
+   </sly>
+     
+</div>
+<sly data-sly-call="${commonsTemplates.placeholder @ isEmpty = !hasContent}"></sly>

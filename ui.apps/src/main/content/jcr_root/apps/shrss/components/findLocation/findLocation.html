@@ -1,0 +1,29 @@
+<sly data-sly-use.findLocation="com.shrss.core.models.FindLocation"></sly>
+<sly data-sly-use.commonFields="com.shrss.core.models.CommonFields"></sly>
+<div data-sly-test="${wcmmode.edit}" data-emptytext="${'Find A Location' @ i18n}" class="cq-placeholder"></div>
+<div class="hrc-location ${commonFields.overrideClass}" id="${commonFields.id}" data-component="findLocation" data-search-url="${findLocation.pagePath}" data-message="${findLocation.emptyText}">
+  <form class="hrc-location__form">
+    <div class="hrc-location__label">
+      <span class="hrc-location__label-text">${findLocation.locationLabel}</span>
+    </div>
+    <div class="hrc-location__container hrc-location__container--hide-md">
+      <div class="hrc-location__input">
+        <label for="hrc-location__input__label" class="hrc-location__input__text" aria-placeholder="${'Find a Location' @ i18n}"></label>
+        <input class="hrc-location__input__type" type="text" id="hrc-location__input__label" required name="hrc-location__input__label" placeholder="${findLocation.placeholderText}" pattern="[a-zA-Z\s,]*\d*" title="${findLocation.emptyText}"/>
+        <div class="button cmp-button--secondary">
+          <button type="button" id="button-123" class="cmp-button">
+            <span class="cmp-button__text">${findLocation.searchText}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="hrc-location__view">
+      <span class="hrc-location__view__content">${'or' @ i18n}</span>
+      <div class="button cmp-button--secondary">
+         <a class="cmp-button" data-cmp-clickable="" href="${findLocation.pagePath}">
+          <span class="cmp-button__text">${findLocation.viewAllText}</span>
+        </a>
+      </div>
+    </div>
+  </form>
+</div>

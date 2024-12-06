@@ -1,0 +1,16 @@
+.footer-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+    @include media('>=tablet') {
+        padding: 64px 40px 32px;
+    }
+    @include media('>=desktop-sm') {
+        padding: 80px 0;
+    }
+
+    footer {
+        max-width: var(--max-width-container);
+        color: $color-gray67;
+    }
+}

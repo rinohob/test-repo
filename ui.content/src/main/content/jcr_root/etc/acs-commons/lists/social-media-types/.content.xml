@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Social Media Types"
+        sling:resourceType="acs-commons/components/utilities/genericlist">
+        <image
+            jcr:primaryType="nt:unstructured"
+            fileReference="/apps/acs-commons/components/utilities/genericlist/generic-list.png"/>
+        <list jcr:primaryType="nt:unstructured">
+            <item0
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Facebook"
+                value="fab fa-facebook-f"/>
+            <item1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Twitter (aka X)"
+                value="fab fa-twitter"/>
+            <item2
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Instagram"
+                value="fab fa-instagram"/>
+            <item3
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Youtube"
+                value="fab fa-youtube"/>
+            <item4
+                jcr:primaryType="nt:unstructured"
+                jcr:title="LinkedIn"
+                value="fab fa-linkedin-in"/>
+            <item5
+                jcr:primaryType="nt:unstructured"
+                jcr:title="TikTok"
+                value="fab fa-tiktok"/>
+        </list>
+    </jcr:content>
+</jcr:root>

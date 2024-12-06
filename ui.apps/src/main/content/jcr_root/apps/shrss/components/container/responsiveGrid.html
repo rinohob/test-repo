@@ -1,0 +1,9 @@
+<template data-sly-use.commonFields="com.shrss.core.models.CommonFields" data-sly-template.responsiveGrid="${ @ container}" data-sly-set.height="${properties.minheight ? '{0}{1}{2}' : '' @ format = ['min-height:', properties.minheight, 'px;']}">
+    <div id="${container.id}"
+         class="cmp-container ${commonFields.overrideClass}"
+         aria-label="${container.accessibilityLabel}"
+         role="${container.roleAttribute}"
+         style="${container.backgroundStyle @ context='styleString'}${height @ context='styleString'}">
+        <sly data-sly-resource="${resource @ resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+    </div>
+</template>

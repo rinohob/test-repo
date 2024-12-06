@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2024-07-10T14:03:56.940+05:30"
+        cq:lastModifiedBy="admin"
+        cq:templateType="/conf/shrss/settings/wcm/template-types/open-page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Open Page"
+        status="enabled"/>
+</jcr:root>

@@ -1,0 +1,30 @@
+ 
+.teaser { 
+  &--default {
+    .cmp-teaser {
+      display: flex;
+      flex-direction: column-reverse;
+      background-color: var(--color-card-bg);
+      box-shadow: 2px 1px 10px 0 rgba(0, 0, 0, 20%);
+      min-height: 480px;
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      
+      &__description {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+      
+      &__action-container {
+        margin-top: auto;
+      }
+
+    }
+  }
+}

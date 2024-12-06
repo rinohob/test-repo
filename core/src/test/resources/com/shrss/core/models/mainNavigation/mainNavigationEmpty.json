@@ -1,0 +1,58 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "mobileText": "Mobile text",
+  "jcr:createdBy": "admin",
+  "jcr:lastModifiedBy": "admin",
+  "jcr:created": "Sun Jun 09 2024 13:14:17 GMT+0530",
+  "id": "id",
+  "jcr:lastModified": "Sun Jun 09 2024 13:16:14 GMT+0530",
+  "sling:resourceType": "shrss/components/mainnavigation",
+  "textIsRich": "true",
+  "logo": {
+    "jcr:primaryType": "nt:unstructured",
+    "item0": {
+      "jcr:primaryType": "nt:unstructured",
+      "fileReference": "/content/dam/shrss/asset.jpg",
+      "logoTarget": "_self",
+      "logoUrl": "/content/shrss/us/en/head1",
+      "logoText": "<p>Hard Rock</p>\r\n"
+    }
+  },
+  "primaryNav": {
+    "jcr:primaryType": "nt:unstructured",
+    "item0": {
+      "jcr:primaryType": "nt:unstructured",
+      "urlTarget": "_self",
+      "showHide": "false",
+      "url": "/content/shrss/us/en/head1",
+      "label": "Destinations",
+      "secondaryNav": {
+        "jcr:primaryType": "nt:unstructured",
+        "item0": {
+          "jcr:primaryType": "nt:unstructured",
+          "urlTarget": "_self",
+          "showHide": "false",
+          "url": "/content/shrss/us/en/head1",
+          "label": "North America",
+          "tertiaryNav": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "tertiaryTarget": "_self",
+              "tertiaryLabel": "New York",
+              "tertiaryShowHide": "false",
+              "tertiaryUrl": "/content/shrss/us/en/head1"
+            },
+            "item1": {
+              "jcr:primaryType": "nt:unstructured",
+              "tertiaryTarget": "_self",
+              "tertiaryLabel": "Chicago",
+              "tertiaryShowHide": "false",
+              "tertiaryUrl": "/content/shrss/us/en/head1"
+            }
+          }
+        }
+      }
+    }
+  }
+}

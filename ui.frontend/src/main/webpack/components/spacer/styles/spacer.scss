@@ -1,0 +1,44 @@
+$spacer: 8px;
+$spacers: (
+    1: $spacer * 1,
+    2: $spacer * 2,
+    3: $spacer * 3,
+    4: $spacer * 4,
+    5: $spacer * 5,
+    6: $spacer * 6,
+    7: $spacer * 7,
+    8: $spacer * 8,
+    9: $spacer * 9,
+    10: $spacer * 10
+);
+
+@mixin spacer($spacing) {
+    height: map-get($spacers, $spacing);
+}
+
+.spacer-1 { @include spacer(1); }
+.spacer-2 { @include spacer(2); }
+.spacer-3 { @include spacer(3); }
+.spacer-4 { @include spacer(4); }
+.spacer-5 { @include spacer(4); }
+.spacer-6 { @include spacer(4); }
+.spacer-7 { @include spacer(4); }
+.spacer-8 { @include spacer(6); }
+.spacer-9 { @include spacer(6); }
+.spacer-10 { @include spacer(6); }
+
+@include media('>=mobile') {
+    .spacer-7 { @include spacer(6); }
+    .spacer-8 { @include spacer(6); }
+    .spacer-9 { @include spacer(6); }
+    .spacer-10 { @include spacer(6); }
+}
+
+@include media('>=tablet') {
+    .spacer-5 { @include spacer(5); }
+    .spacer-6 { @include spacer(6); }
+    .spacer-7 { @include spacer(7); }
+    .spacer-8 { @include spacer(8); }
+    .spacer-9 { @include spacer(9); }
+    .spacer-10 { @include spacer(10); }
+}

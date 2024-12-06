@@ -1,0 +1,983 @@
+<coral-multifield
+  data-sly-use.childrenEditor="com.adobe.cq.wcm.core.components.commons.editor.dialog.childreneditor.Editor"
+  data-sly-use.iconTemplate="icon.html" data-cmp-is="childrenEditor" class="cmp-childreneditor"
+  data-container-path="${childrenEditor.container.path}">
+  <coral-multifield-item data-sly-repeat.item="${childrenEditor.items}" data-name="${item.name}">
+    <div class="cmp-childreneditor__item">
+      <coral-icon data-sly-test.isLiveCopy="${item.isLiveCopy}"
+        class="coral-Form-fieldinfo coral3-Icon coral3-Icon--infoCircle coral3-Icon--sizeS" icon="infoCircle"
+        tabindex="0" size="S" role="img" aria-label="description"></coral-icon>
+      <coral-tooltip data-sly-test="${isLiveCopy}" target="_prev" placement="right"
+        class="coral3-Tooltip coral3-Tooltip--info coral3-Tooltip--arrowLeft" aria-hidden="true" variant="info"
+        tabindex="-1" role="tooltip" style="z-index: 10020; max-width: 1070px; left: 205px; top: -3px;">
+        <coral-tooltip-content>${'You have to cancel the inheritance for the panel in order to change its title.' @ i18n}</coral-tooltip-content>
+      </coral-tooltip>
+      <sly data-sly-call="${iconTemplate.icon @ item=item}"></sly>
+      <div class="cq-RichText richtext-container coral-Form-field coral-DecoratedTextfield">
+        <input type="hidden" data-cq-richtext-input="true" data-usefixedinlinetoolbar="true"
+          data-removesingleparagraphcontainer="true" data-enablefontsize="true" class="cmp-childreneditor__item-title"
+          data-cmp-hook-childreneditor="itemTitle" name="./${item.name}/cq:panelTitle" value="${item.value}"
+          data-sly-attribute.disabled="${item.isLiveCopy}" placeholder="${item.title}">
+        <input type="hidden" name="./textIsRich" value="true">
+
+        <div class="rte-ui is-desktop">
+          <div data-type="dialogFullScreen">
+            <coral-buttongroup role="group" selectionmode="none" class="rte-toolbar _coral-ButtonGroup"><select
+                class=" _coral-ButtonGroup-select" tabindex="-1" handle="nativeSelect"></select>
+
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Bold (Ctrl+B)" icon="textBold" data-action="format#bold" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textBold">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextBold"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Italic (Ctrl+I)" icon="textItalic" data-action="format#italic" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textItalic">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextItalic"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Underline (Ctrl+U)" icon="textUnderline" data-action="format#underline" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textUnderline">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextUnderline"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled rte--trigger _coral-ActionButton _coral-ActionButton--quiet"
+                type="button" title="Special Characters" icon="star" data-action="misctools#specialchars" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="star">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Star"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label">
+                  <coral-icon icon="chevronDown" role="img" size="XXS"
+                    class="_coral-Icon--sizeXXS rte-openIcon _coral-Icon">
+                    <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                      <use xlink:href="#spectrum-icon-18-ChevronDown"></use>
+                    </svg>
+                  </coral-icon>
+                </coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Source Edit" icon="fileCode" data-action="misctools#sourceedit" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="fileCode">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-FileCode"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Subscript" icon="textSubscript" data-action="subsuperscript#subscript" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textSubscript">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextSubscript"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Superscript" icon="textSuperscript" data-action="subsuperscript#superscript" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textSuperscript">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextSuperscript"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+            </coral-buttongroup>
+            <coral-popover interaction="off" data-id="justify" class="rte-popover _coral-Overlay _coral-Popover"
+              role="dialog" aria-live="assertive" variant="default" closable="off" tabindex="0"
+              style="display: none; visibility: visible;">
+              <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
+              <div class=" _coral-Dialog-header" handle="headerWrapper" role="presentation" hidden="">
+                <coral-popover-header class="_coral-Dialog-title"></coral-popover-header></div><button is="coral-button"
+                tracking="off" handle="closeButton" class="_coral-Dialog-closeButton _coral-ClearButton" type="button"
+                variant="_custom" icon="close" title="Close" tabindex="-1" coral-close="" size="M"
+                style="display: none;"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img"
+                  icon="close">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Close"></use>
+                  </svg>
+                </coral-icon><coral-button-label></coral-button-label></button>
+              <div class=" _coral-Popover-tip" handle="tip" hidden=""></div><coral-popover-content
+                class="_coral-Dialog-content"><coral-buttongroup class="_coral-ButtonGroup" selectionmode="none"
+                  role="group"><select class=" _coral-ButtonGroup-select" tabindex="-1" handle="nativeSelect"></select>
+                </coral-buttongroup>
+              </coral-popover-content><coral-popover-footer class="_coral-Dialog-footer"
+                hidden=""></coral-popover-footer>
+              <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation">
+              </div>
+              <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
+            </coral-popover>
+            <coral-popover interaction="off" data-id="paraformat" class="rte-popover _coral-Overlay _coral-Popover"
+              role="dialog" aria-live="assertive" variant="default" closable="off" tabindex="0"
+              style="display: none; visibility: visible;">
+              <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
+              <div class=" _coral-Dialog-header" handle="headerWrapper" role="presentation" hidden="">
+                <coral-popover-header class="_coral-Dialog-title"></coral-popover-header></div><button is="coral-button"
+                tracking="off" handle="closeButton" class="_coral-Dialog-closeButton _coral-ClearButton" type="button"
+                variant="_custom" icon="close" title="Close" tabindex="-1" coral-close="" size="M"
+                style="display: none;"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img"
+                  icon="close">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Close"></use>
+                  </svg>
+                </coral-icon><coral-button-label></coral-button-label></button>
+              <div class=" _coral-Popover-tip" handle="tip" hidden=""></div><coral-popover-content
+                class="_coral-Dialog-content">
+              </coral-popover-content><coral-popover-footer class="_coral-Dialog-footer"
+                hidden=""></coral-popover-footer>
+              <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation">
+              </div>
+              <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
+            </coral-popover>
+          </div>
+          <div data-type="inline">
+            <coral-buttongroup role="group" selectionmode="none"
+              class="rte-toolbar _coral-ButtonGroup is-sticky is-active"
+              style="top: 0px; left: 0px; visibility: hidden;"><select class=" _coral-ButtonGroup-select" tabindex="-1"
+                handle="nativeSelect"></select>
+
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Bold (Ctrl+B)" icon="textBold" data-action="format#bold" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textBold" alt="Bold (Ctrl+B)"
+                  aria-label="Bold (Ctrl+B)">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextBold"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Italic (Ctrl+I)" icon="textItalic" data-action="format#italic" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textItalic" alt="Italic (Ctrl+I)"
+                  aria-label="Italic (Ctrl+I)">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextItalic"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Underline (Ctrl+U)" icon="textUnderline" data-action="format#underline" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textUnderline"
+                  alt="Underline (Ctrl+U)" aria-label="Underline (Ctrl+U)">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextUnderline"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled rte--trigger _coral-ActionButton _coral-ActionButton--quiet"
+                type="button" title="Special Characters" icon="star" data-action="misctools#specialchars" tabindex="-1"
+                size="M" aria-expanded="false"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img"
+                  icon="star" alt="Special Characters" aria-label="Special Characters">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Star"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label">
+                  <coral-icon icon="chevronDown" role="img" size="XXS"
+                    class="_coral-Icon--sizeXXS rte-openIcon _coral-Icon">
+                    <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                      <use xlink:href="#spectrum-icon-18-ChevronDown"></use>
+                    </svg>
+                  </coral-icon>
+                </coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Source Edit" icon="fileCode" data-action="misctools#sourceedit" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="fileCode"
+                  alt="Source Edit" aria-label="Source Edit">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-FileCode"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Subscript" icon="textSubscript" data-action="subsuperscript#subscript" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textSubscript"
+                  alt="Subscript" aria-label="Subscript">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextSubscript"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Superscript" icon="textSuperscript" data-action="subsuperscript#superscript" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textSuperscript"
+                  alt="Superscript" aria-label="Superscript">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextSuperscript"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+            </coral-buttongroup>
+            <coral-popover interaction="off" data-id="justify" class="rte-popover _coral-Overlay _coral-Popover"
+              role="dialog" aria-live="assertive" variant="default" closable="off" tabindex="0"
+              style="display: none; visibility: visible;">
+              <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
+              <div class=" _coral-Dialog-header" handle="headerWrapper" role="presentation" hidden="">
+                <coral-popover-header class="_coral-Dialog-title"></coral-popover-header></div><button is="coral-button"
+                tracking="off" handle="closeButton" class="_coral-Dialog-closeButton _coral-ClearButton" type="button"
+                variant="_custom" icon="close" title="Close" tabindex="-1" coral-close="" size="M"
+                style="display: none;"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img"
+                  icon="close">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Close"></use>
+                  </svg>
+                </coral-icon><coral-button-label></coral-button-label></button>
+              <div class=" _coral-Popover-tip" handle="tip" hidden=""></div><coral-popover-content
+                class="_coral-Dialog-content"><coral-buttongroup class="_coral-ButtonGroup" selectionmode="none"
+                  role="group"><select class=" _coral-ButtonGroup-select" tabindex="-1" handle="nativeSelect"></select>
+
+                </coral-buttongroup>
+              </coral-popover-content><coral-popover-footer class="_coral-Dialog-footer"
+                hidden=""></coral-popover-footer>
+              <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation">
+              </div>
+              <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
+            </coral-popover>
+            <coral-popover interaction="off" data-id="format" class="rte-popover _coral-Overlay _coral-Popover"
+              role="dialog" aria-live="assertive" variant="default" closable="off" tabindex="0"
+              style="display: none; visibility: visible;">
+              <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
+              <div class=" _coral-Dialog-header" handle="headerWrapper" role="presentation" hidden="">
+                <coral-popover-header class="_coral-Dialog-title"></coral-popover-header></div><button is="coral-button"
+                tracking="off" handle="closeButton" class="_coral-Dialog-closeButton _coral-ClearButton" type="button"
+                variant="_custom" icon="close" title="Close" tabindex="-1" coral-close="" size="M"
+                style="display: none;"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img"
+                  icon="close">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Close"></use>
+                  </svg>
+                </coral-icon><coral-button-label></coral-button-label></button>
+              <div class=" _coral-Popover-tip" handle="tip" hidden=""></div><coral-popover-content
+                class="_coral-Dialog-content"><coral-buttongroup class="_coral-ButtonGroup" selectionmode="none"
+                  role="group"><select class=" _coral-ButtonGroup-select" tabindex="-1" handle="nativeSelect"></select>
+                  <button is="coral-button" type="button" title="Bold (Ctrl+B)" variant="quietaction"
+                    class="rte-toolbar-item is-disabled _coral-ActionButton _coral-ActionButton--quiet" icon="textBold"
+                    data-action="format#bold" tabindex="-1" size="M"><coral-icon size="S"
+                      class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textBold">
+                      <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                        <use xlink:href="#spectrum-icon-18-TextBold"></use>
+                      </svg>
+                    </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+                  <button is="coral-button" type="button" title="Italic (Ctrl+I)" variant="quietaction"
+                    class="rte-toolbar-item is-disabled _coral-ActionButton _coral-ActionButton--quiet"
+                    icon="textItalic" data-action="format#italic" tabindex="-1" size="M"><coral-icon size="S"
+                      class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textItalic">
+                      <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                        <use xlink:href="#spectrum-icon-18-TextItalic"></use>
+                      </svg>
+                    </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+                  <button is="coral-button" type="button" title="Underline (Ctrl+U)" variant="quietaction"
+                    class="rte-toolbar-item is-disabled _coral-ActionButton _coral-ActionButton--quiet"
+                    icon="textUnderline" data-action="format#underline" tabindex="-1" size="M"><coral-icon size="S"
+                      class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textUnderline">
+                      <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                        <use xlink:href="#spectrum-icon-18-TextUnderline"></use>
+                      </svg>
+                    </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+                </coral-buttongroup>
+              </coral-popover-content><coral-popover-footer class="_coral-Dialog-footer"
+                hidden=""></coral-popover-footer>
+              <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation">
+              </div>
+              <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
+            </coral-popover>
+          </div>
+          <div data-type="fullscreen">
+            <coral-buttongroup role="group" selectionmode="none" class="rte-toolbar _coral-ButtonGroup"><select
+                class=" _coral-ButtonGroup-select" tabindex="-1" handle="nativeSelect"></select>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Bold (Ctrl+B)" icon="textBold" data-action="format#bold" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textBold">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextBold"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Italic (Ctrl+I)" icon="textItalic" data-action="format#italic" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textItalic">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextItalic"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Underline (Ctrl+U)" icon="textUnderline" data-action="format#underline" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textUnderline">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextUnderline"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Subscript" icon="textSubscript" data-action="subsuperscript#subscript" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textSubscript">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextSubscript"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Superscript" icon="textSuperscript" data-action="subsuperscript#superscript" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textSuperscript">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextSuperscript"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled rte--trigger _coral-ActionButton _coral-ActionButton--quiet"
+                type="button" title="Hyperlink" icon="link" data-action="links#modifylink" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="link">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Link"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label">
+                  <coral-icon icon="chevronDown" role="img" size="XXS"
+                    class="_coral-Icon--sizeXXS rte-openIcon _coral-Icon">
+                    <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                      <use xlink:href="#spectrum-icon-18-ChevronDown"></use>
+                    </svg>
+                  </coral-icon>
+                </coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Unlink" icon="linkOff" data-action="links#unlink" tabindex="-1" size="M"><coral-icon size="S"
+                  class="_coral-Icon--sizeS _coral-Icon" role="img" icon="linkOff">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-LinkOff"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+
+
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled rte--trigger _coral-ActionButton _coral-ActionButton--quiet"
+                type="button" title="Anchor" icon="anchor" data-action="links#anchor" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="anchor">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Anchor"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label">
+                  <coral-icon icon="chevronDown" role="img" size="XXS"
+                    class="_coral-Icon--sizeXXS rte-openIcon _coral-Icon">
+                    <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                      <use xlink:href="#spectrum-icon-18-ChevronDown"></use>
+                    </svg>
+                  </coral-icon>
+                </coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Bullet List" icon="textBulleted" data-action="lists#unordered" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textBulleted">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextBulleted"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Numbered List" icon="textNumbered" data-action="lists#ordered" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textNumbered">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextNumbered"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Outdent" icon="textIndentDecrease" data-action="lists#outdent" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textIndentDecrease">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextIndentDecrease"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+
+
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Indent" icon="textIndentIncrease" data-action="lists#indent" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textIndentIncrease">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextIndentIncrease"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled rte--trigger _coral-ActionButton _coral-ActionButton--quiet"
+                type="button" title="Special Characters" icon="star" data-action="misctools#specialchars" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="star">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Star"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label">
+                  <coral-icon icon="chevronDown" role="img" size="XXS"
+                    class="_coral-Icon--sizeXXS rte-openIcon _coral-Icon">
+                    <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                      <use xlink:href="#spectrum-icon-18-ChevronDown"></use>
+                    </svg>
+                  </coral-icon>
+                </coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Source Edit" icon="fileCode" data-action="misctools#sourceedit" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="fileCode">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-FileCode"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+            </coral-buttongroup>
+            <coral-popover interaction="off" data-id="styles" class="rte-popover _coral-Overlay _coral-Popover"
+              role="dialog" aria-live="assertive" variant="default" closable="off" tabindex="0"
+              style="display: none; visibility: visible;">
+              <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
+              <div class=" _coral-Dialog-header" handle="headerWrapper" role="presentation" hidden="">
+                <coral-popover-header class="_coral-Dialog-title"></coral-popover-header></div><button is="coral-button"
+                tracking="off" handle="closeButton" class="_coral-Dialog-closeButton _coral-ClearButton" type="button"
+                variant="_custom" icon="close" title="Close" tabindex="-1" coral-close="" size="M"
+                style="display: none;"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img"
+                  icon="close">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Close"></use>
+                  </svg>
+                </coral-icon><coral-button-label></coral-button-label></button>
+              <div class=" _coral-Popover-tip" handle="tip" hidden=""></div><coral-popover-content
+                class="_coral-Dialog-content"><coral-buttonlist class="rte-toolbar-list _coral-Menu _coral-ButtonList"
+                  interaction="on">
+
+                </coral-buttonlist>
+              </coral-popover-content><coral-popover-footer class="_coral-Dialog-footer"
+                hidden=""></coral-popover-footer>
+              <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation">
+              </div>
+              <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
+            </coral-popover>
+
+
+            <coral-popover interaction="off" data-id="paraformat" class="rte-popover _coral-Overlay _coral-Popover"
+              role="dialog" aria-live="assertive" variant="default" closable="off" tabindex="0"
+              style="display: none; visibility: visible;">
+              <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
+              <div class=" _coral-Dialog-header" handle="headerWrapper" role="presentation" hidden="">
+                <coral-popover-header class="_coral-Dialog-title"></coral-popover-header></div><button is="coral-button"
+                tracking="off" handle="closeButton" class="_coral-Dialog-closeButton _coral-ClearButton" type="button"
+                variant="_custom" icon="close" title="Close" tabindex="-1" coral-close="" size="M"
+                style="display: none;"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img"
+                  icon="close">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Close"></use>
+                  </svg>
+                </coral-icon><coral-button-label></coral-button-label></button>
+              <div class=" _coral-Popover-tip" handle="tip" hidden=""></div><coral-popover-content
+                class="_coral-Dialog-content">
+
+              </coral-popover-content><coral-popover-footer class="_coral-Dialog-footer"
+                hidden=""></coral-popover-footer>
+              <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation">
+              </div>
+              <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
+            </coral-popover>
+          </div>
+          <div data-type="tableEditOptions">
+            <coral-buttongroup role="group" selectionmode="none" class="rte-toolbar _coral-ButtonGroup"><select
+                class=" _coral-ButtonGroup-select" tabindex="-1" handle="nativeSelect"></select>
+            </coral-buttongroup>
+          </div>
+        </div>
+        <div data-cq-richtext-editable="true"
+          class="cq-RichText-editable coral-RichText-editable coral-RichText coral-DecoratedTextfield-input is-edited webkit chrome"
+          data-config-path="/apps/shrss/components/rte/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/text.config.json/content/shrss/us/en/qa-home-page/jcr:content/root/container_1826964350/container_1009917358/tabs/item_1721756569231/title"
+          data-use-fixed-inline-toolbar="true" data-custom-start="null" data-editor-type="text"
+          data-external-style-sheets="" data-usefixedinlinetoolbar="true" data-removesingleparagraphcontainer="true"
+          data-fieldlabel="Title" data-enablefontsize="true" name="./jcr:title" value="" contenteditable="true"
+          style="outline-style: none;">
+          <p><br _rte_temp_br="brEOB"></p>
+        </div><textarea class="rte-sourceEditor u-coral-noBorder" style="display: none;"></textarea>
+      </div>
+    </div>
+  </coral-multifield-item>
+  <input type="hidden" name="itemOrder" data-cmp-hook-childreneditor="order">
+  <input type="hidden" name="deletedItems" data-cmp-hook-childreneditor="delete">
+  <button data-cmp-hook-childreneditor="add" type="button" is="coral-button" loading="lazy">${'Add' @ i18n}</button>
+  <template coral-multifield-template="">
+    <div class="cmp-childreneditor__item">
+      <span class="cmp-childreneditor__item-icon" data-cmp-hook-childreneditor="itemIcon"></span>
+      <div class="cq-RichText richtext-container coral-Form-field coral-DecoratedTextfield">
+        <input type="hidden" data-cq-richtext-input="true" data-usefixedinlinetoolbar="true"
+          data-removesingleparagraphcontainer="true" data-enablefontsize="true" class="cmp-childreneditor__item-title"
+          data-cmp-hook-childreneditor="itemTitle" name="./${item.name}/cq:panelTitle" value="${item.value}"
+          data-sly-attribute.disabled="${item.isLiveCopy}" placeholder="${item.title}">
+        <input type="hidden" name="./textIsRich" value="true">
+        <div class="rte-ui is-desktop">
+          <div data-type="dialogFullScreen">
+            <coral-buttongroup role="group" selectionmode="none" class="rte-toolbar _coral-ButtonGroup"><select
+                class=" _coral-ButtonGroup-select" tabindex="-1" handle="nativeSelect"></select>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Bold (Ctrl+B)" icon="textBold" data-action="format#bold" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textBold">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextBold"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Italic (Ctrl+I)" icon="textItalic" data-action="format#italic" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textItalic">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextItalic"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Underline (Ctrl+U)" icon="textUnderline" data-action="format#underline" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textUnderline">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextUnderline"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled rte--trigger _coral-ActionButton _coral-ActionButton--quiet"
+                type="button" title="Special Characters" icon="star" data-action="misctools#specialchars" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="star">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Star"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label">
+                  <coral-icon icon="chevronDown" role="img" size="XXS"
+                    class="_coral-Icon--sizeXXS rte-openIcon _coral-Icon">
+                    <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                      <use xlink:href="#spectrum-icon-18-ChevronDown"></use>
+                    </svg>
+                  </coral-icon>
+                </coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Source Edit" icon="fileCode" data-action="misctools#sourceedit" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="fileCode">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-FileCode"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Subscript" icon="textSubscript" data-action="subsuperscript#subscript" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textSubscript">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextSubscript"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Superscript" icon="textSuperscript" data-action="subsuperscript#superscript" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textSuperscript">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextSuperscript"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+            </coral-buttongroup>
+            <coral-popover interaction="off" data-id="justify" class="rte-popover _coral-Overlay _coral-Popover"
+              role="dialog" aria-live="assertive" variant="default" closable="off" tabindex="0"
+              style="display: none; visibility: visible;">
+              <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
+              <div class=" _coral-Dialog-header" handle="headerWrapper" role="presentation" hidden="">
+                <coral-popover-header class="_coral-Dialog-title"></coral-popover-header></div><button is="coral-button"
+                tracking="off" handle="closeButton" class="_coral-Dialog-closeButton _coral-ClearButton" type="button"
+                variant="_custom" icon="close" title="Close" tabindex="-1" coral-close="" size="M"
+                style="display: none;"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img"
+                  icon="close">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Close"></use>
+                  </svg>
+                </coral-icon><coral-button-label></coral-button-label></button>
+              <div class=" _coral-Popover-tip" handle="tip" hidden=""></div><coral-popover-content
+                class="_coral-Dialog-content"><coral-buttongroup class="_coral-ButtonGroup" selectionmode="none"
+                  role="group"><select class=" _coral-ButtonGroup-select" tabindex="-1" handle="nativeSelect"></select>
+                </coral-buttongroup>
+              </coral-popover-content><coral-popover-footer class="_coral-Dialog-footer"
+                hidden=""></coral-popover-footer>
+              <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation">
+              </div>
+              <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
+            </coral-popover>
+            <coral-popover interaction="off" data-id="paraformat" class="rte-popover _coral-Overlay _coral-Popover"
+              role="dialog" aria-live="assertive" variant="default" closable="off" tabindex="0"
+              style="display: none; visibility: visible;">
+              <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
+              <div class=" _coral-Dialog-header" handle="headerWrapper" role="presentation" hidden="">
+                <coral-popover-header class="_coral-Dialog-title"></coral-popover-header></div><button is="coral-button"
+                tracking="off" handle="closeButton" class="_coral-Dialog-closeButton _coral-ClearButton" type="button"
+                variant="_custom" icon="close" title="Close" tabindex="-1" coral-close="" size="M"
+                style="display: none;"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img"
+                  icon="close">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Close"></use>
+                  </svg>
+                </coral-icon><coral-button-label></coral-button-label></button>
+              <div class=" _coral-Popover-tip" handle="tip" hidden=""></div><coral-popover-content
+                class="_coral-Dialog-content">
+              </coral-popover-content><coral-popover-footer class="_coral-Dialog-footer"
+                hidden=""></coral-popover-footer>
+              <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation">
+              </div>
+              <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
+            </coral-popover>
+          </div>
+          <div data-type="inline">
+            <coral-buttongroup role="group" selectionmode="none"
+              class="rte-toolbar _coral-ButtonGroup is-sticky is-active"
+              style="top: 0px; left: 0px; visibility: hidden;"><select class=" _coral-ButtonGroup-select" tabindex="-1"
+                handle="nativeSelect"></select>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Bold (Ctrl+B)" icon="textBold" data-action="format#bold" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textBold" alt="Bold (Ctrl+B)"
+                  aria-label="Bold (Ctrl+B)">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextBold"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Italic (Ctrl+I)" icon="textItalic" data-action="format#italic" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textItalic" alt="Italic (Ctrl+I)"
+                  aria-label="Italic (Ctrl+I)">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextItalic"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Underline (Ctrl+U)" icon="textUnderline" data-action="format#underline" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textUnderline"
+                  alt="Underline (Ctrl+U)" aria-label="Underline (Ctrl+U)">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextUnderline"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled rte--trigger _coral-ActionButton _coral-ActionButton--quiet"
+                type="button" title="Special Characters" icon="star" data-action="misctools#specialchars" tabindex="-1"
+                size="M" aria-expanded="false"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img"
+                  icon="star" alt="Special Characters" aria-label="Special Characters">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Star"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label">
+                  <coral-icon icon="chevronDown" role="img" size="XXS"
+                    class="_coral-Icon--sizeXXS rte-openIcon _coral-Icon">
+                    <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                      <use xlink:href="#spectrum-icon-18-ChevronDown"></use>
+                    </svg>
+                  </coral-icon>
+                </coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Source Edit" icon="fileCode" data-action="misctools#sourceedit" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="fileCode"
+                  alt="Source Edit" aria-label="Source Edit">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-FileCode"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Subscript" icon="textSubscript" data-action="subsuperscript#subscript" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textSubscript"
+                  alt="Subscript" aria-label="Subscript">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextSubscript"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Superscript" icon="textSuperscript" data-action="subsuperscript#superscript" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textSuperscript"
+                  alt="Superscript" aria-label="Superscript">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextSuperscript"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+            </coral-buttongroup>
+            <coral-popover interaction="off" data-id="justify" class="rte-popover _coral-Overlay _coral-Popover"
+              role="dialog" aria-live="assertive" variant="default" closable="off" tabindex="0"
+              style="display: none; visibility: visible;">
+              <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
+              <div class=" _coral-Dialog-header" handle="headerWrapper" role="presentation" hidden="">
+                <coral-popover-header class="_coral-Dialog-title"></coral-popover-header></div><button is="coral-button"
+                tracking="off" handle="closeButton" class="_coral-Dialog-closeButton _coral-ClearButton" type="button"
+                variant="_custom" icon="close" title="Close" tabindex="-1" coral-close="" size="M"
+                style="display: none;"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img"
+                  icon="close">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Close"></use>
+                  </svg>
+                </coral-icon><coral-button-label></coral-button-label></button>
+              <div class=" _coral-Popover-tip" handle="tip" hidden=""></div><coral-popover-content
+                class="_coral-Dialog-content"><coral-buttongroup class="_coral-ButtonGroup" selectionmode="none"
+                  role="group"><select class=" _coral-ButtonGroup-select" tabindex="-1" handle="nativeSelect"></select>
+
+                </coral-buttongroup>
+              </coral-popover-content><coral-popover-footer class="_coral-Dialog-footer"
+                hidden=""></coral-popover-footer>
+              <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation">
+              </div>
+              <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
+            </coral-popover>
+            <coral-popover interaction="off" data-id="format" class="rte-popover _coral-Overlay _coral-Popover"
+              role="dialog" aria-live="assertive" variant="default" closable="off" tabindex="0"
+              style="display: none; visibility: visible;">
+              <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
+              <div class=" _coral-Dialog-header" handle="headerWrapper" role="presentation" hidden="">
+                <coral-popover-header class="_coral-Dialog-title"></coral-popover-header></div><button is="coral-button"
+                tracking="off" handle="closeButton" class="_coral-Dialog-closeButton _coral-ClearButton" type="button"
+                variant="_custom" icon="close" title="Close" tabindex="-1" coral-close="" size="M"
+                style="display: none;"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img"
+                  icon="close">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Close"></use>
+                  </svg>
+                </coral-icon><coral-button-label></coral-button-label></button>
+              <div class=" _coral-Popover-tip" handle="tip" hidden=""></div><coral-popover-content
+                class="_coral-Dialog-content"><coral-buttongroup class="_coral-ButtonGroup" selectionmode="none"
+                  role="group"><select class=" _coral-ButtonGroup-select" tabindex="-1" handle="nativeSelect"></select>
+
+                  <button is="coral-button" type="button" title="Bold (Ctrl+B)" variant="quietaction"
+                    class="rte-toolbar-item is-disabled _coral-ActionButton _coral-ActionButton--quiet" icon="textBold"
+                    data-action="format#bold" tabindex="-1" size="M"><coral-icon size="S"
+                      class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textBold">
+                      <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                        <use xlink:href="#spectrum-icon-18-TextBold"></use>
+                      </svg>
+                    </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+                  <button is="coral-button" type="button" title="Italic (Ctrl+I)" variant="quietaction"
+                    class="rte-toolbar-item is-disabled _coral-ActionButton _coral-ActionButton--quiet"
+                    icon="textItalic" data-action="format#italic" tabindex="-1" size="M"><coral-icon size="S"
+                      class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textItalic">
+                      <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                        <use xlink:href="#spectrum-icon-18-TextItalic"></use>
+                      </svg>
+                    </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+                  <button is="coral-button" type="button" title="Underline (Ctrl+U)" variant="quietaction"
+                    class="rte-toolbar-item is-disabled _coral-ActionButton _coral-ActionButton--quiet"
+                    icon="textUnderline" data-action="format#underline" tabindex="-1" size="M"><coral-icon size="S"
+                      class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textUnderline">
+                      <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                        <use xlink:href="#spectrum-icon-18-TextUnderline"></use>
+                      </svg>
+                    </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+                </coral-buttongroup>
+              </coral-popover-content><coral-popover-footer class="_coral-Dialog-footer"
+                hidden=""></coral-popover-footer>
+              <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation">
+              </div>
+              <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
+            </coral-popover>
+          </div>
+          <div data-type="fullscreen">
+            <coral-buttongroup role="group" selectionmode="none" class="rte-toolbar _coral-ButtonGroup"><select
+                class=" _coral-ButtonGroup-select" tabindex="-1" handle="nativeSelect"></select>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Bold (Ctrl+B)" icon="textBold" data-action="format#bold" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textBold">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextBold"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Italic (Ctrl+I)" icon="textItalic" data-action="format#italic" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textItalic">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextItalic"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Underline (Ctrl+U)" icon="textUnderline" data-action="format#underline" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textUnderline">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextUnderline"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Subscript" icon="textSubscript" data-action="subsuperscript#subscript" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textSubscript">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextSubscript"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Superscript" icon="textSuperscript" data-action="subsuperscript#superscript" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textSuperscript">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextSuperscript"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled rte--trigger _coral-ActionButton _coral-ActionButton--quiet"
+                type="button" title="Hyperlink" icon="link" data-action="links#modifylink" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="link">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Link"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label">
+                  <coral-icon icon="chevronDown" role="img" size="XXS"
+                    class="_coral-Icon--sizeXXS rte-openIcon _coral-Icon">
+                    <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                      <use xlink:href="#spectrum-icon-18-ChevronDown"></use>
+                    </svg>
+                  </coral-icon>
+                </coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Unlink" icon="linkOff" data-action="links#unlink" tabindex="-1" size="M"><coral-icon size="S"
+                  class="_coral-Icon--sizeS _coral-Icon" role="img" icon="linkOff">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-LinkOff"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled rte--trigger _coral-ActionButton _coral-ActionButton--quiet"
+                type="button" title="Anchor" icon="anchor" data-action="links#anchor" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="anchor">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Anchor"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label">
+                  <coral-icon icon="chevronDown" role="img" size="XXS"
+                    class="_coral-Icon--sizeXXS rte-openIcon _coral-Icon">
+                    <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                      <use xlink:href="#spectrum-icon-18-ChevronDown"></use>
+                    </svg>
+                  </coral-icon>
+                </coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Bullet List" icon="textBulleted" data-action="lists#unordered" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textBulleted">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextBulleted"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Numbered List" icon="textNumbered" data-action="lists#ordered" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textNumbered">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextNumbered"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Outdent" icon="textIndentDecrease" data-action="lists#outdent" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textIndentDecrease">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextIndentDecrease"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Indent" icon="textIndentIncrease" data-action="lists#indent" tabindex="-1" size="M"><coral-icon
+                  size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="textIndentIncrease">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-TextIndentIncrease"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled rte--trigger _coral-ActionButton _coral-ActionButton--quiet"
+                type="button" title="Special Characters" icon="star" data-action="misctools#specialchars" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="star">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Star"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label">
+                  <coral-icon icon="chevronDown" role="img" size="XXS"
+                    class="_coral-Icon--sizeXXS rte-openIcon _coral-Icon">
+                    <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                      <use xlink:href="#spectrum-icon-18-ChevronDown"></use>
+                    </svg>
+                  </coral-icon>
+                </coral-button-label></button>
+              <button is="coral-button" variant="quietaction"
+                class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet" type="button"
+                title="Source Edit" icon="fileCode" data-action="misctools#sourceedit" tabindex="-1"
+                size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="fileCode">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-FileCode"></use>
+                  </svg>
+                </coral-icon><coral-button-label class="_coral-ActionButton-label"></coral-button-label></button>
+            </coral-buttongroup>
+            <coral-popover interaction="off" data-id="styles" class="rte-popover _coral-Overlay _coral-Popover"
+              role="dialog" aria-live="assertive" variant="default" closable="off" tabindex="0"
+              style="display: none; visibility: visible;">
+              <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
+              <div class=" _coral-Dialog-header" handle="headerWrapper" role="presentation" hidden="">
+                <coral-popover-header class="_coral-Dialog-title"></coral-popover-header></div><button is="coral-button"
+                tracking="off" handle="closeButton" class="_coral-Dialog-closeButton _coral-ClearButton" type="button"
+                variant="_custom" icon="close" title="Close" tabindex="-1" coral-close="" size="M"
+                style="display: none;"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img"
+                  icon="close">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Close"></use>
+                  </svg>
+                </coral-icon><coral-button-label></coral-button-label></button>
+              <div class=" _coral-Popover-tip" handle="tip" hidden=""></div><coral-popover-content
+                class="_coral-Dialog-content"><coral-buttonlist class="rte-toolbar-list _coral-Menu _coral-ButtonList"
+                  interaction="on">
+                </coral-buttonlist>
+              </coral-popover-content><coral-popover-footer class="_coral-Dialog-footer"
+                hidden=""></coral-popover-footer>
+              <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation">
+              </div>
+              <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
+            </coral-popover>
+            <coral-popover interaction="off" data-id="paraformat" class="rte-popover _coral-Overlay _coral-Popover"
+              role="dialog" aria-live="assertive" variant="default" closable="off" tabindex="0"
+              style="display: none; visibility: visible;">
+              <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
+              <div class=" _coral-Dialog-header" handle="headerWrapper" role="presentation" hidden="">
+                <coral-popover-header class="_coral-Dialog-title"></coral-popover-header></div><button is="coral-button"
+                tracking="off" handle="closeButton" class="_coral-Dialog-closeButton _coral-ClearButton" type="button"
+                variant="_custom" icon="close" title="Close" tabindex="-1" coral-close="" size="M"
+                style="display: none;"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img"
+                  icon="close">
+                  <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+                    <use xlink:href="#spectrum-icon-18-Close"></use>
+                  </svg>
+                </coral-icon><coral-button-label></coral-button-label></button>
+              <div class=" _coral-Popover-tip" handle="tip" hidden=""></div><coral-popover-content
+                class="_coral-Dialog-content">
+
+              </coral-popover-content><coral-popover-footer class="_coral-Dialog-footer"
+                hidden=""></coral-popover-footer>
+              <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation">
+              </div>
+              <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
+            </coral-popover>
+          </div>
+          <div data-type="tableEditOptions">
+            <coral-buttongroup role="group" selectionmode="none" class="rte-toolbar _coral-ButtonGroup"><select
+                class=" _coral-ButtonGroup-select" tabindex="-1" handle="nativeSelect"></select>
+            </coral-buttongroup>
+          </div>
+        </div>
+        <div data-cq-richtext-editable="true"
+          class="cq-RichText-editable coral-RichText-editable coral-RichText coral-DecoratedTextfield-input is-edited webkit chrome"
+          data-config-path="/apps/shrss/components/rte/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/text.config.json/content/shrss/us/en/qa-home-page/jcr:content/root/container_1826964350/container_1009917358/tabs/item_1721756569231/title"
+          data-use-fixed-inline-toolbar="true" data-custom-start="null" data-editor-type="text"
+          data-external-style-sheets="" data-usefixedinlinetoolbar="true" data-removesingleparagraphcontainer="true"
+          data-fieldlabel="Title" data-enablefontsize="true" name="./jcr:title" value="" contenteditable="true"
+          style="outline-style: none;">
+          <p><br _rte_temp_br="brEOB"></p>
+        </div><textarea class="rte-sourceEditor u-coral-noBorder" style="display: none;"></textarea>
+      </div>
+      <input type="hidden" data-cmp-hook-childreneditor="itemResourceType">
+      <input type="hidden" data-cmp-hook-childreneditor="itemTemplatePath">
+    </div>
+  </template>
+</coral-multifield>

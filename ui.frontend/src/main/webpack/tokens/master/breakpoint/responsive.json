@@ -1,0 +1,9 @@
+{
+  "breakpoint": {
+    "responsive": {
+      "mobile": { "value": "768px" },
+      "laptop": { "value": "1024px" },
+      "desktop": { "value": "1366px" }
+    }
+  }
+}

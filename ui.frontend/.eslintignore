@@ -1,0 +1,14 @@
+../ui.apps/
+./src/main/webpack/tests/
+**/stories
+/webpack.*.js
+**/assets/
+**/resources/
+**/*.scss
+**/static
+./src/main/webpack/components/_helloworld.js
+./.storybook
+**/tokens/
+./build-brands.js
+**/*.hbs
+**/*.css

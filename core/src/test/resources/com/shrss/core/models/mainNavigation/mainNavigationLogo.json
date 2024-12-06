@@ -1,0 +1,7 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "fileReference": "/content/dam/shrss/asset.jpg",
+  "logoTarget": "_self",
+  "logoUrl": "/content/shrss/us/en/head1",
+  "logoText": "Hard Rock"
+}

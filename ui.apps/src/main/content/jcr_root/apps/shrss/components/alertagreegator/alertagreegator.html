@@ -1,0 +1,14 @@
+<sly data-sly-use.alertModel="com.shrss.core.models.AlertAgreegatorModel" />
+<div data-sly-test="${wcmmode.edit && !alertModel.experienceSource}" data-emptytext="${'Alert Agreegator' @ i18n}"  class="cq-placeholder">
+</div>
+
+<div class="hrc-alert" data-component="alert" data-url="${alertModel.resourcePath}.data.json" role="region" aria-roledescription="carousel" aria-label="${'Alerts' @ i18n}">
+    <div class="hrc-alert__content">
+      <button class="hrc-alert__prev fas fa-chevron-left" aria-controls="myCarousel-items" aria-label="${'Previous Slide' @ i18n}"></button>
+      <div class="hrc-alert__viewport">
+        <ul class="hrc-alert__slides" id="myCarousel-items"></ul>
+      </div>
+      <button class="hrc-alert__next fas fa-chevron-right" aria-controls="myCarousel-items" aria-label="${'Next Slide' @ i18n}"></button>
+    </div>
+ </div>
+

@@ -1,0 +1,106 @@
+.hrc-header {
+  $p: &;
+
+  &--reverb {
+    display: block;
+
+    .hrc-header {
+      &__main {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__main__button {
+        display: flex;
+        align-items: center;
+      }
+    }
+    #{$p}__logo {
+      gap: 0;
+      overflow: hidden;
+    }
+    #{$p}__link {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    #{$p}__line {
+      width: 1px;
+      height: inherit;
+      border-left: 1px solid $color-white;
+      margin: 0 16px;
+      @include media(">=mobile") {
+        margin: 0 24px;
+      }
+    }
+
+    #{$p}__address {
+      font-size: var(--font-size-header-logo-title);
+      line-height: 1.5;
+      color: var(--color-button-primary);
+      font-family: var(--font-family-secondary);
+      overflow: hidden;
+      white-space: nowrap;
+
+      p {
+        text-overflow: ellipsis;
+        overflow: inherit;
+
+        &:nth-child(n + 2) {
+          font-size: var(--font-size-header-logo);
+          line-height: 1.5;
+          color: var(--color-button-secondary);
+          font-family: var(--font-family-primary);
+        }
+      }
+    }
+
+    .hrc-header__button--primary,
+    .hrc-header__button--secondary {
+      font-family: var(--font-family-secondary);
+      font-weight: 900;
+    }
+  }
+}
+@include media(">=desktop-sm") {
+  .hrc-header {
+    &--reverb {
+      display: block;
+
+      .hrc-header {
+        &__main {
+          &__button {
+            display: block;
+
+            .hrc-header__button {
+              display: none;
+            }
+          }
+
+          &__menu {
+            position: fixed;
+            background-color: var(--color-background-header-reverb);
+            top: calc(var(--top-header) + 40px);
+            width: 340px;
+            height: calc(100% - 40px);
+            padding: 20px 24px;
+            padding: 0 40px;
+            padding-top: 120px;
+          }
+
+          &__menulink {
+            font-size: var(--font-size-header-menu-sm);
+          }
+        }
+
+        &__ham-icon {
+          z-index: $z-index-ham-icon;
+          position: relative;
+          padding-left: 0;
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+}

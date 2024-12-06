@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+	xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Text"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[seminole.rte.edit]">
+	<content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+		<items jcr:primaryType="nt:unstructured">
+			<tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+				<items jcr:primaryType="nt:unstructured">
+					<properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+								<items jcr:primaryType="nt:unstructured">
+									<column
+                                        granite:class="cq-RichText-FixedColumn-column"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                name="./text"
+                                                useFixedInlineToolbar="{Boolean}true">
+												<rtePlugins jcr:primaryType="nt:unstructured">
+													<format
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:hideResource="{Boolean}true"/>
+													<justify
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:hideResource="{Boolean}true"/>
+													<links
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:hideResource="{Boolean}true"/>
+													<lists
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:hideResource="{Boolean}true"/>
+													<styles
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*">
+														<styles jcr:primaryType="nt:unstructured">
+															<one
+                                                                jcr:primaryType="nt:unstructured"
+                                                                cssName="p1"
+                                                                text="Body Text"/>
+															<two
+                                                                jcr:primaryType="nt:unstructured"
+                                                                cssName="legal"
+                                                                text="Legal Text"/>
+														</styles>
+													</styles>
+													<misctools jcr:primaryType="nt:unstructured">
+														<specialCharsConfig jcr:primaryType="nt:unstructured">
+															<chars jcr:primaryType="nt:unstructured">
+																<default_copyright
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:hideResource="{Boolean}true"/>
+																<default_euro
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:hideResource="{Boolean}true"/>
+																<default_registered
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:hideResource="{Boolean}true"/>
+																<default_trademark
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:hideResource="{Boolean}true"/>
+															</chars>
+														</specialCharsConfig>
+													</misctools>
+													<paraformat
+							                            jcr:primaryType="nt:unstructured"
+							                            features="*">
+														<formats
+							                                jcr:primaryType="nt:unstructured"
+							                                override="true">
+															<item0
+							                                    jcr:primaryType="nt:unstructured"
+							                                    description="Paragraph"
+							                                    tag="p"/>
+															<item1
+							                                    jcr:primaryType="nt:unstructured"
+							                                    description="Heading 1"
+							                                    tag="h1"/>
+															<item2
+							                                    jcr:primaryType="nt:unstructured"
+							                                    description="Heading 2"
+							                                    tag="h2"/>
+															<item3
+							                                    jcr:primaryType="nt:unstructured"
+							                                    description="Heading 3"
+							                                    tag="h3"/>
+															<item4
+							                                    jcr:primaryType="nt:unstructured"
+							                                    description="Heading 4"
+							                                    tag="h4"/>
+															<item5
+							                                    jcr:primaryType="nt:unstructured"
+							                                    description="Heading 5"
+							                                    tag="h5"/>
+															<item6
+							                                    jcr:primaryType="nt:unstructured"
+							                                    description="Heading 6"
+							                                    tag="h6"/>
+															<item7
+							                                    jcr:primaryType="nt:unstructured"
+							                                    description="Quote"
+							                                    tag="blockquote"/>
+															<item8
+							                                    jcr:primaryType="nt:unstructured"
+							                                    description="Horizontal Rule (visual line break)"
+							                                    tag="hr"/>
+															<item9
+							                                    jcr:primaryType="nt:unstructured"
+							                                    description="Preformatted"
+							                                    tag="pre"/>
+														</formats>
+													</paraformat>
+													<table
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:hideResource="{Boolean}true"></table>
+													<tracklinks
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:hideResource="{Boolean}true"/>
+												</rtePlugins>
+												<uiSettings jcr:primaryType="nt:unstructured">
+													<cui jcr:primaryType="nt:unstructured">
+														<inline
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat,#styles]">
+															<popovers jcr:primaryType="nt:unstructured">
+																<justify
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:hideResource="{Boolean}true"/>
+																<lists
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:hideResource="{Boolean}true"/>
+																<paraformat
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:hideResource="{Boolean}true"/>
+																<styles
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="styles:getStyles:styles-pulldown"
+                                                                    ref="styles"/>
+															</popovers>
+														</inline>
+														<tableEditOptions
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:hideResource="{Boolean}true"/>
+													</cui>
+												</uiSettings>
+											</text>
+											<id
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideProperties="{Boolean}true"/>
+										</items>
+									</column>
+								</items>
+							</columns>
+						</items>
+					</properties>
+					<styletab
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="/mnt/overlay/cq/gui/components/authoring/dialog/style/tab_edit/styletab"/>
+				</items>
+			</tabs>
+		</items>
+	</content>
+</jcr:root>

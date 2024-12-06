@@ -1,0 +1,46 @@
+<sly data-sly-use.crownCTAModel="com.shrss.core.models.CrownCTAModel"></sly>
+<div data-sly-test="${wcmmode.edit && !crownCTAModel.ctaItemList}" data-emptytext="Crown CTA" class="cq-placeholder">
+</div>
+<sly data-sly-set.ctaCount="0" data-sly-list.link="${crownCTAModel.ctaItemList}">
+  <a href="${link.ctaURL}" data-sly-test="${link.experienceSelect == 'signin'}"
+    target="${link.newTab == 'true' ? '_blank' : ''}" class="hrc-header__button hrc-header__button--unity">
+    <i class="fas fa-user"></i>
+    <span class="hrc-header__button__text"> ${link.label}</span>
+  </a>
+  <a href="${link.ctaURL}" style="background-color:${link.colorSel @ context='styleToken'}"
+    target="${link.newTab == 'true' ? '_blank' : ''}"
+    data-sly-test="${link.experienceSelect == 'cta' && !link.fileReference}"
+    class="hrc-header__button hrc-header__button--${ctaCount == '0' ? 'primary' : 'secondary'}">
+    <span data-sly-set.ctaCount="1" class="hrc-header__button__text">${link.label}</span>
+  </a>
+  <div class="hrc-header__dropdown"
+  data-sly-test="${link.experienceSelect == 'dropdown'}">
+  <sly data-sly-set.variation="${link.dropdownFor == 'CTA' ? 'primary': (link.dropdownFor == 'mapmarker' ? 'map' : 'lang' ) }">
+ <a class="hrc-header__button hrc-header__button--${variation}" href="#"
+    role="button">
+    <sly data-sly-test="${variation == 'primary'}"><sly data-sly-set.ctaCount="1" ></sly></sly>
+     <span class="${variation == 'map' ? 'fas fa-map-marker' : (variation == 'lang' ? 'fas fa-globe' : '' )}"></span>
+     <span class="hrc-header__button__text">${link.label}</span>
+ </a>
+ <ul data-sly-list.mapLang="${link.mapLangItemList}"
+     class="hrc-header__dropdown__content">
+     <li class="hrc-header__dropdown__item">
+         <a href="${mapLang.url}" target="${mapLang.newTabDropdown == 'true' ? '_blank' : ''}"
+            class="hrc-header__button hrc-header__button--${variation}">${mapLang.labelDropdown}</a>
+     </li>
+ </ul>
+ </sly>
+</div>
+  <a href="${link.ctaURL}"
+    data-sly-test="${link.experienceSelect == 'help' || link.experienceSelect == 'locationFinder'}"
+    target="${link.newTab == 'true' ? '_blank' : ''}" class="hrc-header__button hrc-header__button--icon">
+    <i
+      class="${link.experienceSelect == 'help' ? 'fas fa-question-circle' : (link.experienceSelect == 'locationFinder' ? 'fas fa-search' : '')}"></i>
+    <span class="hrc-header__button__text">${link.label}</span>
+  </a>
+  <a href="${link.ctaURL}" target="${link.newTab == 'true' ? '_blank' : ''}"
+    data-sly-test="${link.experienceSelect == 'cta' && link.fileReference}"
+    class="hrc-header__button hrc-header__button--img">
+    <img src="${link.fileReference}" alt="${link.label}" class="hrc-header__button__img">
+  </a>
+</sly>

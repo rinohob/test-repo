@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Crown CTA"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[core.wcm.components.commons.editor.dialog.childreneditor.v1,core.wcm.components.accordion.v1.editor]">
+    <content
+        granite:class="cmp-accordion__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <crownCTA
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Crown CTA"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <crowncta
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Crown CTA">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                    name="./crowncta">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <label
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            emptyText="Label"
+                                            fieldDescription="Enter label"
+                                            fieldLabel="Label"
+                                            name="./label"/>
+                                        <ctaurl
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            emptyText="URL/Anchor ID"
+                                            fieldDescription="Enter URL"
+                                            fieldLabel="URL/Anchor ID "
+                                            name="./ctaURL"
+											rootPath="/content"/>
+                                        <newtab
+                                            granite:class="coral-Form-fieldwrapper"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                            fieldDescription="Check this checkbox for opening URL in new Tab"
+                                            name="./newTab"
+                                            text="Open in new tab"
+                                            uncheckedValue="{Boolean}false"
+                                            value="{Boolean}true"/>
+                                        <colorselector
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            emptyText="Color Selector"
+                                            fieldDescription="Enter #code for CTA background color"
+                                            fieldLabel="Color Selector"
+                                            name="./colorSel"/>
+                                        <experience
+                                            granite:class="cq-dialog-dropdown-showhide-multival"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldDescription="Select the experience selector"
+                                            fieldLabel="Experience Selector "
+                                            name="./experienceSelect">
+                                            <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                cq-dialog-dropdown-showhide-target=".cq-dialog-dropdown-showhide-target"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <cta
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="CTA"
+                                                    value="cta"/>
+                                                <signin
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Signin"
+                                                    value="signin"/>
+                                                <dropdown
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Dropdown"
+                                                    value="dropdown"/>
+                                                <help
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Help"
+                                                    value="help"/>
+                                                <locationfinder
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Location Finder"
+                                                    value="locationFinder"/>
+                                            </items>
+                                        </experience>
+                                        <container
+                                            granite:class="hide cq-dialog-dropdown-showhide-target"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <dropdownFor
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldDescription="Select the appropriate selection"
+                                                    fieldLabel="Dropdown triggered for"
+                                                    name="./dropdownFor">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <cta
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="CTA"
+                                                            value="CTA"/>
+                                                        <mapmarker
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Map Marker"
+                                                            value="mapmarker"/>
+                                                        <languageSel
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Language Selector"
+                                                            value="languageSel"/>
+                                                    </items>
+                                                </dropdownFor>
+                                                <maplang
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                    composite="{Boolean}true"
+                                                    fieldLabel="Map/Language/CTA">
+                                                    <field
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        name="./mapLangSel">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <text
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                emptyText="Label"
+                                                                fieldDescription="Enter text"
+                                                                fieldLabel="Label"
+                                                                name="./labelDropdown"/>
+                                                            <url
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                emptyText="URL"
+                                                                fieldDescription="Enter URL"
+                                                                fieldLabel="URL"
+                                                                name="./url"
+																rootPath="/content"/>
+                                                            <newtabdropdown
+                                                                granite:class="coral-Form-fieldwrapper"
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                                fieldDescription="Check this checkbox for opening URL in new Tab"
+                                                                name="./newTabDropdown"
+                                                                text="Open in new tab"
+                                                                uncheckedValue="{Boolean}false"
+                                                                value="{Boolean}true"/>
+                                                            <separation
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                                text="------------------"/>
+                                                        </items>
+                                                    </field>
+                                                </maplang>
+                                            </items>
+                                            <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                showhidetargetvalue="dropdown"/>
+                                        </container>
+                                        <file
+                                            granite:class="hide cq-dialog-dropdown-showhide-target"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                            allowUpload="{Boolean}false"
+                                            class="cq-droptarget"
+                                            fieldDescription="Insert CTA image only for CTA experience"
+                                            fieldLabel="Image"
+                                            fileNameParameter="./fileName"
+                                            fileReferenceParameter="./fileReference"
+											rootPath="/content/dam"
+                                            mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                            name="./file">
+                                            <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                showhidetargetvalue="cta"/>
+                                        </file>
+                                        <authorid
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            emptyText="Author unique Id"
+                                            fieldLabel="Author unique Id"
+                                            name="./authorId"/>
+                                        <separation
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                            text="----------------------------"/>
+                                    </items>
+                                </field>
+                            </crowncta>
+                        </items>
+                    </crownCTA>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

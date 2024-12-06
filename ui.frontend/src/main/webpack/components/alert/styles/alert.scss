@@ -1,0 +1,153 @@
+.hrc-alert {
+    $p: &;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 24px;
+    background-color: $color-background-alert;
+    display: none;
+
+    &__content {
+        overflow: hidden;
+        @include d-flex(flex, flex-start, center);
+        @extend %p1;
+
+        color: $color-black;
+    }
+
+    &__viewport {
+        overflow: hidden;
+        flex: 1;
+    }
+
+    &__slides {
+        display: flex;
+    }
+
+    &__slide {
+        @include d-flex(flex, flex-start, center);
+
+        flex: 0 0 100%;
+        min-width: 0;
+        gap: 10px;
+        margin-inline: 20px;
+
+        &--mobile {
+            display: block;
+        }
+
+        &--tab {
+            display: none;
+        }
+    }
+
+    &__prev,
+    &__next,
+    &__close {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__prev {
+        padding-right: 24px;
+    }
+
+    &__close {
+        margin-left: auto;
+    }
+
+    &__next {
+        padding-left: 24px;
+    }
+
+    .fas {
+        cursor: pointer;
+        line-height: inherit;
+    }
+
+    &--show {
+        display: block;
+    }
+
+    &--only-slide {
+        #{$p}__prev,
+        #{$p}__next {
+            display: none;
+        }
+
+        #{$p}__viewport {
+            flex: 1;
+        }
+
+        #{$p}__slide {
+            margin-inline: 0;
+
+            &--mobile {
+                display: block;
+            }
+
+            &--tab {
+                display: none;
+            }
+        }
+    }
+
+    &--icon-hide {
+        display: none;
+    }
+}
+
+@include media(">=mobile") {
+    .hrc-alert {
+        $p: &;
+
+        &__prev {
+            padding-right: 40px;
+        }
+
+        &__next {
+            padding-left: 40px;
+        }
+
+        &__slide {
+            &--mobile {
+                display: none;
+            }
+
+            &--tab {
+                display: block;
+            }
+        }
+
+        &--only-slide {
+            #{$p}__slide {
+                &--mobile {
+                    display: none;
+                }
+
+                &--tab {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@include media(">=desktop-sm") {
+    .hrc-alert {
+        $p: &;
+
+        padding: 24px 15px;
+
+        &__content {
+            max-width: var(--max-width-container);
+            margin: 0 auto;
+        }
+    }
+}

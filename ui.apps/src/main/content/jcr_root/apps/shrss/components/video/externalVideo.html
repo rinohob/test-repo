@@ -1,0 +1,12 @@
+<sly data-sly-use.video="com.shrss.core.models.VideoModel"></sly>
+<sly data-sly-use.commonFields="com.shrss.core.models.CommonFields"></sly>
+<iframe 
+   id="${commonFields.id}"
+   class="${commonFields.overrideClass}"
+   title="External video"
+   width="${video.externalWidth ||'100%' @ context='scriptString'}"
+   src="${video.externalUrl}"
+   frameborder="0"
+   allowfullscreen
+   allow="autoplay; fullscreen"
+   aria-label="External Video Label"></iframe>

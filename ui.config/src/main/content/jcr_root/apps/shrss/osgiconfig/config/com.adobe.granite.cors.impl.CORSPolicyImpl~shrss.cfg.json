@@ -1,0 +1,22 @@
+{
+  "alloworigin": ["http://localhost:3000"],
+  "allowedpaths": ["/(content|conf)/shrss.*","/graphql/execute.json/.*","/content/_cq_graphql/(global|shrss)/endpoint.json"],
+  "supportedheaders": [
+    "Authorization",
+    "Origin",
+    "Accept",
+    "X-Requested-With",
+    "Content-Type",
+    "Access-Control-Request-Method",
+    "Access-Control-Request-Headers",
+    "Access-Control-Allow-Origin",
+    "Content-Security-Policy",
+    "Permissions-Policy",
+    "Referrer-Policy",
+    "Strict-Transport-Security",
+    "X-Frame-Options",
+    "X-XSS-Protection"
+  ],
+  "supportedmethods": ["GET","HEAD","POST","PUT","OPTIONS"],
+  "alloworiginregexp": ["https://.*\\.hardrock\\.com","https://.*\\.azurewebsites\\.net","http://localhost:.*"]
+}

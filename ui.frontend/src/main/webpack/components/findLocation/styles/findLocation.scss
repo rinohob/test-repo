@@ -1,0 +1,106 @@
+.hrc-location {
+  background-color: var(--color-location-bg);
+  color: var(--color-text-light);
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 15px 20px;
+  $p: &;
+  &__form {
+    display: block;
+    max-width: 735px;
+    margin: 0 auto;
+    #{$p}__label {
+      width: 100%;
+      padding: 0 15px;
+    }
+    #{$p}__label-text {
+      @extend %p1;
+      color: var(--color-text-light);
+      vertical-align: middle;
+      }
+    #{$p}__container {
+      &--hide-md {
+        display: none;
+      }
+    }
+    #{$p}__input {
+      @include d-flex(flex, center, center);
+      height: 40px;
+      &__type {
+        width: 100%;
+        @extend %p2;
+        height: 40px;
+        background-color: transparent;
+        color: var(--color-text-light);
+        border: 1px solid var(--color-location-border);
+        border-right: none;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+        padding: 6px 12px;
+        &:not(:first-child):not(:last-child) {
+          border-radius: 0;
+        }
+        &:focus {
+          border-color: var(--color-location-focus-input);
+          outline: 0;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+        }
+      }
+    }
+    .button {
+      width: 100%;
+      .cmp-button {
+        @include d-flex(flex, center, center);
+        color: var(--color-text-light);
+        width: 100%;
+        min-width: auto;
+        height: 40px;
+        border-width: 1px;
+        margin: 0 auto;
+        padding: 0 30px;
+      }
+    }
+
+    #{$p}__view {
+      @include d-flex(flex, center, center);
+      width: 100%;
+      padding: 0 15px;
+      margin-top: 10px;
+      color: var(--color-location-text-form);
+      &__content {
+        display: none;
+      }
+    }
+  }
+}
+
+@include media(">=mobile") {
+  .hrc-location {
+    $p: &;
+    padding: 20px 15px;
+    &__form {
+      @include d-flex(flex, center, center);
+      #{$p}__label {
+        width: 25%;
+      }
+      .hrc-location__container {
+        width: 50%;
+        &--hide-md {
+          display: inline-block;
+        }
+      }
+      #{$p}__view {
+        width: 25%;
+        padding-left: 5px;
+        margin-top: 0;
+        &__content {
+          display: inline-block;
+          margin-right: 10px;
+        }
+      }
+      .button {
+        width: auto;
+      }
+    }
+  }
+}

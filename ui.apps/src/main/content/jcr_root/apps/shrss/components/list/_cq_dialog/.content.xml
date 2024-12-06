@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+	xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="List"
+    extraClientlibs="[shrss.list.v4.editor]">
+	<content jcr:primaryType="nt:unstructured">
+		<items jcr:primaryType="nt:unstructured">
+			<tabs jcr:primaryType="nt:unstructured">
+				<items jcr:primaryType="nt:unstructured">
+					<listSettings jcr:primaryType="nt:unstructured">
+						<items jcr:primaryType="nt:unstructured">
+							<columns jcr:primaryType="nt:unstructured">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured">
+										<items jcr:primaryType="nt:unstructured">
+											<setStatic jcr:primaryType="nt:unstructured">
+												<items jcr:primaryType="nt:unstructured">
+													<well jcr:primaryType="nt:unstructured">
+														<items jcr:primaryType="nt:unstructured">
+															<pages jcr:primaryType="nt:unstructured">
+																<items jcr:primaryType="nt:unstructured">
+																	<multi
+                                                                        granite:class="cmp-list__editor-static-multifield"
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                                        composite="{Boolean}true">
+																		<field
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                            granite:class="coral-RichText-FixedColumn-column"
+                                                                            name="./static">
+																			<items jcr:primaryType="nt:unstructured">
+																				<link
+                                                                                    granite:class="cmp-list__editor-static-multifield-linkURL"
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="cq/gui/components/coral/common/form/pagefield"
+                                                                                    emptyText="Link"
+                                                                                    name="linkURL"
+                                                                                    required="{Boolean}true"
+                                                                                    rootPath="/content"/>
+																				<target
+                                                                                    granite:class="cmp-list__editor-static-multifield-linkTarget"
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                    fieldDescription="If checked the link will be opened in a new browser tab."
+                                                                                    name="linkTarget"
+                                                                                    text="Open in new tab"
+                                                                                    uncheckedValue="_self"
+                                                                                    value="_blank"/>
+																				<text
+                                                                                    granite:class="cmp-list__editor-static-multifield-linkText"
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="acs-commons/granite/ui/components/include"
+                                                                                    emptyText="Text"
+                                                                                    name="linkText"
+                                                                                    path="shrss/components/rte/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/text"
+                                                                                    required="{Boolean}true">
+																					<parameters
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        fieldDescription="Provide the title of the page."
+                                                                                        fieldLabel="Page Title"
+                                                                                        fieldName="linkText"/>
+																				</text>
+																			</items>
+																		</field>
+																	</multi>
+																</items>
+															</pages>
+														</items>
+													</well>
+												</items>
+											</setStatic>
+											<columns
+                                               jcr:primaryType="nt:unstructured"
+                                               sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                               sling:orderBefore="maxItems"
+                                               fieldDescription="The number of columns list items should appear in"
+                                               fieldLabel="Number of Columns for list items"
+                                               name="./columns">
+                                               <items jcr:primaryType="nt:unstructured">
+                                                   <one
+                                                       jcr:primaryType="nt:unstructured"
+                                                       text="1"
+                                                       value="1"/>
+                                                   <radio
+                                                       jcr:primaryType="nt:unstructured"
+                                                       text="2"
+                                                       value="2"/>
+                                                   <slider
+                                                       jcr:primaryType="nt:unstructured"
+                                                       text="3"
+                                                       value="3"/>
+                                                   <toggle
+                                                       jcr:primaryType="nt:unstructured"
+                                                       text="4"
+                                                       value="4"/>
+                                                   <dropdown
+                                                       jcr:primaryType="nt:unstructured"
+                                                       text="5"
+                                                       value="5"/>
+                                               </items>
+                                           </columns>
+                                           <class
+				                                jcr:primaryType="nt:unstructured"
+				                                sling:orderBefore="id"
+				                                sling:resourceType="granite/ui/components/foundation/include"
+				                                path="shrss/components/commonfields/cq:dialog/content/items/tabs/items/properties/items/columns/items/column/items/class"/>
+										</items>
+									</column>
+								</items>
+							</columns>
+						</items>
+					</listSettings>
+				</items>
+			</tabs>
+		</items>
+	</content>
+</jcr:root>

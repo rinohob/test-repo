@@ -1,0 +1,24 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "urlTarget": "_self",
+  "showHide": "false",
+  "url": "/",
+  "label": "North America",
+  "tertiaryNav": {
+    "jcr:primaryType": "nt:unstructured",
+    "item0": {
+      "jcr:primaryType": "nt:unstructured",
+      "tertiaryTarget": "_self",
+      "tertiaryLabel": "New York",
+      "tertiaryShowHide": "false",
+      "tertiaryUrl": "/content/shrss/us/en/head1"
+    },
+    "item1": {
+      "jcr:primaryType": "nt:unstructured",
+      "tertiaryTarget": "_self",
+      "tertiaryLabel": "Chicago",
+      "tertiaryShowHide": "false",
+      "tertiaryUrl": "/content/shrss/us/en/head1"
+    }
+  }
+}

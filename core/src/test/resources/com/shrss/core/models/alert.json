@@ -1,0 +1,14 @@
+{
+	"jcr:primaryType": "nt:unstructured",
+	"mobileText": "Mobile text",
+	"fromDate": "2024-08-24",
+	"toDate": "2024-08-24",
+	"ariaLabel": "Alert label",
+	"id": "123",
+	"text": "Alert1",
+	"class": "custom-css",
+	"dismissAlert": false,
+	"cq:tags": "[shrss:hotel/new-york]",
+	"sling:resourceType": "shrss/components/alert",
+	"showHideIcon": "false"
+}

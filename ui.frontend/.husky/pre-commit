@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Check if there are any changes in the ui.frontend folder
+if git diff --name-only --diff-filter=d --cached | grep -q "^ui.frontend/"; then
+    cd ui.frontend && npx lint-staged 
+    npm run build
+fi

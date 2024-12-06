@@ -1,0 +1,18 @@
+{
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "admin",
+            "jcr:lastModifiedBy": "admin",
+            "jcr:created": "Mon Aug 12 2024 17:19:10 GMT+0530",
+            "jcr:lastModified": "Mon Aug 12 2024 17:19:21 GMT+0530",
+            "sling:resourceType": "shrss/components/socialmedia",
+            "socialMediaLinks": {
+              "jcr:primaryType": "nt:unstructured",
+              "item0": {
+                "jcr:primaryType": "nt:unstructured",
+                "socialMedia": "facebook",
+                "ctaTarget": "_blank",
+                "pagePath": "/content/shrss/us/en",
+                "label": "Accessibility Label"
+              }
+            }
+          }

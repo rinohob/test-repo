@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/shrss/clientlibs"/>
+    <filter root="/apps/shrss/components"/>
+    <filter root="/apps/shrss/i18n"/>
+</workspaceFilter>

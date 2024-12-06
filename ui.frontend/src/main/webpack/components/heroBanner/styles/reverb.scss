@@ -1,0 +1,19 @@
+.page-reverb {
+  .cmp-teaser {
+    .cmp-image {
+      &::after {
+        background: transparent
+          linear-gradient(180deg, rgba(0, 0, 0, 0%) 0%, rgba(0, 0, 0, 80%) 100%)
+          0% 0% no-repeat padding-box;
+      }
+    }
+
+    &.cmp-teaser--dark {
+      .cmp-teaser__pretitle,
+      .cmp-teaser__title,
+      .cmp-teaser__description {
+        color: var(--color-text-secondary);
+      }
+    }
+  }
+}

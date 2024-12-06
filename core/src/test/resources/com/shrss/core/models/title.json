@@ -1,0 +1,21 @@
+{
+	"jcr:primaryType": "nt:unstructured",
+	"jcr:createdBy": "admin",
+	"jcr:title": "Home title",
+	"eyebrowcheck": "true",
+	"eyebrow": "Sample eyebrow",
+	"jcr:lastModifiedBy": "admin",
+	"jcr:created": "Tue Jul 02 2024 21:43:51 GMT+0530",
+	"type": "h1",
+	"linkTarget": "_self",
+	"jcr:lastModified": "Wed Jul 03 2024 11:29:23 GMT+0530",
+	"sling:resourceType": "shrss/components/title",
+	"textIsRich": [
+		"true",
+		"true"
+	],
+	"cq:styleIds": [
+		"1719979018104",
+		"1719979034307"
+	]
+}

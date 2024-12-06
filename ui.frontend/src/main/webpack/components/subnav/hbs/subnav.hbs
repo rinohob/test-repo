@@ -1,0 +1,55 @@
+{{> header}}
+
+{{! subnav starts }}
+<div data-component="subnav" class="list list--subnav list--md" id="subnav">
+  <div class="cmp-list__value">
+  </div>
+  <ul id="list-3a1e8d64e8" class="cmp-list">
+    <li class="cmp-list__item">
+      <a href="/url" class="cmp-list__item-link cmp-list__item-link--first">Parent</a>
+    </li>
+    {{#each items}}
+    <li class="cmp-list__item">
+      <a href="{{url}}" class="cmp-list__item-link {{#if active}} active{{/if}}">{{label}}</a>
+    </li>
+    {{/each}}
+  </ul>
+</div>
+</div>
+{{! just for testing }}
+
+<div class="container responsivegrid" style="background-color: {{bgColor}}; height: {{height}};">
+  <div class="cmp-container" style=" border: 1px dashed #FFFFFF;">
+    <div class="container responsivegrid" style="background-color: gray; height: 100px;">
+      <div class="cmp-container" style=" border: 1px dashed #FFFFFF;">
+        <div class="container responsivegrid container--max-content">
+          <div class="cmp-container" style=" border: 1px dashed #FFFFFF;">
+            <div class="title">
+              <div class="cmp-title">
+                <h3 class="cmp-title__text" style="color: #ffffff">hi Lorem Ipsum</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="container container--fb-max-content responsivegrid" style="background-color: gray; height: 400px;">
+      <div class="cmp-container" style=" border: 1px dashed #FFFFFF;">
+            <div class="title">
+              <div class="cmp-title">
+                <h3 class="cmp-title__text" style="color: #ffffff">Other way hi Lorem Ipsum</h3>
+              </div>
+            </div>
+      </div>
+    </div>
+    <div class="text">
+      <div class="cmp-text">
+        <p style="color: black">Full bleed Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor
+          incididunt ut labore et dolore magna aliqua. Eu mi bibendum neque egestas congue quisque egestas. Varius morbi
+          enim nunc faucibus a pellentesque. Scelerisque eleifend donec pretium vulputate sapien nec sagittis.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<img src="https://hotel.hardrock.com/files/5829/23496308_ImageLargeWidth.avif" alt="" style="max-width: 100%;" />

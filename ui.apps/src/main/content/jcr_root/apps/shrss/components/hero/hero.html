@@ -1,0 +1,52 @@
+<sly  data-sly-use.heroModel="com.shrss.core.models.HeroModel"></sly>
+
+<div data-sly-test="${wcmmode.edit && !heroModel.assetType}" aria-placeholder="${'Hero Banner' @ i18n}" data-emptytext="${'Hero Banner' @ i18n}" class="cq-placeholder"></div>
+
+  <sly data-sly-test="${heroModel.assetType == 'image'}">
+  <div id="${heroModel.id}" class="cmp-teaser ${heroModel.cssClass}">
+    <div class="cmp-teaser__body">
+      <div class="cmp-teaser__content">
+        <p class="cmp-teaser__pretitle">${heroModel.pretitle @ context='html'}</p>
+        <h2 class="cmp-teaser__title">${heroModel.title @ context='html'}</h2>
+        <div class="cmp-teaser__description">
+          ${heroModel.description @ context="html"}
+        </div>
+        <div class="cmp-teaser__action-container">
+      
+         <sly data-sly-set.ctaCount="0" data-sly-list.cta="${heroModel.ctaList}">
+          <div class="button cmp-button--${ctaCount == '0' ? 'primary' : 'secondary'}">
+            <a type="button" data-sly-set.ctaCount="1" href="${cta.link}" target="${cta.linkTarget}"  class="cmp-button">${cta.text}</a>
+          </div>
+        </sly>
+        
+        </div>
+      </div>
+    </div>
+    <div class="cmp-teaser__image">
+      <div class="cmp-image">
+        <picture>
+          <!-- Desktop Image -->
+          <source media="(min-width: 1024px)" srcset="${heroModel.fileReference}">
+          <!-- Tablet and mobile Image -->
+          <source media="(max-width: 1023px)" srcset="${heroModel.fileReference}">
+          <!-- Fallback Image -->
+          <img src="${heroModel.fileReference}" loading="lazy" alt="${heroModel.alt}" class="cmp-image__image">
+        </picture>
+      </div>
+    </div>
+  </div>
+  </sly>
+  <sly data-sly-test="${heroModel.assetType == 'video'}">
+  <div class="hero hero-- hero--light hero--sm hero--gradient-off  ${heroModel.cssClass}">
+  	<div  class="cmp-teaser ">
+    	<div class="embed">
+      		<div class="cmp-embed cmp-embed__video-banner">
+     			<div id="teaser-4dd97e852b" class="cmp-teaser">
+              		<sly data-sly-resource="${ @path='video',resourceType='shrss/components/video'}"></sly>
+                </div>
+            </div>
+         </div>   
+      </div>
+     </div> 
+  </sly>
+  

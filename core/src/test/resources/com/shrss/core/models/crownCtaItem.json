@@ -1,0 +1,27 @@
+ {
+                "jcr:primaryType": "nt:unstructured",
+                "ctaURL": "https://hotel.hardrock.com/",
+                "newTab": "true",
+                "colorSel": "#ffffff",
+                "label": "Book Now",
+                "dropdownFor": "CTA",
+                "experienceSelect": "dropdown",
+                "authorId": "3333",
+                "fileReference" : "/content/dam/example/image.jpg",
+                "authorId" : "author123",
+                "mapLangSel": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "item0": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "newTabDropdown": "true",
+                        "url": "https://hotel.hardrock.com/",
+                        "labelDropdown": "cta11"
+                    },
+                    "item1": {
+                        "jcr:primaryType": "nt:unstructured",
+                        "newTabDropdown": "true",
+                        "url": "https://cafe.hardrock.com/",
+                        "labelDropdown": "cta22"
+                    }
+              }
+}

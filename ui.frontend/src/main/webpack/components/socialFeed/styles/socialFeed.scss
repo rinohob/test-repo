@@ -1,0 +1,168 @@
+$icon-instagram: "\f16d";
+
+.hrc-socialfeed {
+    $p: &;
+
+    background-color: var(--color-socialfeed-background);
+
+    &__wrapper {
+        margin: 0 auto;
+        max-width: var(--max-width-container);
+        padding: 50px 15px;
+    }
+
+    &__header {
+        text-align: center;
+
+        &__text {
+            @extend %h2;
+
+            margin: 0 0 30px;
+        }
+    }
+
+    &__loading {
+        display: block;
+        height: 50px;
+        background-image: url("../resources/images/loading.gif");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+
+        &--hide {
+            display: none;
+        }
+    }
+
+    &__grid {
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        &--show {
+            display: grid;
+        }
+
+        #{$p}__column-first {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+
+            &--hide {
+                display: none;
+            }
+        }
+
+        #{$p}__column-second {
+            &--hide {
+                display: none;
+            }
+        }
+
+        #{$p}__column-first,
+        #{$p}__column-second {
+            #{$p}__content {
+                background-size: cover;
+                background-position: 50%;
+                padding-top: 100%;
+                position: relative;
+
+                &::after {
+                    content: $icon-instagram;
+                    font-family: $font-awesome-family-brands;
+                    font-weight: 400;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    @include d-flex(flex, center, center);
+
+                    width: 35px;
+                    height: 35px;
+                    color: var(--color-socialfeed-post-text);
+                    font-size: 20px;
+                    line-height: 20px;
+                }
+            }
+
+            #{$p}__text {
+                display: none;
+                position: absolute;
+                inset: 0;
+                @extend %p2;
+
+                color: var(--color-socialfeed-post-text);
+                background: rgb(0, 0, 0, 60%);
+                padding: 10px;
+                word-break: break-word;
+                overflow: hidden;
+            }
+
+            #{$p}__item {
+                &:hover {
+                    #{$p}__text {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    &__links {
+        margin-top: 10px;
+        padding: 0 5px;
+        @extend %p1;
+
+        &-wrapper {
+            padding-left: 30px;
+            display: flex;
+            flex-flow: row wrap;
+            gap: 8px;
+            position: relative;
+
+            &::before {
+                content: $icon-instagram;
+                font-family: $font-awesome-family-brands;
+                position: absolute;
+                top: -1px;
+                left: 5px;
+            }
+        }
+    }
+
+    &__link {
+        &__text:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__load-more {
+        display: none;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        color: var(--color-socialfeed-load-more);
+        font-style: italic;
+        margin: 10px auto 0;
+        text-transform: uppercase;
+        transition: all 0.5s ease;
+
+        .fas {
+            margin-left: 10px;
+            position: relative;
+            top: -3px;
+            vertical-align: middle;
+        }
+
+        &--show {
+            display: block;
+        }
+    }
+}
+
+@include media(">=mobile") {
+    .hrc-socialfeed {
+        &__grid {
+            grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+        }
+    }
+}

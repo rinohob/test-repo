@@ -1,0 +1,5 @@
+src/main/content/jcr_root/apps/shrss/clientlibs/clientlib-site
+src/main/content/jcr_root/apps/shrss/clientlibs/clientlib-dependencies
+src/main/content/jcr_root/apps/shrss/clientlibs/*
+/bin/*
+/target/*

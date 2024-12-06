@@ -1,0 +1,12 @@
+<div class="socialmedia socialmedia--{{variant}}">
+<ol class="socialmedia__list">
+    {{#each socialMediaLinks}}
+    <li class="socialmedia__listitem">
+      <a class="socialmedia__link" href="{{link}}" target="_blank">
+        <span class="fab {{icon}}"></span>
+        <span class="sr-only">{{label}}</span>
+      </a>
+    </li>
+  {{/each}}
+</ol>
+</div>

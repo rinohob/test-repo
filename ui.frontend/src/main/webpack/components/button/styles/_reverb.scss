@@ -1,0 +1,35 @@
+.page-reverb{
+    .cmp-button {
+        font-family: var(--font-family-secondary);
+
+        &--secondary-light{
+            .cmp-button{
+                color: var(--color-button-secondary-light);
+                border-color: inherit;
+                background-color: transparent;
+
+                &:hover{
+                    border-color: inherit;
+                    color: var(--color-button-secondary-light-hover);
+                }
+            }
+
+            &.disabled{
+                .cmp-button{
+                    color: var(--color-button-secondary-light-disabled);
+                    pointer-events: none;
+                }
+            }
+        }
+        
+        &--secondary{
+            .cmp-button{
+                &:hover{
+                    background-color: transparent;
+                    color: var(--color-button-secondary-hover);
+                }
+            }
+        }
+    }
+}
+

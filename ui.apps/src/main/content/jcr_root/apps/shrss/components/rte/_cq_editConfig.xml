@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:EditConfig">
+    <cq:inplaceEditing
+        jcr:primaryType="cq:InplaceEditingConfig"
+        active="{Boolean}true"
+        editorType="text">
+        <config jcr:primaryType="nt:unstructured">
+            <rtePlugins jcr:primaryType="nt:unstructured">
+                <subsuperscript
+                    jcr:primaryType="nt:unstructured"
+                    features="*"/>
+                <misctools
+                    jcr:primaryType="nt:unstructured"
+                    features="specialchars">
+                    <specialCharsConfig jcr:primaryType="nt:unstructured">
+                        <chars jcr:primaryType="nt:unstructured">
+                            <pound
+                                jcr:primaryType="nt:unstructured"
+                                entity="&amp;#163"/>
+                            <nbsp
+                                jcr:primaryType="nt:unstructured"
+                                entity="&amp;#160"/>
+                            <registered
+                                jcr:primaryType="nt:unstructured"
+                                entity="&amp;#174"/>
+                            <copyright
+                                jcr:primaryType="nt:unstructured"
+                                entity="&amp;#169"/>
+                            <trademark
+                                jcr:primaryType="nt:unstructured"
+                                entity="&amp;#8482"/>
+                            <emDash
+                                jcr:primaryType="nt:unstructured"
+                                entity="&amp;#8212;"/>
+                            <dollar
+                                jcr:primaryType="nt:unstructured"
+                                entity="&amp;#36;"/>
+                        </chars>
+                    </specialCharsConfig>
+                </misctools>
+                <links
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideResource="{Boolean}true"
+                    features="-">
+                    <linkDialogConfig
+                        jcr:primaryType="nt:unstructured"
+                        height="{Long}316">
+                        <linkAttributes jcr:primaryType="cq:WidgetCollection">
+                            <linkAdvanced
+                                jcr:primaryType="cq:Widget"
+                                collapsed="{Boolean}true"
+                                collapsible="{Boolean}true"
+                                inputValue="advanced"
+                                name="./linkdialog/cq:adhocLinkTrackingTab"
+                                title="Link tracking"
+                                xtype="dialogfieldset">
+                                <items jcr:primaryType="cq:WidgetCollection">
+                                    <enable
+                                        jcr:primaryType="nt:unstructured"
+                                        attribute="enabletracking"
+                                        fieldDescription="override analytics framework settings"
+                                        fieldLabel="Custom link tracking"
+                                        name="./linkdialog/cq:adhocLinkTrackingEnableTracking"
+                                        prefix="http:"
+                                        xtype="checkbox">
+                                        <listeners
+                                            jcr:primaryType="nt:unstructured"
+                                            check="function(component){var dlg=component.findParentByType('rtelinkdialog');dlg.enableSCFields(component.checked);}"
+                                            prefix="http:"/>
+                                    </enable>
+                                    <events
+                                        jcr:primaryType="nt:unstructured"
+                                        attribute="adhocevents"
+                                        fieldDescription="e.g.: event2, event7"
+                                        fieldLabel="Include SiteCatalyst events"
+                                        name="./linkdialog/cq:adhocLinkTrackingEvents"
+                                        xtype="textfield"/>
+                                    <evars
+                                        jcr:primaryType="nt:unstructured"
+                                        attribute="adhocevars"
+                                        fieldDescription="e.g.: eVar1: pagedata.url, prop4: 'const'"
+                                        fieldLabel="Include SiteCatalyst variables"
+                                        name="./linkdialog/cq:adhocLinkTrackingEvars"
+                                        xtype="textfield"/>
+                                </items>
+                            </linkAdvanced>
+                        </linkAttributes>
+                    </linkDialogConfig>
+                </links>
+            </rtePlugins>
+            <uiSettings jcr:primaryType="nt:unstructured">
+                <cui jcr:primaryType="nt:unstructured">
+                    <inline
+                        jcr:primaryType="nt:unstructured"
+                        toolbar="[#format,#justify,misctools#specialchars,misctools#sourceedit,fullscreen#start,control#close,control#save]">
+                        <popovers jcr:primaryType="nt:unstructured">
+                            <format
+                                jcr:primaryType="nt:unstructured"
+                                items="[format#bold,format#italic,format#underline]"
+                                ref="format"/>
+                            <justify
+                                jcr:primaryType="nt:unstructured"
+                                items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                ref="justify"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"
+                                items="paraformat:getFormats:paraformat-pulldown"
+                                ref="paraformat"/>
+                        </popovers>
+                    </inline>
+                    <dialogFullScreen
+                        jcr:primaryType="nt:unstructured"
+                        toolbar="[format#bold,format#italic,format#underline,misctools#specialchars,misctools#sourceedit,subsuperscript#subscript,subsuperscript#superscript,fullscreen#finish,control#close,control#save]">
+                        <popovers jcr:primaryType="nt:unstructured">
+                            <justify
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"
+                                items="[justify#justifyleft,justify#justifycenter,justify#justifyright]"
+                                ref="justify"/>
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                sling:hideResource="{Boolean}true"
+                                items="paraformat:getFormats:paraformat-pulldown"
+                                ref="paraformat"/>
+                        </popovers>
+                    </dialogFullScreen>
+                </cui>
+            </uiSettings>
+        </config>
+    </cq:inplaceEditing>
+</jcr:root>

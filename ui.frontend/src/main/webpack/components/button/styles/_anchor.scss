@@ -1,0 +1,11 @@
+// a {
+//     color: var(--color-anchor);
+//     text-decoration: var(--text-decoration-anchor);
+//     &:hover {
+//         --text-decoration-anchor: none;
+//         color: var(--color-anchor-hover, var(--color-anchor));
+//     }
+//     &[disabled] {
+//         color: var(--color-button-disabled);
+//     }
+// }

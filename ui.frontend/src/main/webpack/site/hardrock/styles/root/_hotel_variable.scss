@@ -1,0 +1,21 @@
+.page-hotel {
+       --color-button-primary: #59588c;
+       --color-button-primary-hover: #3d3b6a;
+       --color-button-secondary: #ffffff;
+       --color-button-secondary-light: #59588c;
+       --color-button-tertiary: #000000;
+       --color-text-light: #ffffff;
+       --color-text-dark: #363636;
+       --color-text-link-hover: #000000;
+       --color-background-primary: #77531a;
+
+       // TAB
+       --color-tab-title: var(--color-text-dark);
+       --color-tab-title-hover: var(--color-text-light);
+       --color-tab-title-active: var(--color-text-light);
+       --color-tab-bg-hover: var(--color-button-primary-hover);
+       --color-tab-bg-active: var(--color-button-primary);
+
+       // Button text
+       --color-button-text-secondary-hover: #3d3b6a;
+}

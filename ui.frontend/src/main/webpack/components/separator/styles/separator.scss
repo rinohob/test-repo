@@ -1,0 +1,23 @@
+.separator {
+  .cmp-separator {
+    padding: 0;
+    
+    &__horizontal-rule {
+      height: 1px;
+      color: var(--color-background-sep);;
+      background: var(--color-background-sep);
+      font-size: 0;
+      border: 0;
+      margin: 20px 0;
+    }
+  }
+
+  &--dark {
+    .cmp-separator {
+      &__horizontal-rule {
+        color: var(--color-background-sep-dark);
+        background: var(--color-background-sep-dark);
+      }
+    }
+  }
+}

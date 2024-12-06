@@ -1,0 +1,24 @@
+<div class="hrc-socialfeed" data-component="socialFeed" data-url="{{dataURL}}">
+    <div class="hrc-socialfeed__wrapper">
+        <div class="hrc-socialfeed__header">
+            <h2 class="hrc-socialfeed__header__text">{{headerText}}</h2>
+        </div>
+        <div class="hrc-socialfeed__loading"></div>
+        <div class="hrc-socialfeed__grid"></div>
+        <div class="hrc-socialfeed__links">
+            {{#if links.length}}
+            <div class="hrc-socialfeed__links-wrapper">
+                {{#each links}}
+                <div class="hrc-socialfeed__link">
+                    <a class="hrc-socialfeed__link__text" href="{{link}}" target="_blank">{{name}}</a>
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+            <button class="hrc-socialfeed__load-more">
+                <span>Load More</span>
+                <span class="fas fa-chevron-down"></span>
+            </button>
+        </div>
+    </div>
+</div>
